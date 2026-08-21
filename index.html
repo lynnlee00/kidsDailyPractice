@@ -1393,7 +1393,7 @@
         </button>
         <button class="home-action-btn mistake" id="mistakeBookBtn">
           <span class="home-action-emoji">📕</span>
-          <span class="home-action-label">錯題本</span>
+          <span class="home-action-label" id="mistakeBookLabel">錯題本</span>
           <span class="mistake-badge" id="mistakeBookBadge" style="display:none;"></span>
         </button>
       </div>
@@ -1719,7 +1719,7 @@
   </div>
 </div>
 
-<footer>拾光練習 · 使用瀏覽器內建語音功能朗讀 · <span id="appVersion">v2026.08.21-11</span></footer>
+<footer>拾光練習 · 使用瀏覽器內建語音功能朗讀 · <span id="appVersion">v2026.08.22-1</span></footer>
 
 <script>
 /* ============ SOUND EFFECTS (tiny synthesized chimes, no audio files needed) ============ */
@@ -3903,179 +3903,181 @@ const CHAPTERS = [
     subject: 'mandarin',
     category: 'character',
     unitLabel: '康軒二上 第五課',
-    title: '水上木偶戲',
+    title: '坐竹籃船',
     zh: '生字:部首・筆畫・造詞・破音字',
-    cardEmoji: '📝🎭🎪',
+    cardEmoji: '📝🚣🎋',
     headerEmoji: '📝',
     enabledTabs: ['story', 'game'],
     tabLabels: { story: '📝 生字卡', game: '🎯 生字挑戰' },
-
     characters: [
-      { char:'木', pinyin:'ㄇㄨˋ', radical:'木部', strokeCount:4, words:[
-          {word:'木頭', sentence:'這張桌子是用木頭做的。'},
-          {word:'木偶', sentence:'舞台上有一個可愛的木偶。'},
-          {word:'樹木', sentence:'公園裡種了很多樹木。'}
-        ], polyphonic:null, moreWords:['木材','木匠']},
-      { char:'偶', pinyin:'ㄡˇ', radical:'人部', strokeCount:11, words:[
-          {word:'木偶', sentence:'這齣戲是用木偶表演的。'},
-          {word:'偶爾', sentence:'我偶爾會和爸爸去爬山。'},
-          {word:'布偶', sentence:'妹妹抱著她最愛的布偶睡覺。'}
-        ], polyphonic:null, moreWords:['偶像','偶然']},
-      { char:'戲', pinyin:'ㄒㄧˋ', radical:'戈部', strokeCount:17, words:[
-          {word:'戲劇', sentence:'我們班要表演一齣戲劇。'},
-          {word:'遊戲', sentence:'下課時間我們一起玩遊戲。'},
-          {word:'把戲', sentence:'魔術師表演了一個有趣的把戲。'}
-        ], polyphonic:null, moreWords:['戲院','看戲']},
-      { char:'演', pinyin:'ㄧㄢˇ', radical:'水部', strokeCount:14, words:[
-          {word:'表演', sentence:'今天學校有才藝表演。'},
-          {word:'演戲', sentence:'姊姊喜歡演戲給我們看。'},
-          {word:'演員', sentence:'這位演員演得真好。'}
-        ], polyphonic:null, moreWords:['演出','導演']},
-      { char:'池', pinyin:'ㄔˊ', radical:'水部', strokeCount:6, words:[
-          {word:'水池', sentence:'花園裡有一個小水池。'},
-          {word:'游泳池', sentence:'夏天我常常去游泳池游泳。'},
-          {word:'電池', sentence:'這個玩具需要兩顆電池。'}
-        ], polyphonic:null, moreWords:['池塘','魚池']},
-      { char:'台', pinyin:'ㄊㄞˊ', radical:'口部', strokeCount:5, words:[
-          {word:'舞台', sentence:'她站在舞台中央唱歌。'},
-          {word:'講台', sentence:'老師站在講台上上課。'},
-          {word:'台北', sentence:'我們全家去台北玩了一天。'}
-        ], polyphonic:null, moreWords:['台燈','櫃台']},
-      { char:'活', pinyin:'ㄏㄨㄛˊ', radical:'水部', strokeCount:9, words:[
-          {word:'活動', sentence:'學校舉辦了有趣的活動。'},
-          {word:'生活', sentence:'我很喜歡現在的生活。'},
-          {word:'活潑', sentence:'弟弟是一個活潑好動的孩子。'}
-        ], polyphonic:null, moreWords:['活力','快活']},
-      { char:'精', pinyin:'ㄐㄧㄥ', radical:'米部', strokeCount:14, words:[
-          {word:'精彩', sentence:'這場比賽真是太精彩了。'},
-          {word:'精神', sentence:'睡飽以後我覺得很有精神。'},
-          {word:'妖精', sentence:'故事裡出現了一個小妖精。'}
-        ], polyphonic:null, moreWords:['精力','精細']},
-      { char:'彩', pinyin:'ㄘㄞˇ', radical:'彡部', strokeCount:11, words:[
-          {word:'精彩', sentence:'木偶戲表演得非常精彩。'},
-          {word:'彩虹', sentence:'雨後天空出現一道美麗的彩虹。'},
-          {word:'彩色', sentence:'我用彩色筆畫了一幅畫。'}
-        ], polyphonic:null, moreWords:['彩帶','喝彩']},
-      {
-        char:'背', pinyin:'ㄅㄟˋ', radical:'肉部(月)', strokeCount:9, words:[
-          {word:'背包', sentence:'我每天背著背包上學。'},
-          {word:'背後', sentence:'有人站在我的背後。'},
-          {word:'背書', sentence:'我正在背書準備考試。'}
-        ],
-        polyphonic:[
-          { reading:'ㄅㄟˋ', meaning:'身體的背部,或東西的後面(常用在「背後」、「背包」)', example:'他的背包裡裝滿了課本。' },
-          { reading:'ㄅㄟ', meaning:'用背扛著東西(動作)', example:'媽媽背著弟弟走了好久。' }
-        ],
-      moreWords:['背景','背面']
-      },
-      { char:'撐', pinyin:'ㄔㄥ', radical:'手部(扌)', strokeCount:15, words:[
-          {word:'撐傘', sentence:'下雨了,媽媽幫我撐傘。'},
-          {word:'支撐', sentence:'這根柱子用來支撐屋頂。'},
-          {word:'撐船', sentence:'船夫用力撐船前進。'}
-        ], polyphonic:null, moreWords:['撐開','撐住']},
-      { char:'阿', pinyin:'ㄚ', radical:'阜部(阝)', strokeCount:8, words:[
-          {word:'阿姨', sentence:'阿姨買了禮物送我。'},
-          {word:'阿公', sentence:'阿公喜歡在庭院種花。'},
-          {word:'阿嬤', sentence:'阿嬤煮的湯特別好喝。'}
-        ], polyphonic:null, moreWords:['阿伯','阿婆']},
-      { char:'乘', pinyin:'ㄔㄥˊ', radical:'丿部', strokeCount:10, words:[
-          {word:'乘車', sentence:'我們乘車去阿嬤家。'},
-          {word:'乘客', sentence:'公車上坐滿了乘客。'},
-          {word:'乘法', sentence:'我正在學習乘法。'}
-        ], polyphonic:null, moreWords:['乘坐','搭乘']},
-      { char:'涼', pinyin:'ㄌㄧㄤˊ', radical:'水部', strokeCount:11, words:[
-          {word:'涼快', sentence:'樹下吹風真涼快。'},
-          {word:'涼水', sentence:'天氣熱,我喝了一杯涼水。'},
-          {word:'清涼', sentence:'這條溪水又清涼又乾淨。'}
-        ], polyphonic:null, moreWords:['涼爽','涼亭']},
-      { char:'認', pinyin:'ㄖㄣˋ', radical:'言部', strokeCount:14, words:[
-          {word:'認識', sentence:'我今天認識了一位新朋友。'},
-          {word:'認真', sentence:'弟弟寫功課很認真。'},
-          {word:'認錯', sentence:'做錯事要勇敢認錯。'}
-        ], polyphonic:null, moreWords:['認為','確認']},
+      { char:'叫', pinyin:'ㄐㄧㄠˋ', radical:'口部', strokeCount:5, words:[
+          {word:'叫做', sentence:'這個男孩叫做小明。'},
+          {word:'大叫', sentence:'妹妹看到蟑螂嚇得大叫。'},
+          {word:'叫聲', sentence:'公雞的叫聲把大家都吵醒了。'}
+        ], polyphonic:null, moreWords:['尖叫','叫醒']},
+      { char:'吹', pinyin:'ㄔㄨㄟ', radical:'口部', strokeCount:7, words:[
+          {word:'吹笛子', sentence:'哥哥在河邊吹笛子。'},
+          {word:'吹口哨', sentence:'他開心地吹口哨。'},
+          {word:'吹蠟燭', sentence:'生日時大家一起吹蠟燭。'}
+        ], polyphonic:null, moreWords:['吹風機']},
+      { char:'等', pinyin:'ㄉㄥˇ', radical:'竹部', strokeCount:12, words:[
+          {word:'等船', sentence:'大家在岸邊等船。'},
+          {word:'等待', sentence:'我們耐心等待竹籃船靠岸。'},
+          {word:'等一下', sentence:'請等一下,我馬上就來。'}
+        ], polyphonic:null, moreWords:['等候','平等']},
+      { char:'籃', pinyin:'ㄌㄢˊ', radical:'竹部', strokeCount:20, words:[
+          {word:'竹籃', sentence:'阿公用竹籃裝滿了水果。'},
+          {word:'籃子', sentence:'媽媽提著籃子去買菜。'},
+          {word:'花籃', sentence:'教室門口擺了一個花籃。'}
+        ], polyphonic:null, moreWords:['籃球','菜籃']},
+      { char:'竹', pinyin:'ㄓㄨˊ', radical:'竹部', strokeCount:6, words:[
+          {word:'竹子', sentence:'河邊種著一整排竹子。'},
+          {word:'竹林', sentence:'我們穿過竹林去爬山。'},
+          {word:'竹筍', sentence:'奶奶煮了一鍋竹筍湯。'}
+        ], polyphonic:null, moreWords:['竹葉']},
+      { char:'暑', pinyin:'ㄕㄨˇ', radical:'日部', strokeCount:12, words:[
+          {word:'暑假', sentence:'暑假我們全家去坐竹籃船。'},
+          {word:'中暑', sentence:'天氣太熱,要小心中暑。'},
+          {word:'暑期', sentence:'暑期學校辦了游泳課。'}
+        ], polyphonic:null, moreWords:['避暑']},
+      { char:'南', pinyin:'ㄋㄢˊ', radical:'十部', strokeCount:9, words:[
+          {word:'南方', sentence:'候鳥每年冬天都飛往南方。'},
+          {word:'台南', sentence:'我們全家去台南旅行。'},
+          {word:'南瓜', sentence:'媽媽煮了香甜的南瓜湯。'}
+        ], polyphonic:null, moreWords:['南極','指南針']},
+      { char:'鄉', pinyin:'ㄒㄧㄤ', radical:'邑部(阝)', strokeCount:12, words:[
+          {word:'家鄉', sentence:'爺爺常常想念他的家鄉。'},
+          {word:'鄉下', sentence:'我們暑假去鄉下玩。'},
+          {word:'同鄉', sentence:'他們兩個是同鄉。'}
+        ], polyphonic:null, moreWords:['故鄉','鄉村']},
+      { char:'近', pinyin:'ㄐㄧㄣˋ', radical:'辵部(辶)', strokeCount:8, words:[
+          {word:'附近', sentence:'附近有一條美麗的小溪。'},
+          {word:'靠近', sentence:'小心不要靠近河邊。'},
+          {word:'最近', sentence:'我最近學會了划船。'}
+        ], polyphonic:null, moreWords:['近視','親近']},
+      { char:'邊', pinyin:'ㄅㄧㄢ', radical:'辵部(辶)', strokeCount:19, words:[
+          {word:'河邊', sentence:'我們在河邊坐竹籃船。'},
+          {word:'旁邊', sentence:'妹妹坐在我的旁邊。'},
+          {word:'邊走邊看', sentence:'我們邊走邊看沿路的風景。'}
+        ], polyphonic:null, moreWords:['海邊','身邊']},
+      { char:'原', pinyin:'ㄩㄢˊ', radical:'厂部', strokeCount:10, words:[
+          {word:'原來', sentence:'原來坐竹籃船這麼好玩。'},
+          {word:'草原', sentence:'遠方有一片綠色的草原。'},
+          {word:'原因', sentence:'下雨的原因是烏雲變多了。'}
+        ], polyphonic:null, moreWords:['原本','平原']},
+      { char:'划', pinyin:'ㄏㄨㄚˊ', radical:'刀部(刂)', strokeCount:6, words:[
+          {word:'划船', sentence:'爺爺教我怎麼划船。'},
+          {word:'划水', sentence:'我們用力划水前進。'},
+          {word:'划槳', sentence:'船夫用力划槳。'}
+        ], polyphonic:null, moreWords:['划算']},
+      { char:'跨', pinyin:'ㄎㄨㄚˋ', radical:'足部', strokeCount:13, words:[
+          {word:'跨過', sentence:'我小心跨過小水溝。'},
+          {word:'跨年', sentence:'我們一起跨年迎接新的一年。'},
+          {word:'跨步', sentence:'他大步跨步走向前。'}
+        ], polyphonic:null, moreWords:['跨越']},
+      { char:'帶', pinyin:'ㄉㄞˋ', radical:'巾部', strokeCount:11, words:[
+          {word:'帶路', sentence:'哥哥帶路走進竹林。'},
+          {word:'帶來', sentence:'這趟旅行帶來很多快樂。'},
+          {word:'皮帶', sentence:'爸爸繫上皮帶出門。'}
+        ], polyphonic:null, moreWords:['帶領','絲帶']},
+      { char:'假', pinyin:'ㄐㄧㄚˇ', radical:'人部', strokeCount:11, words:[
+          {word:'假的', sentence:'這朵花是假的,做得很像真花。'},
+          {word:'真假', sentence:'我一時分不出真假。'},
+          {word:'假裝', sentence:'他假裝在睡覺。'}
+        ], polyphonic:[
+          { reading:'ㄐㄧㄚˇ', meaning:'不是真的、虛偽的(常用在「假的」、「真假」、「假裝」)', example:'這是一朵假花,做得很逼真。' },
+          { reading:'ㄐㄧㄚˋ', meaning:'休息不上課、不上班的日子(常用在「放假」、「暑假」、「假期」)', example:'暑假我們全家出去玩。' }
+        ], moreWords:['放假','假期']},
       { char:'識', pinyin:'ㄕˋ', radical:'言部', strokeCount:19, words:[
-          {word:'認識', sentence:'很高興認識你。'},
+          {word:'認識', sentence:'我認識班上每一位同學。'},
           {word:'知識', sentence:'讀書可以增加知識。'},
-          {word:'常識', sentence:'這是大家都應該知道的常識。'}
-        ], polyphonic:null, moreWords:['識字','見識']}
+          {word:'常識', sentence:'這是生活中的常識。'}
+        ], polyphonic:null, moreWords:['識字','見識']},
+      { char:'活', pinyin:'ㄏㄨㄛˊ', radical:'水部(氵)', strokeCount:9, words:[
+          {word:'活動', sentence:'學校舉辦了戶外活動。'},
+          {word:'生活', sentence:'鄉下的生活很悠閒。'},
+          {word:'活潑', sentence:'妹妹是個活潑的孩子。'}
+        ], polyphonic:null, moreWords:['活力','快活']},
+      { char:'捕', pinyin:'ㄅㄨˇ', radical:'手部(扌)', strokeCount:10, words:[
+          {word:'捕魚', sentence:'漁夫每天出海捕魚。'},
+          {word:'捕捉', sentence:'青蛙很會捕捉昆蟲。'},
+          {word:'捕手', sentence:'他是棒球隊的捕手。'}
+        ], polyphonic:null, moreWords:['捕獲']}
     ],
 
     gameTitle: '🎯 生字挑戰',
     levelPool: [
-      { id:1, title:'部首', photo:'📝', before:'「偶」的部首是', after:'?', zh:'💡 選出正確的部首', options:['手部(扌)','口部','人部'], correct:'人部', hint:'提示:「偶」的部首是「人部」。', blanks:1 },
-      { id:2, title:'造詞', photo:'📖', before:'', after:'煮的湯特別好喝。', zh:'💡 選出正確的詞語,填入空格', options:['乘車','阿嬤','知識'], correct:'阿嬤', hint:'提示:「阿嬤」是用「阿」字造的詞。', blanks:1 },
-      { id:3, title:'造詞', photo:'📖', before:'這張桌子是用', after:'做的。', zh:'💡 選出正確的詞語,填入空格', options:['彩色','台北','木頭'], correct:'木頭', hint:'提示:「木頭」是用「木」字造的詞。', blanks:1 },
-      { id:4, title:'造詞', photo:'📖', before:'花園裡有一個小', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['涼快','水池','木偶'], correct:'水池', hint:'提示:「水池」是用「池」字造的詞。', blanks:1 },
-      { id:5, title:'造詞', photo:'📖', before:'這根柱子用來', after:'屋頂。', zh:'💡 選出正確的詞語,填入空格', options:['木頭','認真','支撐'], correct:'支撐', hint:'提示:「支撐」是用「撐」字造的詞。', blanks:1 },
-      { id:6, title:'筆畫', photo:'✏️', before:'「撐」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['9','15','10'], correct:'15', hint:'提示:「撐」共有15畫。', blanks:1 },
-      { id:7, title:'部首', photo:'📝', before:'「演」的部首是', after:'?', zh:'💡 選出正確的部首', options:['戈部','口部','水部'], correct:'水部', hint:'提示:「演」的部首是「水部」。', blanks:1 },
-      { id:8, title:'造詞', photo:'📖', before:'弟弟是一個', after:'好動的孩子。', zh:'💡 選出正確的詞語,填入空格', options:['活潑','阿公','精神'], correct:'活潑', hint:'提示:「活潑」是用「活」字造的詞。', blanks:1 },
-      { id:9, title:'部首', photo:'📝', before:'「木」的部首是', after:'?', zh:'💡 選出正確的部首', options:['彡部','戈部','木部'], correct:'木部', hint:'提示:「木」的部首是「木部」。', blanks:1 },
-      { id:10, title:'造詞', photo:'📖', before:'今天學校有才藝', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['表演','戲劇','木頭'], correct:'表演', hint:'提示:「表演」是用「演」字造的詞。', blanks:1 },
-      { id:11, title:'造詞', photo:'📖', before:'下課時間我們一起玩', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['舞台','彩色','遊戲'], correct:'遊戲', hint:'提示:「遊戲」是用「戲」字造的詞。', blanks:1 },
-      { id:12, title:'造詞', photo:'📖', before:'這是大家都應該知道的', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['認識','常識','遊戲'], correct:'常識', hint:'提示:「常識」是用「識」字造的詞。', blanks:1 },
-      { id:13, title:'筆畫', photo:'✏️', before:'「識」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['8','19','5'], correct:'19', hint:'提示:「識」共有19畫。', blanks:1 },
-      { id:14, title:'部首', photo:'📝', before:'「活」的部首是', after:'?', zh:'💡 選出正確的部首', options:['肉部(月)','人部','水部'], correct:'水部', hint:'提示:「活」的部首是「水部」。', blanks:1 },
-      { id:15, title:'造詞', photo:'📖', before:'我們班要表演一齣', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['妖精','背後','戲劇'], correct:'戲劇', hint:'提示:「戲劇」是用「戲」字造的詞。', blanks:1 },
-      { id:16, title:'造詞', photo:'📖', before:'學校舉辦了有趣的', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['游泳池','活動','樹木'], correct:'活動', hint:'提示:「活動」是用「活」字造的詞。', blanks:1 },
-      { id:17, title:'造詞', photo:'📖', before:'讀書可以增加', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['知識','舞台','演員'], correct:'知識', hint:'提示:「知識」是用「識」字造的詞。', blanks:1 },
-      { id:18, title:'造詞', photo:'📖', before:'木偶戲表演得非常', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['演戲','精彩','活潑'], correct:'精彩', hint:'提示:「精彩」是用「彩」字造的詞。', blanks:1 },
-      { id:19, title:'造詞', photo:'📖', before:'這齣戲是用', after:'表演的。', zh:'💡 選出正確的詞語,填入空格', options:['樹木','台北','木偶'], correct:'木偶', hint:'提示:「木偶」是用「偶」字造的詞。', blanks:1 },
-      { id:20, title:'部首', photo:'📝', before:'「精」的部首是', after:'?', zh:'💡 選出正確的部首', options:['肉部(月)','丿部','米部'], correct:'米部', hint:'提示:「精」的部首是「米部」。', blanks:1 },
-      { id:21, title:'造詞', photo:'📖', before:'她站在', after:'中央唱歌。', zh:'💡 選出正確的詞語,填入空格', options:['舞台','布偶','講台'], correct:'舞台', hint:'提示:「舞台」是用「台」字造的詞。', blanks:1 },
-      { id:22, title:'部首', photo:'📝', before:'「背」的部首是', after:'?', zh:'💡 選出正確的部首', options:['肉部(月)','言部','彡部'], correct:'肉部(月)', hint:'提示:「背」的部首是「肉部(月)」。', blanks:1 },
-      { id:23, title:'造詞', photo:'📖', before:'下雨了,媽媽幫我', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['阿嬤','撐船','撐傘'], correct:'撐傘', hint:'提示:「撐傘」是用「撐」字造的詞。', blanks:1 },
-      { id:24, title:'部首', photo:'📝', before:'「識」的部首是', after:'?', zh:'💡 選出正確的部首', options:['言部','人部','口部'], correct:'言部', hint:'提示:「識」的部首是「言部」。', blanks:1 },
-      { id:25, title:'破音字挑戰', photo:'🔀', before:'「背」在「他的背包裡裝滿了課本。」這句話裡要唸', after:'', zh:'💡 選出正確的讀音', options:['ㄅㄟˋ','ㄅㄟˊ','ㄅㄟ'], correct:'ㄅㄟˋ', hint:'提示:「背」是破音字,在這句話裡要唸 ㄅㄟˋ。', blanks:1 },
-      { id:26, title:'部首', photo:'📝', before:'「戲」的部首是', after:'?', zh:'💡 選出正確的部首', options:['阜部(阝)','肉部(月)','戈部'], correct:'戈部', hint:'提示:「戲」的部首是「戈部」。', blanks:1 },
-      { id:27, title:'造詞', photo:'📖', before:'', after:'喜歡在庭院種花。', zh:'💡 選出正確的詞語,填入空格', options:['阿公','妖精','樹木'], correct:'阿公', hint:'提示:「阿公」是用「阿」字造的詞。', blanks:1 },
-      { id:28, title:'造詞', photo:'📖', before:'老師站在', after:'上上課。', zh:'💡 選出正確的詞語,填入空格', options:['講台','精彩','認識'], correct:'講台', hint:'提示:「講台」是用「台」字造的詞。', blanks:1 },
-      { id:29, title:'造詞', photo:'📖', before:'睡飽以後我覺得很有', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['精神','活潑','認真'], correct:'精神', hint:'提示:「精神」是用「精」字造的詞。', blanks:1 },
-      { id:30, title:'造詞', photo:'📖', before:'這個玩具需要兩顆', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['電池','背書','表演'], correct:'電池', hint:'提示:「電池」是用「池」字造的詞。', blanks:1 },
-      { id:31, title:'造詞', photo:'📖', before:'故事裡出現了一個小', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['演戲','妖精','把戲'], correct:'妖精', hint:'提示:「妖精」是用「精」字造的詞。', blanks:1 },
-      { id:32, title:'筆畫', photo:'✏️', before:'「台」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['9','19','5'], correct:'5', hint:'提示:「台」共有5畫。', blanks:1 },
-      { id:33, title:'部首', photo:'📝', before:'「池」的部首是', after:'?', zh:'💡 選出正確的部首', options:['言部','戈部','水部'], correct:'水部', hint:'提示:「池」的部首是「水部」。', blanks:1 },
-      { id:34, title:'筆畫', photo:'✏️', before:'「阿」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['15','8','4'], correct:'8', hint:'提示:「阿」共有8畫。', blanks:1 },
-      { id:35, title:'造詞', photo:'📖', before:'我們', after:'去阿嬤家。', zh:'💡 選出正確的詞語,填入空格', options:['背書','乘車','彩色'], correct:'乘車', hint:'提示:「乘車」是用「乘」字造的詞。', blanks:1 },
-      { id:36, title:'部首', photo:'📝', before:'「認」的部首是', after:'?', zh:'💡 選出正確的部首', options:['言部','丿部','肉部(月)'], correct:'言部', hint:'提示:「認」的部首是「言部」。', blanks:1 },
-      { id:37, title:'造詞', photo:'📖', before:'樹下吹風真', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['涼快','電池','妖精'], correct:'涼快', hint:'提示:「涼快」是用「涼」字造的詞。', blanks:1 },
-      { id:38, title:'造詞', photo:'📖', before:'有人站在我的', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['活潑','背包','背後'], correct:'背後', hint:'提示:「背後」是用「背」字造的詞。', blanks:1 },
-      { id:39, title:'筆畫', photo:'✏️', before:'「戲」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['14','19','17'], correct:'17', hint:'提示:「戲」共有17畫。', blanks:1 },
-      { id:40, title:'筆畫', photo:'✏️', before:'「池」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['9','11','6'], correct:'6', hint:'提示:「池」共有6畫。', blanks:1 },
-      { id:41, title:'部首', photo:'📝', before:'「阿」的部首是', after:'?', zh:'💡 選出正確的部首', options:['人部','阜部(阝)','彡部'], correct:'阜部(阝)', hint:'提示:「阿」的部首是「阜部(阝)」。', blanks:1 },
-      { id:42, title:'造詞', photo:'📖', before:'魔術師表演了一個有趣的', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['把戲','阿嬤','撐船'], correct:'把戲', hint:'提示:「把戲」是用「戲」字造的詞。', blanks:1 },
-      { id:43, title:'筆畫', photo:'✏️', before:'「活」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['9','15','10'], correct:'9', hint:'提示:「活」共有9畫。', blanks:1 },
-      { id:44, title:'筆畫', photo:'✏️', before:'「彩」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['11','14','5'], correct:'11', hint:'提示:「彩」共有11畫。', blanks:1 },
-      { id:45, title:'造詞', photo:'📖', before:'我們全家去', after:'玩了一天。', zh:'💡 選出正確的詞語,填入空格', options:['乘車','台北','游泳池'], correct:'台北', hint:'提示:「台北」是用「台」字造的詞。', blanks:1 },
-      { id:46, title:'造詞', photo:'📖', before:'姊姊喜歡', after:'給我們看。', zh:'💡 選出正確的詞語,填入空格', options:['演戲','彩虹','精神'], correct:'演戲', hint:'提示:「演戲」是用「演」字造的詞。', blanks:1 },
-      { id:47, title:'筆畫', photo:'✏️', before:'「木」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['17','14','4'], correct:'4', hint:'提示:「木」共有4畫。', blanks:1 },
-      { id:48, title:'造詞', photo:'📖', before:'這場比賽真是太', after:'了。', zh:'💡 選出正確的詞語,填入空格', options:['精彩','講台','阿公'], correct:'精彩', hint:'提示:「精彩」是用「精」字造的詞。', blanks:1 },
-      { id:49, title:'造詞', photo:'📖', before:'公園裡種了很多', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['乘車','表演','樹木'], correct:'樹木', hint:'提示:「樹木」是用「木」字造的詞。', blanks:1 },
-      { id:50, title:'筆畫', photo:'✏️', before:'「認」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['14','17','8'], correct:'14', hint:'提示:「認」共有14畫。', blanks:1 },
-      { id:51, title:'造詞', photo:'📖', before:'', after:'買了禮物送我。', zh:'💡 選出正確的詞語,填入空格', options:['阿姨','涼快','阿嬤'], correct:'阿姨', hint:'提示:「阿姨」是用「阿」字造的詞。', blanks:1 },
-      { id:52, title:'造詞', photo:'📖', before:'很高興', after:'你。', zh:'💡 選出正確的詞語,填入空格', options:['認識','偶爾','乘客'], correct:'認識', hint:'提示:「認識」是用「識」字造的詞。', blanks:1 },
-      { id:53, title:'造詞', photo:'📖', before:'夏天我常常去', after:'游泳。', zh:'💡 選出正確的詞語,填入空格', options:['布偶','游泳池','支撐'], correct:'游泳池', hint:'提示:「游泳池」是用「池」字造的詞。', blanks:1 },
-      { id:54, title:'筆畫', photo:'✏️', before:'「背」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['11','9','5'], correct:'9', hint:'提示:「背」共有9畫。', blanks:1 },
-      { id:55, title:'造詞', photo:'📖', before:'弟弟寫功課很', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['活動','認真','知識'], correct:'認真', hint:'提示:「認真」是用「認」字造的詞。', blanks:1 },
-      { id:56, title:'造詞', photo:'📖', before:'這條溪水又', after:'又乾淨。', zh:'💡 選出正確的詞語,填入空格', options:['講台','清涼','把戲'], correct:'清涼', hint:'提示:「清涼」是用「涼」字造的詞。', blanks:1 },
-      { id:57, title:'造詞', photo:'📖', before:'船夫用力', after:'前進。', zh:'💡 選出正確的詞語,填入空格', options:['台北','演戲','撐船'], correct:'撐船', hint:'提示:「撐船」是用「撐」字造的詞。', blanks:1 },
-      { id:58, title:'部首', photo:'📝', before:'「涼」的部首是', after:'?', zh:'💡 選出正確的部首', options:['肉部(月)','水部','木部'], correct:'水部', hint:'提示:「涼」的部首是「水部」。', blanks:1 },
-      { id:59, title:'造詞', photo:'📖', before:'舞台上有一個可愛的', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['撐傘','演戲','木偶'], correct:'木偶', hint:'提示:「木偶」是用「木」字造的詞。', blanks:1 },
-      { id:60, title:'筆畫', photo:'✏️', before:'「演」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['6','8','14'], correct:'14', hint:'提示:「演」共有14畫。', blanks:1 }
+      { id:1, title:'造詞', photo:'📖', before:'奶奶煮了一鍋', after:'湯。', zh:'💡 選出正確的詞語,填入空格', options:["最近","竹筍","旁邊"], correct:'竹筍', hint:'提示:「竹筍」是用「竹」字造的詞。', blanks:1 },
+      { id:2, title:'部首', photo:'📝', before:'「叫」的部首是', after:'?', zh:'💡 選出正確的部首', options:["手部(扌)","辵部(辶)","口部"], correct:'口部', hint:'提示:「叫」的部首是「口部」。', blanks:1 },
+      { id:3, title:'造詞', photo:'📖', before:'', after:'有一條美麗的小溪。', zh:'💡 選出正確的詞語,填入空格', options:["附近","暑期","台南"], correct:'附近', hint:'提示:「附近」是用「近」字造的詞。', blanks:1 },
+      { id:4, title:'造詞', photo:'📖', before:'我們全家去', after:'旅行。', zh:'💡 選出正確的詞語,填入空格', options:["大叫","台南","鄉下"], correct:'台南', hint:'提示:「台南」是用「南」字造的詞。', blanks:1 },
+      { id:5, title:'造詞', photo:'📖', before:'船夫用力', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["划槳","邊走邊看","吹口哨"], correct:'划槳', hint:'提示:「划槳」是用「划」字造的詞。', blanks:1 },
+      { id:6, title:'造詞', photo:'📖', before:'他開心地', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["划水","划槳","吹口哨"], correct:'吹口哨', hint:'提示:「吹口哨」是用「吹」字造的詞。', blanks:1 },
+      { id:7, title:'部首', photo:'📝', before:'「鄉」的部首是', after:'?', zh:'💡 選出正確的部首', options:["邑部(阝)","巾部","竹部"], correct:'邑部(阝)', hint:'提示:「鄉」的部首是「邑部(阝)」。', blanks:1 },
+      { id:8, title:'造詞', photo:'📖', before:'我們一起', after:'迎接新的一年。', zh:'💡 選出正確的詞語,填入空格', options:["捕魚","跨年","帶路"], correct:'跨年', hint:'提示:「跨年」是用「跨」字造的詞。', blanks:1 },
+      { id:9, title:'造詞', photo:'📖', before:'漁夫每天出海', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["帶路","草原","捕魚"], correct:'捕魚', hint:'提示:「捕魚」是用「捕」字造的詞。', blanks:1 },
+      { id:10, title:'造詞', photo:'📖', before:'生日時大家一起', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["河邊","大叫","吹蠟燭"], correct:'吹蠟燭', hint:'提示:「吹蠟燭」是用「吹」字造的詞。', blanks:1 },
+      { id:11, title:'造詞', photo:'📖', before:'媽媽提著', after:'去買菜。', zh:'💡 選出正確的詞語,填入空格', options:["籃子","跨步","旁邊"], correct:'籃子', hint:'提示:「籃子」是用「籃」字造的詞。', blanks:1 },
+      { id:12, title:'筆畫', photo:'✏️', before:'「原」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["10","11","9"], correct:'10', hint:'提示:「原」共有10畫。', blanks:1 },
+      { id:13, title:'筆畫', photo:'✏️', before:'「捕」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["10","9","11"], correct:'10', hint:'提示:「捕」共有10畫。', blanks:1 },
+      { id:14, title:'部首', photo:'📝', before:'「捕」的部首是', after:'?', zh:'💡 選出正確的部首', options:["言部","手部(扌)","辵部(辶)"], correct:'手部(扌)', hint:'提示:「捕」的部首是「手部(扌)」。', blanks:1 },
+      { id:15, title:'部首', photo:'📝', before:'「假」的部首是', after:'?', zh:'💡 選出正確的部首', options:["人部","竹部","辵部(辶)"], correct:'人部', hint:'提示:「假」的部首是「人部」。', blanks:1 },
+      { id:16, title:'筆畫', photo:'✏️', before:'「划」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["6","7","5"], correct:'6', hint:'提示:「划」共有6畫。', blanks:1 },
+      { id:17, title:'造詞', photo:'📖', before:'這趟旅行', after:'很多快樂。', zh:'💡 選出正確的詞語,填入空格', options:["帶來","跨步","旁邊"], correct:'帶來', hint:'提示:「帶來」是用「帶」字造的詞。', blanks:1 },
+      { id:18, title:'部首', photo:'📝', before:'「跨」的部首是', after:'?', zh:'💡 選出正確的部首', options:["足部","手部(扌)","刀部(刂)"], correct:'足部', hint:'提示:「跨」的部首是「足部」。', blanks:1 },
+      { id:19, title:'造詞', photo:'📖', before:'我們在', after:'坐竹籃船。', zh:'💡 選出正確的詞語,填入空格', options:["認識","中暑","河邊"], correct:'河邊', hint:'提示:「河邊」是用「邊」字造的詞。', blanks:1 },
+      { id:20, title:'部首', photo:'📝', before:'「竹」的部首是', after:'?', zh:'💡 選出正確的部首', options:["手部(扌)","十部","竹部"], correct:'竹部', hint:'提示:「竹」的部首是「竹部」。', blanks:1 },
+      { id:21, title:'造詞', photo:'📖', before:'媽媽煮了香甜的', after:'湯。', zh:'💡 選出正確的詞語,填入空格', options:["跨年","南瓜","等船"], correct:'南瓜', hint:'提示:「南瓜」是用「南」字造的詞。', blanks:1 },
+      { id:22, title:'造詞', photo:'📖', before:'我們穿過', after:'去爬山。', zh:'💡 選出正確的詞語,填入空格', options:["划槳","竹林","捕手"], correct:'竹林', hint:'提示:「竹林」是用「竹」字造的詞。', blanks:1 },
+      { id:23, title:'部首', photo:'📝', before:'「識」的部首是', after:'?', zh:'💡 選出正確的部首', options:["厂部","言部","手部(扌)"], correct:'言部', hint:'提示:「識」的部首是「言部」。', blanks:1 },
+      { id:24, title:'造詞', photo:'📖', before:'學校舉辦了戶外', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["活動","鄉下","等待"], correct:'活動', hint:'提示:「活動」是用「活」字造的詞。', blanks:1 },
+      { id:25, title:'部首', photo:'📝', before:'「暑」的部首是', after:'?', zh:'💡 選出正確的部首', options:["人部","竹部","日部"], correct:'日部', hint:'提示:「暑」的部首是「日部」。', blanks:1 },
+      { id:26, title:'造詞', photo:'📖', before:'我', after:'班上每一位同學。', zh:'💡 選出正確的詞語,填入空格', options:["跨步","認識","划水"], correct:'認識', hint:'提示:「認識」是用「識」字造的詞。', blanks:1 },
+      { id:27, title:'筆畫', photo:'✏️', before:'「邊」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["19","20","18"], correct:'19', hint:'提示:「邊」共有19畫。', blanks:1 },
+      { id:28, title:'造詞', photo:'📖', before:'下雨的', after:'是烏雲變多了。', zh:'💡 選出正確的詞語,填入空格', options:["生活","家鄉","原因"], correct:'原因', hint:'提示:「原因」是用「原」字造的詞。', blanks:1 },
+      { id:29, title:'造詞', photo:'📖', before:'妹妹看到蟑螂嚇得', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["暑假","最近","大叫"], correct:'大叫', hint:'提示:「大叫」是用「叫」字造的詞。', blanks:1 },
+      { id:30, title:'造詞', photo:'📖', before:'他大步', after:'走向前。', zh:'💡 選出正確的詞語,填入空格', options:["附近","跨步","南方"], correct:'跨步', hint:'提示:「跨步」是用「跨」字造的詞。', blanks:1 },
+      { id:31, title:'造詞', photo:'📖', before:'哥哥', after:'走進竹林。', zh:'💡 選出正確的詞語,填入空格', options:["原因","帶路","靠近"], correct:'帶路', hint:'提示:「帶路」是用「帶」字造的詞。', blanks:1 },
+      { id:32, title:'造詞', photo:'📖', before:'他是棒球隊的', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["跨過","捕魚","捕手"], correct:'捕手', hint:'提示:「捕手」是用「捕」字造的詞。', blanks:1 },
+      { id:33, title:'部首', photo:'📝', before:'「划」的部首是', after:'?', zh:'💡 選出正確的部首', options:["巾部","刀部(刂)","水部(氵)"], correct:'刀部(刂)', hint:'提示:「划」的部首是「刀部(刂)」。', blanks:1 },
+      { id:34, title:'造詞', photo:'📖', before:'天氣太熱,要小心', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["中暑","帶路","划船"], correct:'中暑', hint:'提示:「中暑」是用「暑」字造的詞。', blanks:1 },
+      { id:35, title:'部首', photo:'📝', before:'「吹」的部首是', after:'?', zh:'💡 選出正確的部首', options:["辵部(辶)","刀部(刂)","口部"], correct:'口部', hint:'提示:「吹」的部首是「口部」。', blanks:1 },
+      { id:36, title:'筆畫', photo:'✏️', before:'「鄉」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["13","12","11"], correct:'12', hint:'提示:「鄉」共有12畫。', blanks:1 },
+      { id:37, title:'筆畫', photo:'✏️', before:'「吹」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["6","8","7"], correct:'7', hint:'提示:「吹」共有7畫。', blanks:1 },
+      { id:38, title:'部首', photo:'📝', before:'「帶」的部首是', after:'?', zh:'💡 選出正確的部首', options:["巾部","口部","辵部(辶)"], correct:'巾部', hint:'提示:「帶」的部首是「巾部」。', blanks:1 },
+      { id:39, title:'筆畫', photo:'✏️', before:'「籃」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["21","19","20"], correct:'20', hint:'提示:「籃」共有20畫。', blanks:1 },
+      { id:40, title:'造詞', photo:'📖', before:'爸爸繫上', after:'出門。', zh:'💡 選出正確的詞語,填入空格', options:["皮帶","吹笛子","等船"], correct:'皮帶', hint:'提示:「皮帶」是用「帶」字造的詞。', blanks:1 },
+      { id:41, title:'部首', photo:'📝', before:'「邊」的部首是', after:'?', zh:'💡 選出正確的部首', options:["口部","辵部(辶)","竹部"], correct:'辵部(辶)', hint:'提示:「邊」的部首是「辵部(辶)」。', blanks:1 },
+      { id:42, title:'造詞', photo:'📖', before:'鄉下的', after:'很悠閒。', zh:'💡 選出正確的詞語,填入空格', options:["生活","台南","竹子"], correct:'生活', hint:'提示:「生活」是用「活」字造的詞。', blanks:1 },
+      { id:43, title:'筆畫', photo:'✏️', before:'「叫」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["4","6","5"], correct:'5', hint:'提示:「叫」共有5畫。', blanks:1 },
+      { id:44, title:'筆畫', photo:'✏️', before:'「竹」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["7","5","6"], correct:'6', hint:'提示:「竹」共有6畫。', blanks:1 },
+      { id:45, title:'造詞', photo:'📖', before:'他', after:'在睡覺。', zh:'💡 選出正確的詞語,填入空格', options:["等待","假裝","跨年"], correct:'假裝', hint:'提示:「假裝」是用「假」字造的詞。', blanks:1 },
+      { id:46, title:'造詞', photo:'📖', before:'候鳥每年冬天都飛往', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["南方","竹筍","竹籃"], correct:'南方', hint:'提示:「南方」是用「南」字造的詞。', blanks:1 },
+      { id:47, title:'部首', photo:'📝', before:'「近」的部首是', after:'?', zh:'💡 選出正確的部首', options:["辵部(辶)","日部","口部"], correct:'辵部(辶)', hint:'提示:「近」的部首是「辵部(辶)」。', blanks:1 },
+      { id:48, title:'造詞', photo:'📖', before:'我們', after:'沿路的風景。', zh:'💡 選出正確的詞語,填入空格', options:["旁邊","常識","邊走邊看"], correct:'邊走邊看', hint:'提示:「邊走邊看」是用「邊」字造的詞。', blanks:1 },
+      { id:49, title:'造詞', photo:'📖', before:'我小心', after:'小水溝。', zh:'💡 選出正確的詞語,填入空格', options:["跨過","吹蠟燭","暑期"], correct:'跨過', hint:'提示:「跨過」是用「跨」字造的詞。', blanks:1 },
+      { id:50, title:'造詞', photo:'📖', before:'我一時分不出', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["真假","跨年","竹子"], correct:'真假', hint:'提示:「真假」是用「假」字造的詞。', blanks:1 },
+      { id:51, title:'造詞', photo:'📖', before:'大家在岸邊', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["吹蠟燭","帶來","等船"], correct:'等船', hint:'提示:「等船」是用「等」字造的詞。', blanks:1 },
+      { id:52, title:'造詞', photo:'📖', before:'阿公用', after:'裝滿了水果。', zh:'💡 選出正確的詞語,填入空格', options:["籃子","竹籃","原因"], correct:'竹籃', hint:'提示:「竹籃」是用「籃」字造的詞。', blanks:1 },
+      { id:53, title:'造詞', photo:'📖', before:'爺爺教我怎麼', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["暑假","花籃","划船"], correct:'划船', hint:'提示:「划船」是用「划」字造的詞。', blanks:1 },
+      { id:54, title:'造詞', photo:'📖', before:'請', after:',我馬上就來。', zh:'💡 選出正確的詞語,填入空格', options:["活潑","靠近","等一下"], correct:'等一下', hint:'提示:「等一下」是用「等」字造的詞。', blanks:1 },
+      { id:55, title:'造詞', photo:'📖', before:'', after:'學校辦了游泳課。', zh:'💡 選出正確的詞語,填入空格', options:["暑期","竹子","叫聲"], correct:'暑期', hint:'提示:「暑期」是用「暑」字造的詞。', blanks:1 },
+      { id:56, title:'造詞', photo:'📖', before:'青蛙很會', after:'昆蟲。', zh:'💡 選出正確的詞語,填入空格', options:["暑期","等待","捕捉"], correct:'捕捉', hint:'提示:「捕捉」是用「捕」字造的詞。', blanks:1 },
+      { id:57, title:'筆畫', photo:'✏️', before:'「帶」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["12","11","10"], correct:'11', hint:'提示:「帶」共有11畫。', blanks:1 },
+      { id:58, title:'造詞', photo:'📖', before:'這朵花是', after:',做得很像真花。', zh:'💡 選出正確的詞語,填入空格', options:["假的","籃子","常識"], correct:'假的', hint:'提示:「假的」是用「假」字造的詞。', blanks:1 },
+      { id:59, title:'造詞', photo:'📖', before:'他們兩個是', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["同鄉","跨步","吹笛子"], correct:'同鄉', hint:'提示:「同鄉」是用「鄉」字造的詞。', blanks:1 },
+      { id:60, title:'筆畫', photo:'✏️', before:'「活」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["9","8","10"], correct:'9', hint:'提示:「活」共有9畫。', blanks:1 }
     ],
     poolSampleSize: 15,
     levels: [],
     celebrateMessage: '你完成了第五課生字挑戰,真是生字小博士!',
-    celebrateEmoji: '🎉📝🎭',
+    celebrateEmoji: '🎉📝🎋',
 
     // ---- runtime state (do not edit by hand; the app manages these) ----
     charIndex: 0,
     gameCurrentLevel: 0
   },
 
-  /* ==========================================================================
-     MANDARIN CHARACTERS 國字生字 6 — 康軒二上 第六課:小鎮的柿餅節
-     ========================================================================== */
   {
     id: 'character6',
     subject: 'mandarin',
@@ -4577,164 +4579,174 @@ const CHAPTERS = [
     subject: 'mandarin',
     category: 'character',
     unitLabel: '康軒二上 第九課',
-    title: '等兔子的農夫',
+    title: '大象有多重?',
     zh: '生字:部首・筆畫・造詞・破音字',
-    cardEmoji: '📝🐰🌾',
+    cardEmoji: '📝🐘⚖️',
     headerEmoji: '📝',
     enabledTabs: ['story', 'game'],
     tabLabels: { story: '📝 生字卡', game: '🎯 生字挑戰' },
     characters: [
-      { char:'農', pinyin:'ㄋㄨㄥˊ', radical:'辰部', strokeCount:13, words:[
-          {word:'農夫', sentence:'農夫每天早起去田裡工作。'},
-          {word:'農田', sentence:'稻子在農田裡長得很茂盛。'},
-          {word:'農產品', sentence:'市場裡賣著新鮮的農產品。'}
-        ], polyphonic:null, moreWords:['農民','農場']},
-      { char:'夫', pinyin:'ㄈㄨ', radical:'大部', strokeCount:4, words:[
-          {word:'農夫', sentence:'農夫辛苦地在田裡工作。'},
-          {word:'夫妻', sentence:'這對夫妻結婚十年了。'},
-          {word:'漁夫', sentence:'漁夫一大早就出海捕魚。'}
-        ], polyphonic:null, moreWords:['丈夫','車夫']},
-      {
-        char:'種', pinyin:'ㄓㄨㄥˇ', radical:'禾部', strokeCount:14, words:[
-          {word:'種子', sentence:'農夫在田裡種下種子。'},
-          {word:'種類', sentence:'這家店賣很多種類的水果。'},
-          {word:'種田', sentence:'爺爺喜歡在鄉下種田。'}
-        ],
-        polyphonic:[
-          { reading:'ㄓㄨㄥˇ', meaning:'名詞,指種子或類別(常用在「種子」、「種類」)', example:'這包種子可以種出美麗的花。' },
-          { reading:'ㄓㄨㄥˋ', meaning:'動詞,把植物栽種到土裡(常用在「種田」、「種花」)', example:'爺爺每天都去田裡種菜。' }
-        ],
-      moreWords:['品種','種植']
-      },
-      { char:'到', pinyin:'ㄉㄠˋ', radical:'刀部(刂)', strokeCount:8, words:[
-          {word:'到達', sentence:'我們終於到達山頂了。'},
-          {word:'遲到', sentence:'今天塞車,我上學遲到了。'},
-          {word:'報到', sentence:'開學第一天要先去教室報到。'}
-        ], polyphonic:null, moreWords:['到底','直到']},
-      { char:'累', pinyin:'ㄌㄟˋ', radical:'糸部', strokeCount:11, words:[
-          {word:'累了', sentence:'爬完山以後我覺得好累了。'},
-          {word:'疲累', sentence:'工作了一整天,爸爸感到很疲累。'},
-          {word:'勞累', sentence:'媽媽勞累了一天,終於能休息。'}
-        ], polyphonic:null, moreWords:['累壞']},
-      { char:'躺', pinyin:'ㄊㄤˇ', radical:'身部', strokeCount:15, words:[
-          {word:'躺下', sentence:'弟弟一躺下就睡著了。'},
-          {word:'躺著', sentence:'貓咪喜歡躺著曬太陽。'},
-          {word:'平躺', sentence:'醫生請他先平躺休息。'}
-        ], polyphonic:null, moreWords:['躺椅','仰躺']},
-      { char:'撞', pinyin:'ㄓㄨㄤˋ', radical:'手部(扌)', strokeCount:15, words:[
-          {word:'撞到', sentence:'兔子不小心撞到了樹幹。'},
-          {word:'碰撞', sentence:'兩輛玩具車互相碰撞。'},
-          {word:'衝撞', sentence:'開車要小心,不要衝撞到路人。'}
-        ], polyphonic:null, moreWords:['撞倒','相撞']},
-      { char:'死', pinyin:'ㄙˇ', radical:'歹部', strokeCount:6, words:[
-          {word:'死掉', sentence:'那棵樹已經死掉了。'},
-          {word:'生死', sentence:'醫生努力搶救病人的生死。'},
-          {word:'死心', sentence:'他終於死心,不再等下去了。'}
-        ], polyphonic:null, moreWords:['死板','氣死']},
-      { char:'拾', pinyin:'ㄕˊ', radical:'手部(扌)', strokeCount:9, words:[
-          {word:'拾起', sentence:'他彎腰拾起地上的垃圾。'},
-          {word:'收拾', sentence:'玩完玩具要記得收拾。'},
-          {word:'拾金不昧', sentence:'他撿到錢包後拾金不昧,交給了警察。'}
-        ], polyphonic:null, moreWords:['撿拾']},
-      { char:'從', pinyin:'ㄘㄨㄥˊ', radical:'彳部', strokeCount:11, words:[
-          {word:'從此', sentence:'從此以後,他每天都努力讀書。'},
-          {word:'從前', sentence:'從前有一位善良的國王。'},
-          {word:'跟從', sentence:'小鴨跟從媽媽游過池塘。'}
-        ], polyphonic:null, moreWords:['從來','自從']},
-      { char:'此', pinyin:'ㄘˇ', radical:'止部', strokeCount:6, words:[
-          {word:'從此', sentence:'從此他不敢再偷懶了。'},
-          {word:'因此', sentence:'他很努力,因此得到了好成績。'},
-          {word:'如此', sentence:'事情竟然是如此發展的。'}
-        ], polyphonic:null, moreWords:['此外','彼此']},
-      { char:'守', pinyin:'ㄕㄡˇ', radical:'宀部', strokeCount:6, words:[
-          {word:'守株待兔', sentence:'農夫守株待兔,結果什麼也沒等到。'},
-          {word:'遵守', sentence:'我們要遵守交通規則。'},
-          {word:'看守', sentence:'警衛認真地看守大門。'}
-        ], polyphonic:null, moreWords:['守護','守衛']},
-      { char:'等', pinyin:'ㄉㄥˇ', radical:'竹部', strokeCount:12, words:[
-          {word:'等待', sentence:'農夫在樹下等待兔子出現。'},
-          {word:'等候', sentence:'大家在門口等候公車。'},
-          {word:'平等', sentence:'每個人都應該受到平等的對待。'}
-        ], polyphonic:null, moreWords:['等等','相等']},
-      { char:'肥', pinyin:'ㄈㄟˊ', radical:'肉部(月)', strokeCount:8, words:[
-          {word:'肥料', sentence:'農夫在田裡灑肥料。'},
-          {word:'肥胖', sentence:'吃太多甜食容易肥胖。'},
-          {word:'肥沃', sentence:'這片土地非常肥沃。'}
-        ], polyphonic:null, moreWords:['肥皂','減肥']},
-      { char:'草', pinyin:'ㄘㄠˇ', radical:'艸部(艹)', strokeCount:9, words:[
-          {word:'草地', sentence:'小朋友在草地上玩耍。'},
-          {word:'青草', sentence:'兔子在吃新鮮的青草。'},
-          {word:'野草', sentence:'院子裡長滿了野草。'}
-        ], polyphonic:null, moreWords:['草原','水草']}
+      { char:'柱', pinyin:'ㄓㄨˋ', radical:'木部', strokeCount:9, words:[
+          {word:'柱子', sentence:'這根柱子撐起整個屋頂。'},
+          {word:'石柱', sentence:'廟前立著兩根石柱。'},
+          {word:'支柱', sentence:'他是這個家的支柱。'}
+        ], polyphonic:null, moreWords:['樑柱']},
+      { char:'腿', pinyin:'ㄊㄨㄟˇ', radical:'肉部(月)', strokeCount:14, words:[
+          {word:'大腿', sentence:'他跑步跑得大腿都痠了。'},
+          {word:'腿部', sentence:'醫生仔細檢查了他的腿部。'},
+          {word:'抬腿', sentence:'做運動要記得抬腿。'}
+        ], polyphonic:null, moreWords:['小腿','長腿']},
+      { char:'粗', pinyin:'ㄘㄨ', radical:'米部', strokeCount:11, words:[
+          {word:'粗大', sentence:'大象的腿又粗大又有力。'},
+          {word:'粗心', sentence:'考試時不要太粗心。'},
+          {word:'粗糙', sentence:'石頭表面摸起來很粗糙。'}
+        ], polyphonic:null, moreWords:['粗魯']},
+      { char:'操', pinyin:'ㄘㄠ', radical:'手部(扌)', strokeCount:16, words:[
+          {word:'體操', sentence:'我們每天早上做體操。'},
+          {word:'操場', sentence:'下課時大家在操場玩耍。'},
+          {word:'操心', sentence:'媽媽總是為我們操心。'}
+        ], polyphonic:null, moreWords:['操作']},
+      { char:'象', pinyin:'ㄒㄧㄤˋ', radical:'豕部', strokeCount:12, words:[
+          {word:'大象', sentence:'大象的鼻子好長。'},
+          {word:'象棋', sentence:'爺爺喜歡下象棋。'},
+          {word:'現象', sentence:'這是很常見的自然現象。'}
+        ], polyphonic:null, moreWords:['象徵','印象']},
+      { char:'沖', pinyin:'ㄔㄨㄥ', radical:'水部(氵)', strokeCount:7, words:[
+          {word:'沖水', sentence:'上完廁所要記得沖水。'},
+          {word:'沖澡', sentence:'運動完我去沖澡。'},
+          {word:'沖泡', sentence:'媽媽沖泡了一杯牛奶。'}
+        ], polyphonic:null, moreWords:['沖走']},
+      { char:'搖', pinyin:'ㄧㄠˊ', radical:'手部(扌)', strokeCount:13, words:[
+          {word:'搖頭', sentence:'他搖頭表示不同意。'},
+          {word:'搖晃', sentence:'船身輕輕搖晃。'},
+          {word:'搖籃', sentence:'嬰兒在搖籃裡睡覺。'}
+        ], polyphonic:null, moreWords:['搖動','搖尾巴']},
+      { char:'部', pinyin:'ㄅㄨˋ', radical:'邑部(阝)', strokeCount:11, words:[
+          {word:'部首', sentence:'這個字的部首是水部。'},
+          {word:'全部', sentence:'全部的同學都到齊了。'},
+          {word:'部隊', sentence:'軍人組成一支部隊。'}
+        ], polyphonic:null, moreWords:['部分','內部']},
+      { char:'幾', pinyin:'ㄐㄧ', radical:'幺部', strokeCount:12, words:[
+          {word:'幾個', sentence:'桌上有幾個蘋果。'},
+          {word:'幾乎', sentence:'他幾乎每天都來學校。'},
+          {word:'幾天', sentence:'再過幾天就要放假了。'}
+        ], polyphonic:null, moreWords:['好幾次']},
+      { char:'砍', pinyin:'ㄎㄢˇ', radical:'石部', strokeCount:9, words:[
+          {word:'砍樹', sentence:'工人正在砍樹。'},
+          {word:'砍柴', sentence:'爺爺以前常上山砍柴。'},
+          {word:'砍掉', sentence:'他把枯枝砍掉了。'}
+        ], polyphonic:null, moreWords:['砍伐']},
+      { char:'沿', pinyin:'ㄧㄢˊ', radical:'水部(氵)', strokeCount:8, words:[
+          {word:'沿著', sentence:'我們沿著河邊散步。'},
+          {word:'沿路', sentence:'沿路開滿了美麗的花。'},
+          {word:'沿岸', sentence:'沿岸種了一整排的樹。'}
+        ], polyphonic:null, moreWords:['沿途']},
+      { char:'少', pinyin:'ㄕㄠˇ', radical:'小部', strokeCount:4, words:[
+          {word:'多少', sentence:'這顆西瓜要多少錢?'},
+          {word:'少數', sentence:'只有少數人舉手。'},
+          {word:'減少', sentence:'垃圾量減少了很多。'}
+        ], polyphonic:[
+          { reading:'ㄕㄠˇ', meaning:'數量不多(常用在「多少」、「少數」、「減少」)', example:'班上只有少數人遲到。' },
+          { reading:'ㄕㄠˋ', meaning:'年紀輕的(常用在「少年」、「少女」、「年少」)', example:'他是一位活潑的少年。' }
+        ], moreWords:['少年','少量']},
+      { char:'沉', pinyin:'ㄔㄣˊ', radical:'水部(氵)', strokeCount:7, words:[
+          {word:'下沉', sentence:'石頭丟進水裡會下沉。'},
+          {word:'沉重', sentence:'這個箱子非常沉重。'},
+          {word:'沉默', sentence:'他一句話也不說,只是沉默。'}
+        ], polyphonic:null, moreWords:['沉睡']},
+      { char:'牽', pinyin:'ㄑㄧㄢ', radical:'牛部', strokeCount:11, words:[
+          {word:'牽手', sentence:'爸爸和我牽手一起過馬路。'},
+          {word:'牽牛', sentence:'農夫牽牛去田裡工作。'},
+          {word:'牽掛', sentence:'媽媽總是牽掛著我們。'}
+        ], polyphonic:null, moreWords:['牽引']},
+      { char:'首', pinyin:'ㄕㄡˇ', radical:'首部', strokeCount:9, words:[
+          {word:'首先', sentence:'首先我們要把手洗乾淨。'},
+          {word:'首都', sentence:'台北是台灣的首都。'},
+          {word:'一首', sentence:'這是我最喜歡的一首歌。'}
+        ], polyphonic:null, moreWords:['首飾']},
+      { char:'竟', pinyin:'ㄐㄧㄥˋ', radical:'音部', strokeCount:11, words:[
+          {word:'竟然', sentence:'他竟然一個人量出了大象的重量。'},
+          {word:'究竟', sentence:'你究竟想說什麼?'}
+        ], polyphonic:null, moreWords:['畢竟']},
+      { char:'紀', pinyin:'ㄐㄧˋ', radical:'糸部', strokeCount:9, words:[
+          {word:'世紀', sentence:'我們現在生活在二十一世紀。'},
+          {word:'紀念', sentence:'我們拍照留作紀念。'},
+          {word:'年紀', sentence:'奶奶的年紀很大了。'}
+        ], polyphonic:null, moreWords:['紀錄']},
+      { char:'然', pinyin:'ㄖㄢˊ', radical:'火部', strokeCount:12, words:[
+          {word:'然後', sentence:'我們先吃飯,然後去公園。'},
+          {word:'突然', sentence:'天空突然下起大雨。'},
+          {word:'當然', sentence:'當然可以,歡迎你來。'}
+        ], polyphonic:null, moreWords:['自然','然而']}
     ],
 
     gameTitle: '🎯 生字挑戰',
     levelPool: [
-      { id:1, title:'造詞', photo:'📖', before:'', after:'辛苦地在田裡工作。', zh:'💡 選出正確的詞語,填入空格', options:['跟從','野草','農夫'], correct:'農夫', hint:'提示:「農夫」是用「夫」字造的詞。', blanks:1 },
-      { id:2, title:'筆畫', photo:'✏️', before:'「等」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['12','13','9'], correct:'12', hint:'提示:「等」共有12畫。', blanks:1 },
-      { id:3, title:'造詞', photo:'📖', before:'那棵樹已經', after:'了。', zh:'💡 選出正確的詞語,填入空格', options:['衝撞','死掉','野草'], correct:'死掉', hint:'提示:「死掉」是用「死」字造的詞。', blanks:1 },
-      { id:4, title:'造詞', photo:'📖', before:'', after:'他不敢再偷懶了。', zh:'💡 選出正確的詞語,填入空格', options:['勞累','遲到','從此'], correct:'從此', hint:'提示:「從此」是用「此」字造的詞。', blanks:1 },
-      { id:5, title:'破音字挑戰', photo:'🔀', before:'「種」在「這包種子可以種出美麗的花。」這句話裡要唸', after:'', zh:'💡 選出正確的讀音', options:['ㄓㄨㄥˊ','ㄓㄨㄥˋ','ㄓㄨㄥˇ'], correct:'ㄓㄨㄥˇ', hint:'提示:「種」是破音字,在這句話裡要唸 ㄓㄨㄥˇ。', blanks:1 },
-      { id:6, title:'造詞', photo:'📖', before:'吃太多甜食容易', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['收拾','肥胖','因此'], correct:'肥胖', hint:'提示:「肥胖」是用「肥」字造的詞。', blanks:1 },
-      { id:7, title:'造詞', photo:'📖', before:'他終於', after:',不再等下去了。', zh:'💡 選出正確的詞語,填入空格', options:['撞到','死心','因此'], correct:'死心', hint:'提示:「死心」是用「死」字造的詞。', blanks:1 },
-      { id:8, title:'部首', photo:'📝', before:'「農」的部首是', after:'?', zh:'💡 選出正確的部首', options:['辰部','糸部','刀部(刂)'], correct:'辰部', hint:'提示:「農」的部首是「辰部」。', blanks:1 },
-      { id:9, title:'造詞', photo:'📖', before:'醫生請他先', after:'休息。', zh:'💡 選出正確的詞語,填入空格', options:['死掉','平躺','勞累'], correct:'平躺', hint:'提示:「平躺」是用「躺」字造的詞。', blanks:1 },
-      { id:10, title:'筆畫', photo:'✏️', before:'「種」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['6','9','14'], correct:'14', hint:'提示:「種」共有14畫。', blanks:1 },
-      { id:11, title:'造詞', photo:'📖', before:'貓咪喜歡', after:'曬太陽。', zh:'💡 選出正確的詞語,填入空格', options:['跟從','躺著','看守'], correct:'躺著', hint:'提示:「躺著」是用「躺」字造的詞。', blanks:1 },
-      { id:12, title:'部首', photo:'📝', before:'「到」的部首是', after:'?', zh:'💡 選出正確的部首', options:['彳部','手部(扌)','刀部(刂)'], correct:'刀部(刂)', hint:'提示:「到」的部首是「刀部(刂)」。', blanks:1 },
-      { id:13, title:'部首', photo:'📝', before:'「躺」的部首是', after:'?', zh:'💡 選出正確的部首', options:['彳部','竹部','身部'], correct:'身部', hint:'提示:「躺」的部首是「身部」。', blanks:1 },
-      { id:14, title:'造詞', photo:'📖', before:'警衛認真地', after:'大門。', zh:'💡 選出正確的詞語,填入空格', options:['等候','死心','看守'], correct:'看守', hint:'提示:「看守」是用「守」字造的詞。', blanks:1 },
-      { id:15, title:'部首', photo:'📝', before:'「種」的部首是', after:'?', zh:'💡 選出正確的部首', options:['彳部','糸部','禾部'], correct:'禾部', hint:'提示:「種」的部首是「禾部」。', blanks:1 },
-      { id:16, title:'造詞', photo:'📖', before:'爺爺喜歡在鄉下', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['勞累','生死','種田'], correct:'種田', hint:'提示:「種田」是用「種」字造的詞。', blanks:1 },
-      { id:17, title:'造詞', photo:'📖', before:'', after:'一大早就出海捕魚。', zh:'💡 選出正確的詞語,填入空格', options:['勞累','肥沃','漁夫'], correct:'漁夫', hint:'提示:「漁夫」是用「夫」字造的詞。', blanks:1 },
-      { id:18, title:'部首', photo:'📝', before:'「從」的部首是', after:'?', zh:'💡 選出正確的部首', options:['宀部','糸部','彳部'], correct:'彳部', hint:'提示:「從」的部首是「彳部」。', blanks:1 },
-      { id:19, title:'筆畫', photo:'✏️', before:'「撞」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['11','8','15'], correct:'15', hint:'提示:「撞」共有15畫。', blanks:1 },
-      { id:20, title:'造詞', photo:'📖', before:'農夫在田裡灑', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['肥胖','肥料','看守'], correct:'肥料', hint:'提示:「肥料」是用「肥」字造的詞。', blanks:1 },
-      { id:21, title:'筆畫', photo:'✏️', before:'「到」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['12','15','8'], correct:'8', hint:'提示:「到」共有8畫。', blanks:1 },
-      { id:22, title:'造詞', photo:'📖', before:'弟弟一', after:'就睡著了。', zh:'💡 選出正確的詞語,填入空格', options:['收拾','躺下','肥沃'], correct:'躺下', hint:'提示:「躺下」是用「躺」字造的詞。', blanks:1 },
-      { id:23, title:'造詞', photo:'📖', before:'小鴨', after:'媽媽游過池塘。', zh:'💡 選出正確的詞語,填入空格', options:['青草','拾起','跟從'], correct:'跟從', hint:'提示:「跟從」是用「從」字造的詞。', blanks:1 },
-      { id:24, title:'造詞', photo:'📖', before:'', after:'以後,他每天都努力讀書。', zh:'💡 選出正確的詞語,填入空格', options:['農夫','從此','疲累'], correct:'從此', hint:'提示:「從此」是用「從」字造的詞。', blanks:1 },
-      { id:25, title:'造詞', photo:'📖', before:'他很努力,', after:'得到了好成績。', zh:'💡 選出正確的詞語,填入空格', options:['累了','勞累','因此'], correct:'因此', hint:'提示:「因此」是用「此」字造的詞。', blanks:1 },
-      { id:26, title:'部首', photo:'📝', before:'「拾」的部首是', after:'?', zh:'💡 選出正確的部首', options:['彳部','艸部(艹)','手部(扌)'], correct:'手部(扌)', hint:'提示:「拾」的部首是「手部(扌)」。', blanks:1 },
-      { id:27, title:'造詞', photo:'📖', before:'兩輛玩具車互相', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['碰撞','漁夫','草地'], correct:'碰撞', hint:'提示:「碰撞」是用「撞」字造的詞。', blanks:1 },
-      { id:28, title:'部首', photo:'📝', before:'「等」的部首是', after:'?', zh:'💡 選出正確的部首', options:['竹部','歹部','肉部(月)'], correct:'竹部', hint:'提示:「等」的部首是「竹部」。', blanks:1 },
-      { id:29, title:'造詞', photo:'📖', before:'玩完玩具要記得', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['收拾','拾起','平躺'], correct:'收拾', hint:'提示:「收拾」是用「拾」字造的詞。', blanks:1 },
-      { id:30, title:'筆畫', photo:'✏️', before:'「拾」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['4','13','9'], correct:'9', hint:'提示:「拾」共有9畫。', blanks:1 },
-      { id:31, title:'筆畫', photo:'✏️', before:'「夫」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['8','14','4'], correct:'4', hint:'提示:「夫」共有4畫。', blanks:1 },
-      { id:32, title:'部首', photo:'📝', before:'「撞」的部首是', after:'?', zh:'💡 選出正確的部首', options:['歹部','身部','手部(扌)'], correct:'手部(扌)', hint:'提示:「撞」的部首是「手部(扌)」。', blanks:1 },
-      { id:33, title:'部首', photo:'📝', before:'「夫」的部首是', after:'?', zh:'💡 選出正確的部首', options:['大部','刀部(刂)','彳部'], correct:'大部', hint:'提示:「夫」的部首是「大部」。', blanks:1 },
-      { id:34, title:'造詞', photo:'📖', before:'兔子不小心', after:'了樹幹。', zh:'💡 選出正確的詞語,填入空格', options:['撞到','漁夫','因此'], correct:'撞到', hint:'提示:「撞到」是用「撞」字造的詞。', blanks:1 },
-      { id:35, title:'筆畫', photo:'✏️', before:'「農」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['8','14','13'], correct:'13', hint:'提示:「農」共有13畫。', blanks:1 },
-      { id:36, title:'筆畫', photo:'✏️', before:'「此」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['6','15','4'], correct:'6', hint:'提示:「此」共有6畫。', blanks:1 },
-      { id:37, title:'造詞', photo:'📖', before:'', after:'有一位善良的國王。', zh:'💡 選出正確的詞語,填入空格', options:['死心','草地','從前'], correct:'從前', hint:'提示:「從前」是用「從」字造的詞。', blanks:1 },
-      { id:38, title:'造詞', photo:'📖', before:'這家店賣很多', after:'的水果。', zh:'💡 選出正確的詞語,填入空格', options:['看守','疲累','種類'], correct:'種類', hint:'提示:「種類」是用「種」字造的詞。', blanks:1 },
-      { id:39, title:'造詞', photo:'📖', before:'大家在門口', after:'公車。', zh:'💡 選出正確的詞語,填入空格', options:['等候','肥料','收拾'], correct:'等候', hint:'提示:「等候」是用「等」字造的詞。', blanks:1 },
-      { id:40, title:'筆畫', photo:'✏️', before:'「死」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['13','8','6'], correct:'6', hint:'提示:「死」共有6畫。', blanks:1 },
-      { id:41, title:'造詞', photo:'📖', before:'他撿到錢包後', after:',交給了警察。', zh:'💡 選出正確的詞語,填入空格', options:['拾金不昧','青草','夫妻'], correct:'拾金不昧', hint:'提示:「拾金不昧」是用「拾」字造的詞。', blanks:1 },
-      { id:42, title:'部首', photo:'📝', before:'「守」的部首是', after:'?', zh:'💡 選出正確的部首', options:['大部','宀部','彳部'], correct:'宀部', hint:'提示:「守」的部首是「宀部」。', blanks:1 },
-      { id:43, title:'筆畫', photo:'✏️', before:'「從」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['6','11','13'], correct:'11', hint:'提示:「從」共有11畫。', blanks:1 },
-      { id:44, title:'部首', photo:'📝', before:'「累」的部首是', after:'?', zh:'💡 選出正確的部首', options:['手部(扌)','歹部','糸部'], correct:'糸部', hint:'提示:「累」的部首是「糸部」。', blanks:1 },
-      { id:45, title:'造詞', photo:'📖', before:'醫生努力搶救病人的', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['碰撞','生死','種田'], correct:'生死', hint:'提示:「生死」是用「死」字造的詞。', blanks:1 },
-      { id:46, title:'造詞', photo:'📖', before:'每個人都應該受到', after:'的對待。', zh:'💡 選出正確的詞語,填入空格', options:['平等','農田','從此'], correct:'平等', hint:'提示:「平等」是用「等」字造的詞。', blanks:1 },
-      { id:47, title:'造詞', photo:'📖', before:'工作了一整天,爸爸感到很', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['疲累','漁夫','勞累'], correct:'疲累', hint:'提示:「疲累」是用「累」字造的詞。', blanks:1 },
-      { id:48, title:'造詞', photo:'📖', before:'農夫在田裡種下', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['報到','青草','種子'], correct:'種子', hint:'提示:「種子」是用「種」字造的詞。', blanks:1 },
-      { id:49, title:'造詞', photo:'📖', before:'這片土地非常', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['跟從','肥沃','從前'], correct:'肥沃', hint:'提示:「肥沃」是用「肥」字造的詞。', blanks:1 },
-      { id:50, title:'造詞', photo:'📖', before:'兔子在吃新鮮的', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['青草','生死','從前'], correct:'青草', hint:'提示:「青草」是用「草」字造的詞。', blanks:1 },
-      { id:51, title:'筆畫', photo:'✏️', before:'「躺」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['14','6','15'], correct:'15', hint:'提示:「躺」共有15畫。', blanks:1 },
-      { id:52, title:'造詞', photo:'📖', before:'市場裡賣著新鮮的', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['等待','平等','農產品'], correct:'農產品', hint:'提示:「農產品」是用「農」字造的詞。', blanks:1 },
-      { id:53, title:'筆畫', photo:'✏️', before:'「累」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['9','14','11'], correct:'11', hint:'提示:「累」共有11畫。', blanks:1 },
-      { id:54, title:'造詞', photo:'📖', before:'開學第一天要先去教室', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['種子','報到','死掉'], correct:'報到', hint:'提示:「報到」是用「到」字造的詞。', blanks:1 },
-      { id:55, title:'造詞', photo:'📖', before:'院子裡長滿了', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['野草','從前','碰撞'], correct:'野草', hint:'提示:「野草」是用「草」字造的詞。', blanks:1 },
-      { id:56, title:'筆畫', photo:'✏️', before:'「肥」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['9','8','6'], correct:'8', hint:'提示:「肥」共有8畫。', blanks:1 },
-      { id:57, title:'造詞', photo:'📖', before:'我們終於', after:'山頂了。', zh:'💡 選出正確的詞語,填入空格', options:['農夫','報到','到達'], correct:'到達', hint:'提示:「到達」是用「到」字造的詞。', blanks:1 },
-      { id:58, title:'造詞', photo:'📖', before:'開車要小心,不要', after:'到路人。', zh:'💡 選出正確的詞語,填入空格', options:['衝撞','肥料','草地'], correct:'衝撞', hint:'提示:「衝撞」是用「撞」字造的詞。', blanks:1 },
-      { id:59, title:'筆畫', photo:'✏️', before:'「守」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['6','12','13'], correct:'6', hint:'提示:「守」共有6畫。', blanks:1 },
-      { id:60, title:'造詞', photo:'📖', before:'農夫', after:',結果什麼也沒等到。', zh:'💡 選出正確的詞語,填入空格', options:['跟從','肥胖','守株待兔'], correct:'守株待兔', hint:'提示:「守株待兔」是用「守」字造的詞。', blanks:1 }
+      { id:1, title:'造詞', photo:'📖', before:'船身輕輕', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["沿岸","搖晃","操心"], correct:'搖晃', hint:'提示:「搖晃」是用「搖」字造的詞。', blanks:1 },
+      { id:2, title:'造詞', photo:'📖', before:'', after:'可以,歡迎你來。', zh:'💡 選出正確的詞語,填入空格', options:["腿部","究竟","當然"], correct:'當然', hint:'提示:「當然」是用「然」字造的詞。', blanks:1 },
+      { id:3, title:'部首', photo:'📝', before:'「象」的部首是', after:'?', zh:'💡 選出正確的部首', options:["幺部","音部","豕部"], correct:'豕部', hint:'提示:「象」的部首是「豕部」。', blanks:1 },
+      { id:4, title:'造詞', photo:'📖', before:'奶奶的', after:'很大了。', zh:'💡 選出正確的詞語,填入空格', options:["柱子","年紀","下沉"], correct:'年紀', hint:'提示:「年紀」是用「紀」字造的詞。', blanks:1 },
+      { id:5, title:'造詞', photo:'📖', before:'', after:'的同學都到齊了。', zh:'💡 選出正確的詞語,填入空格', options:["全部","大象","砍掉"], correct:'全部', hint:'提示:「全部」是用「部」字造的詞。', blanks:1 },
+      { id:6, title:'造詞', photo:'📖', before:'我們拍照留作', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["砍掉","紀念","首先"], correct:'紀念', hint:'提示:「紀念」是用「紀」字造的詞。', blanks:1 },
+      { id:7, title:'筆畫', photo:'✏️', before:'「柱」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["8","10","9"], correct:'9', hint:'提示:「柱」共有9畫。', blanks:1 },
+      { id:8, title:'造詞', photo:'📖', before:'爸爸和我', after:'一起過馬路。', zh:'💡 選出正確的詞語,填入空格', options:["牽手","砍掉","搖晃"], correct:'牽手', hint:'提示:「牽手」是用「牽」字造的詞。', blanks:1 },
+      { id:9, title:'造詞', photo:'📖', before:'他跑步跑得', after:'都痠了。', zh:'💡 選出正確的詞語,填入空格', options:["沉重","竟然","大腿"], correct:'大腿', hint:'提示:「大腿」是用「腿」字造的詞。', blanks:1 },
+      { id:10, title:'造詞', photo:'📖', before:'我們每天早上做', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["搖頭","世紀","體操"], correct:'體操', hint:'提示:「體操」是用「操」字造的詞。', blanks:1 },
+      { id:11, title:'部首', photo:'📝', before:'「沉」的部首是', after:'?', zh:'💡 選出正確的部首', options:["水部(氵)","肉部(月)","火部"], correct:'水部(氵)', hint:'提示:「沉」的部首是「水部(氵)」。', blanks:1 },
+      { id:12, title:'造詞', photo:'📖', before:'桌上有', after:'蘋果。', zh:'💡 選出正確的詞語,填入空格', options:["搖籃","幾個","抬腿"], correct:'幾個', hint:'提示:「幾個」是用「幾」字造的詞。', blanks:1 },
+      { id:13, title:'造詞', photo:'📖', before:'爺爺喜歡下', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["幾天","象棋","當然"], correct:'象棋', hint:'提示:「象棋」是用「象」字造的詞。', blanks:1 },
+      { id:14, title:'造詞', photo:'📖', before:'嬰兒在', after:'裡睡覺。', zh:'💡 選出正確的詞語,填入空格', options:["竟然","搖籃","部隊"], correct:'搖籃', hint:'提示:「搖籃」是用「搖」字造的詞。', blanks:1 },
+      { id:15, title:'部首', photo:'📝', before:'「沿」的部首是', after:'?', zh:'💡 選出正確的部首', options:["水部(氵)","肉部(月)","小部"], correct:'水部(氵)', hint:'提示:「沿」的部首是「水部(氵)」。', blanks:1 },
+      { id:16, title:'造詞', photo:'📖', before:'軍人組成一支', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["部隊","下沉","首都"], correct:'部隊', hint:'提示:「部隊」是用「部」字造的詞。', blanks:1 },
+      { id:17, title:'部首', photo:'📝', before:'「腿」的部首是', after:'?', zh:'💡 選出正確的部首', options:["木部","火部","肉部(月)"], correct:'肉部(月)', hint:'提示:「腿」的部首是「肉部(月)」。', blanks:1 },
+      { id:18, title:'破音字挑戰', photo:'🔀', before:'「少」在「他是一位活潑的少年。」這句話裡要唸', after:'', zh:'💡 選出正確的讀音', options:["ㄓㄨㄥˇ","ㄕㄠˋ","ㄕㄠˇ"], correct:'ㄕㄠˋ', hint:'提示:「少」是破音字,在這句話裡要唸 ㄕㄠˋ。', blanks:1 },
+      { id:19, title:'造詞', photo:'📖', before:'上完廁所要記得', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["沖水","現象","沉默"], correct:'沖水', hint:'提示:「沖水」是用「沖」字造的詞。', blanks:1 },
+      { id:20, title:'筆畫', photo:'✏️', before:'「少」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["5","4","3"], correct:'4', hint:'提示:「少」共有4畫。', blanks:1 },
+      { id:21, title:'造詞', photo:'📖', before:'只有', after:'人舉手。', zh:'💡 選出正確的詞語,填入空格', options:["當然","操場","少數"], correct:'少數', hint:'提示:「少數」是用「少」字造的詞。', blanks:1 },
+      { id:22, title:'造詞', photo:'📖', before:'這是我最喜歡的', after:'歌。', zh:'💡 選出正確的詞語,填入空格', options:["首先","一首","支柱"], correct:'一首', hint:'提示:「一首」是用「首」字造的詞。', blanks:1 },
+      { id:23, title:'造詞', photo:'📖', before:'這是很常見的自然', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["沿岸","現象","年紀"], correct:'現象', hint:'提示:「現象」是用「象」字造的詞。', blanks:1 },
+      { id:24, title:'筆畫', photo:'✏️', before:'「紀」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["9","8","10"], correct:'9', hint:'提示:「紀」共有9畫。', blanks:1 },
+      { id:25, title:'造詞', photo:'📖', before:'這根', after:'撐起整個屋頂。', zh:'💡 選出正確的詞語,填入空格', options:["沿著","柱子","操心"], correct:'柱子', hint:'提示:「柱子」是用「柱」字造的詞。', blanks:1 },
+      { id:26, title:'造詞', photo:'📖', before:'媽媽總是為我們', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["操心","砍柴","下沉"], correct:'操心', hint:'提示:「操心」是用「操」字造的詞。', blanks:1 },
+      { id:27, title:'造詞', photo:'📖', before:'做運動要記得', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["沿路","究竟","抬腿"], correct:'抬腿', hint:'提示:「抬腿」是用「腿」字造的詞。', blanks:1 },
+      { id:28, title:'造詞', photo:'📖', before:'他', after:'一個人量出了大象的重量。', zh:'💡 選出正確的詞語,填入空格', options:["竟然","牽手","部首"], correct:'竟然', hint:'提示:「竟然」是用「竟」字造的詞。', blanks:1 },
+      { id:29, title:'筆畫', photo:'✏️', before:'「幾」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["12","13","11"], correct:'12', hint:'提示:「幾」共有12畫。', blanks:1 },
+      { id:30, title:'造詞', photo:'📖', before:'工人正在', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["柱子","幾天","砍樹"], correct:'砍樹', hint:'提示:「砍樹」是用「砍」字造的詞。', blanks:1 },
+      { id:31, title:'筆畫', photo:'✏️', before:'「砍」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["9","10","8"], correct:'9', hint:'提示:「砍」共有9畫。', blanks:1 },
+      { id:32, title:'造詞', photo:'📖', before:'你', after:'想說什麼?', zh:'💡 選出正確的詞語,填入空格', options:["究竟","然後","幾乎"], correct:'究竟', hint:'提示:「究竟」是用「竟」字造的詞。', blanks:1 },
+      { id:33, title:'造詞', photo:'📖', before:'我們現在生活在二十一', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["世紀","多少","牽牛"], correct:'世紀', hint:'提示:「世紀」是用「紀」字造的詞。', blanks:1 },
+      { id:34, title:'部首', photo:'📝', before:'「然」的部首是', after:'?', zh:'💡 選出正確的部首', options:["火部","糸部","小部"], correct:'火部', hint:'提示:「然」的部首是「火部」。', blanks:1 },
+      { id:35, title:'部首', photo:'📝', before:'「砍」的部首是', after:'?', zh:'💡 選出正確的部首', options:["手部(扌)","石部","米部"], correct:'石部', hint:'提示:「砍」的部首是「石部」。', blanks:1 },
+      { id:36, title:'造詞', photo:'📖', before:'這個箱子非常', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["石柱","沉重","搖籃"], correct:'沉重', hint:'提示:「沉重」是用「沉」字造的詞。', blanks:1 },
+      { id:37, title:'造詞', photo:'📖', before:'廟前立著兩根', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["部隊","石柱","沉重"], correct:'石柱', hint:'提示:「石柱」是用「柱」字造的詞。', blanks:1 },
+      { id:38, title:'筆畫', photo:'✏️', before:'「竟」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["11","12","10"], correct:'11', hint:'提示:「竟」共有11畫。', blanks:1 },
+      { id:39, title:'部首', photo:'📝', before:'「幾」的部首是', after:'?', zh:'💡 選出正確的部首', options:["豕部","幺部","牛部"], correct:'幺部', hint:'提示:「幾」的部首是「幺部」。', blanks:1 },
+      { id:40, title:'造詞', photo:'📖', before:'', after:'開滿了美麗的花。', zh:'💡 選出正確的詞語,填入空格', options:["石柱","然後","沿路"], correct:'沿路', hint:'提示:「沿路」是用「沿」字造的詞。', blanks:1 },
+      { id:41, title:'造詞', photo:'📖', before:'媽媽總是', after:'著我們。', zh:'💡 選出正確的詞語,填入空格', options:["牽掛","牽手","大象"], correct:'牽掛', hint:'提示:「牽掛」是用「牽」字造的詞。', blanks:1 },
+      { id:42, title:'造詞', photo:'📖', before:'他', after:'表示不同意。', zh:'💡 選出正確的詞語,填入空格', options:["部首","搖頭","支柱"], correct:'搖頭', hint:'提示:「搖頭」是用「搖」字造的詞。', blanks:1 },
+      { id:43, title:'造詞', photo:'📖', before:'石頭表面摸起來很', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["紀念","粗心","粗糙"], correct:'粗糙', hint:'提示:「粗糙」是用「粗」字造的詞。', blanks:1 },
+      { id:44, title:'筆畫', photo:'✏️', before:'「牽」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["12","11","10"], correct:'11', hint:'提示:「牽」共有11畫。', blanks:1 },
+      { id:45, title:'造詞', photo:'📖', before:'農夫', after:'去田裡工作。', zh:'💡 選出正確的詞語,填入空格', options:["牽牛","體操","沉重"], correct:'牽牛', hint:'提示:「牽牛」是用「牽」字造的詞。', blanks:1 },
+      { id:46, title:'部首', photo:'📝', before:'「操」的部首是', after:'?', zh:'💡 選出正確的部首', options:["肉部(月)","木部","手部(扌)"], correct:'手部(扌)', hint:'提示:「操」的部首是「手部(扌)」。', blanks:1 },
+      { id:47, title:'造詞', photo:'📖', before:'我們先吃飯,', after:'去公園。', zh:'💡 選出正確的詞語,填入空格', options:["搖晃","然後","沉重"], correct:'然後', hint:'提示:「然後」是用「然」字造的詞。', blanks:1 },
+      { id:48, title:'筆畫', photo:'✏️', before:'「首」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["9","10","8"], correct:'9', hint:'提示:「首」共有9畫。', blanks:1 },
+      { id:49, title:'部首', photo:'📝', before:'「部」的部首是', after:'?', zh:'💡 選出正確的部首', options:["米部","牛部","邑部(阝)"], correct:'邑部(阝)', hint:'提示:「部」的部首是「邑部(阝)」。', blanks:1 },
+      { id:50, title:'造詞', photo:'📖', before:'醫生仔細檢查了他的', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["沖澡","幾天","腿部"], correct:'腿部', hint:'提示:「腿部」是用「腿」字造的詞。', blanks:1 },
+      { id:51, title:'造詞', photo:'📖', before:'媽媽', after:'了一杯牛奶。', zh:'💡 選出正確的詞語,填入空格', options:["沖泡","沿岸","沖澡"], correct:'沖泡', hint:'提示:「沖泡」是用「沖」字造的詞。', blanks:1 },
+      { id:52, title:'部首', photo:'📝', before:'「沖」的部首是', after:'?', zh:'💡 選出正確的部首', options:["首部","糸部","水部(氵)"], correct:'水部(氵)', hint:'提示:「沖」的部首是「水部(氵)」。', blanks:1 },
+      { id:53, title:'筆畫', photo:'✏️', before:'「部」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["10","12","11"], correct:'11', hint:'提示:「部」共有11畫。', blanks:1 },
+      { id:54, title:'部首', photo:'📝', before:'「牽」的部首是', after:'?', zh:'💡 選出正確的部首', options:["豕部","牛部","肉部(月)"], correct:'牛部', hint:'提示:「牽」的部首是「牛部」。', blanks:1 },
+      { id:55, title:'造詞', photo:'📖', before:'考試時不要太', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["砍柴","下沉","粗心"], correct:'粗心', hint:'提示:「粗心」是用「粗」字造的詞。', blanks:1 },
+      { id:56, title:'筆畫', photo:'✏️', before:'「粗」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["12","10","11"], correct:'11', hint:'提示:「粗」共有11畫。', blanks:1 },
+      { id:57, title:'部首', photo:'📝', before:'「首」的部首是', after:'?', zh:'💡 選出正確的部首', options:["糸部","首部","水部(氵)"], correct:'首部', hint:'提示:「首」的部首是「首部」。', blanks:1 },
+      { id:58, title:'筆畫', photo:'✏️', before:'「搖」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["12","14","13"], correct:'13', hint:'提示:「搖」共有13畫。', blanks:1 },
+      { id:59, title:'筆畫', photo:'✏️', before:'「腿」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["13","15","14"], correct:'14', hint:'提示:「腿」共有14畫。', blanks:1 },
+      { id:60, title:'筆畫', photo:'✏️', before:'「象」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["13","11","12"], correct:'12', hint:'提示:「象」共有12畫。', blanks:1 }
     ],
     poolSampleSize: 15,
     levels: [],
     celebrateMessage: '你完成了第九課生字挑戰,真是生字小博士!',
-    celebrateEmoji: '🎉📝🐰',
+    celebrateEmoji: '🎉📝🐘',
 
     // ---- runtime state (do not edit by hand; the app manages these) ----
     charIndex: 0,
@@ -4746,156 +4758,175 @@ const CHAPTERS = [
     subject: 'mandarin',
     category: 'character',
     unitLabel: '康軒二上 第十課',
-    title: '我愛冬天',
+    title: '新年快樂',
     zh: '生字:部首・筆畫・造詞・破音字',
-    cardEmoji: '📝❄️🍲',
+    cardEmoji: '📝🧧🎆',
     headerEmoji: '📝',
     enabledTabs: ['story', 'game'],
     tabLabels: { story: '📝 生字卡', game: '🎯 生字挑戰' },
     characters: [
-      { char:'客', pinyin:'ㄎㄜˋ', radical:'宀部', strokeCount:9, words:[
-          {word:'客人', sentence:'家裡今天來了客人。'},
-          {word:'顧客', sentence:'老闆親切地招呼每一位顧客。'},
-          {word:'客廳', sentence:'我們在客廳看電視。'}
-        ], polyphonic:null, moreWords:['客氣','旅客']},
-      { char:'冒', pinyin:'ㄇㄠˋ', radical:'冂部', strokeCount:9, words:[
-          {word:'冒煙', sentence:'鍋子裡的湯正冒煙。'},
-          {word:'冒險', sentence:'他喜歡到處冒險探索。'},
-          {word:'感冒', sentence:'天氣變冷,要小心感冒。'}
-        ], polyphonic:null, moreWords:['冒出','冒牌']},
-      { char:'煙', pinyin:'ㄧㄢ', radical:'火部', strokeCount:13, words:[
-          {word:'冒煙', sentence:'火鍋熱氣冒煙,好香喔!'},
-          {word:'煙火', sentence:'過年時天空施放美麗的煙火。'},
-          {word:'煙囪', sentence:'屋頂上有一根高高的煙囪。'}
-        ], polyphonic:null, moreWords:['煙霧']},
-      { char:'聚', pinyin:'ㄐㄩˋ', radical:'耳部', strokeCount:14, words:[
-          {word:'聚會', sentence:'我們全家在過年時聚會。'},
-          {word:'聚在一起', sentence:'大家聚在一起吃火鍋。'},
-          {word:'團聚', sentence:'一家人團聚真幸福。'}
-        ], polyphonic:null, moreWords:['聚集','聚餐']},
-      { char:'飯', pinyin:'ㄈㄢˋ', radical:'食部', strokeCount:12, words:[
-          {word:'吃飯', sentence:'我們一起坐下來吃飯。'},
-          {word:'飯菜', sentence:'桌上擺滿了美味的飯菜。'},
-          {word:'午飯', sentence:'我在學校吃午飯。'}
-        ], polyphonic:null, moreWords:['飯店','飯碗']},
-      { char:'吃', pinyin:'ㄔ', radical:'口部', strokeCount:6, words:[
-          {word:'吃飯', sentence:'我們一起吃飯吧。'},
-          {word:'好吃', sentence:'這道菜真好吃。'},
-          {word:'吃驚', sentence:'這個消息讓大家很吃驚。'}
-        ], polyphonic:null, moreWords:['吃苦','吃虧']},
-      { char:'火', pinyin:'ㄏㄨㄛˇ', radical:'火部', strokeCount:4, words:[
-          {word:'火鍋', sentence:'冬天全家一起吃火鍋真溫暖。'},
-          {word:'火車', sentence:'我們搭火車去旅行。'},
-          {word:'煙火', sentence:'天空中出現美麗的煙火。'}
-        ], polyphonic:null, moreWords:['火焰','火柴']},
-      { char:'鍋', pinyin:'ㄍㄨㄛ', radical:'金部', strokeCount:17, words:[
-          {word:'火鍋', sentence:'冬天最適合吃火鍋了。'},
-          {word:'鍋子', sentence:'媽媽用鍋子煮湯。'},
-          {word:'湯鍋', sentence:'這個湯鍋剛煮好熱湯。'}
-        ], polyphonic:null, moreWords:['鍋鏟','電鍋']},
-      { char:'愉', pinyin:'ㄩˊ', radical:'心部(忄)', strokeCount:9, words:[
-          {word:'愉快', sentence:'祝你有個愉快的一天。'},
-          {word:'愉悅', sentence:'聽音樂讓我心情愉悅。'}
-        ], polyphonic:null },
-      { char:'快', pinyin:'ㄎㄨㄞˋ', radical:'心部(忄)', strokeCount:7, words:[
-          {word:'快樂', sentence:'祝你生日快樂!'},
-          {word:'愉快', sentence:'我們度過了愉快的一天。'},
-          {word:'快速', sentence:'消防車快速地趕到現場。'}
-        ], polyphonic:null, moreWords:['快點','趕快']},
-      { char:'享', pinyin:'ㄒㄧㄤˇ', radical:'亠部', strokeCount:8, words:[
-          {word:'享受', sentence:'我很享受和家人在一起的時光。'},
-          {word:'分享', sentence:'我喜歡和同學分享我的故事書。'},
-          {word:'享用', sentence:'大家一起享用美味的晚餐。'}
-        ], polyphonic:null, moreWords:['共享','享福']},
-      { char:'團', pinyin:'ㄊㄨㄢˊ', radical:'囗部', strokeCount:14, words:[
-          {word:'團圓', sentence:'過年全家人團圓真開心。'},
-          {word:'團體', sentence:'我們是一個團結的團體。'},
-          {word:'飯團', sentence:'早餐我吃了一個飯團。'}
-        ], polyphonic:null, moreWords:['團隊','集團']},
-      { char:'暖', pinyin:'ㄋㄨㄢˇ', radical:'日部', strokeCount:13, words:[
-          {word:'溫暖', sentence:'這件外套穿起來很溫暖。'},
-          {word:'暖和', sentence:'今天的天氣很暖和。'},
-          {word:'取暖', sentence:'大家圍在火爐旁取暖。'}
-        ], polyphonic:null, moreWords:['暖氣','暖爐']},
-      { char:'滑', pinyin:'ㄏㄨㄚˊ', radical:'水部(氵)', strokeCount:13, words:[
-          {word:'滑雪', sentence:'冬天我們去山上滑雪。'},
-          {word:'滑倒', sentence:'地板濕濕的,要小心滑倒。'},
-          {word:'滑梯', sentence:'弟弟喜歡在公園玩滑梯。'}
-        ], polyphonic:null, moreWords:['滑板','光滑']},
       { char:'雪', pinyin:'ㄒㄩㄝˇ', radical:'雨部', strokeCount:11, words:[
-          {word:'下雪', sentence:'今天早上開始下雪了。'},
-          {word:'雪人', sentence:'我們一起堆了一個雪人。'},
-          {word:'滑雪', sentence:'我最喜歡去雪地滑雪。'}
-        ], polyphonic:null, moreWords:['雪花','白雪']}
+          {word:'下雪', sentence:'冬天山上會下雪。'},
+          {word:'雪人', sentence:'我們一起堆雪人。'},
+          {word:'白雪', sentence:'山頂覆蓋著白雪。'}
+        ], polyphonic:null, moreWords:['雪花']},
+      { char:'火', pinyin:'ㄏㄨㄛˇ', radical:'火部', strokeCount:4, words:[
+          {word:'火車', sentence:'我們搭火車回家過年。'},
+          {word:'生火', sentence:'爺爺在院子裡生火取暖。'},
+          {word:'火光', sentence:'遠方傳來一陣火光。'}
+        ], polyphonic:null, moreWords:['火焰']},
+      { char:'煙', pinyin:'ㄧㄢ', radical:'火部', strokeCount:13, words:[
+          {word:'冒煙', sentence:'鍋子裡的湯正在冒煙。'},
+          {word:'煙火', sentence:'過年時天空施放美麗的煙火。'},
+          {word:'煙囪', sentence:'屋頂上有一根煙囪。'}
+        ], polyphonic:null, moreWords:['煙霧']},
+      { char:'冬', pinyin:'ㄉㄨㄥ', radical:'冫部', strokeCount:5, words:[
+          {word:'冬天', sentence:'冬天的時候特別冷。'},
+          {word:'冬眠', sentence:'熊在冬天會冬眠。'},
+          {word:'過冬', sentence:'小鳥飛去溫暖的地方過冬。'}
+        ], polyphonic:null, moreWords:['寒冬']},
+      { char:'冷', pinyin:'ㄌㄥˇ', radical:'冫部', strokeCount:7, words:[
+          {word:'寒冷', sentence:'冬天的早晨特別寒冷。'},
+          {word:'冷風', sentence:'一陣冷風吹了過來。'},
+          {word:'冰冷', sentence:'河水摸起來冰冷冰冷的。'}
+        ], polyphonic:null, moreWords:['冷氣','冷清']},
+      { char:'季', pinyin:'ㄐㄧˋ', radical:'子部', strokeCount:8, words:[
+          {word:'季節', sentence:'冬天是我最喜歡的季節。'},
+          {word:'四季', sentence:'台灣有春夏秋冬四季。'},
+          {word:'季軍', sentence:'他得到了游泳比賽的季軍。'}
+        ], polyphonic:null, moreWords:['雨季']},
+      { char:'臺', pinyin:'ㄊㄞˊ', radical:'至部', strokeCount:14, words:[
+          {word:'臺灣', sentence:'我們住在臺灣。'},
+          {word:'舞臺', sentence:'她站在舞臺上唱歌。'},
+          {word:'陽臺', sentence:'媽媽在陽臺上曬衣服。'}
+        ], polyphonic:null, moreWords:['臺北']},
+      { char:'卻', pinyin:'ㄑㄩㄝˋ', radical:'卩部', strokeCount:9, words:[
+          {word:'卻是', sentence:'外面下著雪,家裡卻是溫暖的。'},
+          {word:'冷卻', sentence:'讓熱湯先冷卻再喝。'},
+          {word:'卻步', sentence:'他害怕得卻步不前。'}
+        ], polyphonic:null},
+      { char:'夜', pinyin:'ㄧㄝˋ', radical:'夕部', strokeCount:8, words:[
+          {word:'夜晚', sentence:'夜晚的星星好美。'},
+          {word:'半夜', sentence:'我半夜被鞭炮聲吵醒。'},
+          {word:'夜市', sentence:'過年的夜市擠滿了人。'}
+        ], polyphonic:null, moreWords:['除夕夜','夜色']},
+      { char:'梨', pinyin:'ㄌㄧˊ', radical:'木部', strokeCount:11, words:[
+          {word:'水梨', sentence:'阿嬤買了甜甜的水梨。'},
+          {word:'梨子', sentence:'我最喜歡吃梨子。'},
+          {word:'鳳梨', sentence:'媽媽買了一顆鳳梨。'}
+        ], polyphonic:null, moreWords:['梨花']},
+      { char:'春', pinyin:'ㄔㄨㄣ', radical:'日部', strokeCount:9, words:[
+          {word:'春天', sentence:'冬天過後就是春天。'},
+          {word:'春節', sentence:'春節時大家一起吃團圓飯。'},
+          {word:'春聯', sentence:'爸爸在門上貼春聯。'}
+        ], polyphonic:null, moreWords:['立春','青春']},
+      { char:'雞', pinyin:'ㄐㄧ', radical:'隹部', strokeCount:17, words:[
+          {word:'雞蛋', sentence:'奶奶煮了雞蛋湯。'},
+          {word:'公雞', sentence:'公雞一早就在啼叫。'},
+          {word:'雞肉', sentence:'我最喜歡吃雞肉。'}
+        ], polyphonic:null, moreWords:['火雞']},
+      { char:'待', pinyin:'ㄉㄞˋ', radical:'彳部', strokeCount:9, words:[
+          {word:'等待', sentence:'我們在門口等待煙火開始。'},
+          {word:'招待', sentence:'阿姨熱情招待客人。'},
+          {word:'待會兒', sentence:'待會兒我們一起去逛夜市。'}
+        ], polyphonic:null, moreWords:['期待']},
+      { char:'反', pinyin:'ㄈㄢˇ', radical:'又部', strokeCount:4, words:[
+          {word:'反而', sentence:'下雪了,天氣反而不冷。'},
+          {word:'相反', sentence:'這兩個答案完全相反。'},
+          {word:'反覆', sentence:'他反覆練習這首歌。'}
+        ], polyphonic:null, moreWords:['反對']},
+      { char:'相', pinyin:'ㄒㄧㄤ', radical:'目部', strokeCount:9, words:[
+          {word:'相信', sentence:'我相信明天會下雪。'},
+          {word:'互相', sentence:'大家互相祝賀新年快樂。'},
+          {word:'相同', sentence:'這兩件外套顏色相同。'}
+        ], polyphonic:[
+          { reading:'ㄒㄧㄤ', meaning:'彼此、互相(常用在「相信」、「互相」、「相同」)', example:'我們互相祝福新年快樂。' },
+          { reading:'ㄒㄧㄤˋ', meaning:'外觀、拍照(常用在「照相」、「長相」)', example:'全家人一起照相留念。' }
+        ], moreWords:['照相','長相']},
+      { char:'飯', pinyin:'ㄈㄢˋ', radical:'食部', strokeCount:12, words:[
+          {word:'吃飯', sentence:'除夕夜全家人一起吃飯。'},
+          {word:'飯菜', sentence:'桌上擺滿了年夜飯的飯菜。'},
+          {word:'白飯', sentence:'我盛了一碗白飯。'}
+        ], polyphonic:null, moreWords:['飯店','午飯']},
+      { char:'期', pinyin:'ㄑㄧˊ', radical:'月部', strokeCount:12, words:[
+          {word:'期待', sentence:'我很期待新年的到來。'},
+          {word:'假期', sentence:'寒假是我最喜歡的假期。'},
+          {word:'日期', sentence:'月曆上寫著過年的日期。'}
+        ], polyphonic:null, moreWords:['學期']},
+      { char:'貨', pinyin:'ㄏㄨㄛˋ', radical:'貝部', strokeCount:11, words:[
+          {word:'年貨', sentence:'全家一起去買年貨。'},
+          {word:'貨物', sentence:'卡車載滿了貨物。'},
+          {word:'貨品', sentence:'商店裡擺滿了新年貨品。'}
+        ], polyphonic:null, moreWords:['百貨公司']}
     ],
 
     gameTitle: '🎯 生字挑戰',
     levelPool: [
-      { id:1, title:'造詞', photo:'📖', before:'我們度過了', after:'的一天。', zh:'💡 選出正確的詞語,填入空格', options:['好吃','愉快','冒險'], correct:'愉快', hint:'提示:「愉快」是用「快」字造的詞。', blanks:1 },
-      { id:2, title:'部首', photo:'📝', before:'「聚」的部首是', after:'?', zh:'💡 選出正確的部首', options:['火部','耳部','心部(忄)'], correct:'耳部', hint:'提示:「聚」的部首是「耳部」。', blanks:1 },
-      { id:3, title:'造詞', photo:'📖', before:'這件外套穿起來很', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['溫暖','顧客','火鍋'], correct:'溫暖', hint:'提示:「溫暖」是用「暖」字造的詞。', blanks:1 },
-      { id:4, title:'造詞', photo:'📖', before:'屋頂上有一根高高的', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['煙囪','顧客','感冒'], correct:'煙囪', hint:'提示:「煙囪」是用「煙」字造的詞。', blanks:1 },
-      { id:5, title:'筆畫', photo:'✏️', before:'「客」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['14','9','8'], correct:'9', hint:'提示:「客」共有9畫。', blanks:1 },
-      { id:6, title:'造詞', photo:'📖', before:'家裡今天來了', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['客人','溫暖','快速'], correct:'客人', hint:'提示:「客人」是用「客」字造的詞。', blanks:1 },
-      { id:7, title:'筆畫', photo:'✏️', before:'「飯」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['12','9','13'], correct:'12', hint:'提示:「飯」共有12畫。', blanks:1 },
-      { id:8, title:'筆畫', photo:'✏️', before:'「鍋」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['9','17','14'], correct:'17', hint:'提示:「鍋」共有17畫。', blanks:1 },
-      { id:9, title:'造詞', photo:'📖', before:'祝你有個', after:'的一天。', zh:'💡 選出正確的詞語,填入空格', options:['愉快','滑倒','客人'], correct:'愉快', hint:'提示:「愉快」是用「愉」字造的詞。', blanks:1 },
-      { id:10, title:'造詞', photo:'📖', before:'大家圍在火爐旁', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['取暖','客人','團聚'], correct:'取暖', hint:'提示:「取暖」是用「暖」字造的詞。', blanks:1 },
-      { id:11, title:'造詞', photo:'📖', before:'今天早上開始', after:'了。', zh:'💡 選出正確的詞語,填入空格', options:['吃飯','客人','下雪'], correct:'下雪', hint:'提示:「下雪」是用「雪」字造的詞。', blanks:1 },
-      { id:12, title:'筆畫', photo:'✏️', before:'「冒」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['14','9','8'], correct:'9', hint:'提示:「冒」共有9畫。', blanks:1 },
-      { id:13, title:'部首', photo:'📝', before:'「雪」的部首是', after:'?', zh:'💡 選出正確的部首', options:['雨部','囗部','金部'], correct:'雨部', hint:'提示:「雪」的部首是「雨部」。', blanks:1 },
-      { id:14, title:'造詞', photo:'📖', before:'鍋子裡的湯正', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['火車','冒煙','分享'], correct:'冒煙', hint:'提示:「冒煙」是用「冒」字造的詞。', blanks:1 },
-      { id:15, title:'造詞', photo:'📖', before:'地板濕濕的,要小心', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['火鍋','滑倒','愉悅'], correct:'滑倒', hint:'提示:「滑倒」是用「滑」字造的詞。', blanks:1 },
-      { id:16, title:'造詞', photo:'📖', before:'一家人', after:'真幸福。', zh:'💡 選出正確的詞語,填入空格', options:['滑梯','團聚','滑倒'], correct:'團聚', hint:'提示:「團聚」是用「聚」字造的詞。', blanks:1 },
-      { id:17, title:'筆畫', photo:'✏️', before:'「吃」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['6','13','14'], correct:'6', hint:'提示:「吃」共有6畫。', blanks:1 },
-      { id:18, title:'部首', photo:'📝', before:'「滑」的部首是', after:'?', zh:'💡 選出正確的部首', options:['水部(氵)','火部','食部'], correct:'水部(氵)', hint:'提示:「滑」的部首是「水部(氵)」。', blanks:1 },
-      { id:19, title:'造詞', photo:'📖', before:'我們搭', after:'去旅行。', zh:'💡 選出正確的詞語,填入空格', options:['煙火','煙囪','火車'], correct:'火車', hint:'提示:「火車」是用「火」字造的詞。', blanks:1 },
-      { id:20, title:'造詞', photo:'📖', before:'這道菜真', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['感冒','鍋子','好吃'], correct:'好吃', hint:'提示:「好吃」是用「吃」字造的詞。', blanks:1 },
-      { id:21, title:'筆畫', photo:'✏️', before:'「暖」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['13','6','4'], correct:'13', hint:'提示:「暖」共有13畫。', blanks:1 },
-      { id:22, title:'造詞', photo:'📖', before:'我們一起堆了一個', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['吃驚','顧客','雪人'], correct:'雪人', hint:'提示:「雪人」是用「雪」字造的詞。', blanks:1 },
-      { id:23, title:'筆畫', photo:'✏️', before:'「火」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['4','8','13'], correct:'4', hint:'提示:「火」共有4畫。', blanks:1 },
-      { id:24, title:'造詞', photo:'📖', before:'過年時天空施放美麗的', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['煙火','滑雪','火鍋'], correct:'煙火', hint:'提示:「煙火」是用「煙」字造的詞。', blanks:1 },
-      { id:25, title:'造詞', photo:'📖', before:'冬天全家一起吃', after:'真溫暖。', zh:'💡 選出正確的詞語,填入空格', options:['下雪','享受','火鍋'], correct:'火鍋', hint:'提示:「火鍋」是用「火」字造的詞。', blanks:1 },
-      { id:26, title:'筆畫', photo:'✏️', before:'「聚」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['14','6','8'], correct:'14', hint:'提示:「聚」共有14畫。', blanks:1 },
-      { id:27, title:'部首', photo:'📝', before:'「愉」的部首是', after:'?', zh:'💡 選出正確的部首', options:['心部(忄)','日部','火部'], correct:'心部(忄)', hint:'提示:「愉」的部首是「心部(忄)」。', blanks:1 },
-      { id:28, title:'造詞', photo:'📖', before:'他喜歡到處', after:'探索。', zh:'💡 選出正確的詞語,填入空格', options:['滑倒','冒險','火車'], correct:'冒險', hint:'提示:「冒險」是用「冒」字造的詞。', blanks:1 },
-      { id:29, title:'造詞', photo:'📖', before:'弟弟喜歡在公園玩', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['火鍋','愉快','滑梯'], correct:'滑梯', hint:'提示:「滑梯」是用「滑」字造的詞。', blanks:1 },
-      { id:30, title:'造詞', photo:'📖', before:'我們是一個團結的', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['取暖','團體','愉悅'], correct:'團體', hint:'提示:「團體」是用「團」字造的詞。', blanks:1 },
-      { id:31, title:'造詞', photo:'📖', before:'這個', after:'剛煮好熱湯。', zh:'💡 選出正確的詞語,填入空格', options:['滑梯','快速','湯鍋'], correct:'湯鍋', hint:'提示:「湯鍋」是用「鍋」字造的詞。', blanks:1 },
-      { id:32, title:'部首', photo:'📝', before:'「冒」的部首是', after:'?', zh:'💡 選出正確的部首', options:['冂部','耳部','水部(氵)'], correct:'冂部', hint:'提示:「冒」的部首是「冂部」。', blanks:1 },
-      { id:33, title:'部首', photo:'📝', before:'「享」的部首是', after:'?', zh:'💡 選出正確的部首', options:['金部','亠部','囗部'], correct:'亠部', hint:'提示:「享」的部首是「亠部」。', blanks:1 },
-      { id:34, title:'造詞', photo:'📖', before:'冬天最適合吃', after:'了。', zh:'💡 選出正確的詞語,填入空格', options:['滑倒','溫暖','火鍋'], correct:'火鍋', hint:'提示:「火鍋」是用「鍋」字造的詞。', blanks:1 },
-      { id:35, title:'造詞', photo:'📖', before:'過年全家人', after:'真開心。', zh:'💡 選出正確的詞語,填入空格', options:['顧客','團圓','下雪'], correct:'團圓', hint:'提示:「團圓」是用「團」字造的詞。', blanks:1 },
-      { id:36, title:'造詞', photo:'📖', before:'這個消息讓大家很', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['飯團','溫暖','吃驚'], correct:'吃驚', hint:'提示:「吃驚」是用「吃」字造的詞。', blanks:1 },
-      { id:37, title:'部首', photo:'📝', before:'「煙」的部首是', after:'?', zh:'💡 選出正確的部首', options:['囗部','火部','耳部'], correct:'火部', hint:'提示:「煙」的部首是「火部」。', blanks:1 },
-      { id:38, title:'造詞', photo:'📖', before:'冬天我們去山上', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['聚在一起','滑雪','取暖'], correct:'滑雪', hint:'提示:「滑雪」是用「滑」字造的詞。', blanks:1 },
-      { id:39, title:'造詞', photo:'📖', before:'我最喜歡去雪地', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['取暖','快樂','滑雪'], correct:'滑雪', hint:'提示:「滑雪」是用「雪」字造的詞。', blanks:1 },
-      { id:40, title:'造詞', photo:'📖', before:'我們一起坐下來', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['吃飯','火車','溫暖'], correct:'吃飯', hint:'提示:「吃飯」是用「飯」字造的詞。', blanks:1 },
-      { id:41, title:'造詞', photo:'📖', before:'我們在', after:'看電視。', zh:'💡 選出正確的詞語,填入空格', options:['團圓','客廳','湯鍋'], correct:'客廳', hint:'提示:「客廳」是用「客」字造的詞。', blanks:1 },
-      { id:42, title:'造詞', photo:'📖', before:'今天的天氣很', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['暖和','快速','冒險'], correct:'暖和', hint:'提示:「暖和」是用「暖」字造的詞。', blanks:1 },
-      { id:43, title:'部首', photo:'📝', before:'「團」的部首是', after:'?', zh:'💡 選出正確的部首', options:['亠部','囗部','耳部'], correct:'囗部', hint:'提示:「團」的部首是「囗部」。', blanks:1 },
-      { id:44, title:'部首', photo:'📝', before:'「吃」的部首是', after:'?', zh:'💡 選出正確的部首', options:['口部','宀部','心部'], correct:'口部', hint:'提示:「吃」的部首是「口部」。', blanks:1 },
-      { id:45, title:'部首', photo:'📝', before:'「飯」的部首是', after:'?', zh:'💡 選出正確的部首', options:['宀部','食部','金部'], correct:'食部', hint:'提示:「飯」的部首是「食部」。', blanks:1 },
-      { id:46, title:'部首', photo:'📝', before:'「客」的部首是', after:'?', zh:'💡 選出正確的部首', options:['宀部','雨部','金部'], correct:'宀部', hint:'提示:「客」的部首是「宀部」。', blanks:1 },
-      { id:47, title:'部首', photo:'📝', before:'「快」的部首是', after:'?', zh:'💡 選出正確的部首', options:['亠部','心部(忄)','宀部'], correct:'心部(忄)', hint:'提示:「快」的部首是「心部(忄)」。', blanks:1 },
-      { id:48, title:'造詞', photo:'📖', before:'我喜歡和同學', after:'我的故事書。', zh:'💡 選出正確的詞語,填入空格', options:['分享','快速','吃驚'], correct:'分享', hint:'提示:「分享」是用「享」字造的詞。', blanks:1 },
-      { id:49, title:'造詞', photo:'📖', before:'我們全家在過年時', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['溫暖','聚會','火鍋'], correct:'聚會', hint:'提示:「聚會」是用「聚」字造的詞。', blanks:1 },
-      { id:50, title:'造詞', photo:'📖', before:'媽媽用', after:'煮湯。', zh:'💡 選出正確的詞語,填入空格', options:['愉快','湯鍋','鍋子'], correct:'鍋子', hint:'提示:「鍋子」是用「鍋」字造的詞。', blanks:1 },
-      { id:51, title:'筆畫', photo:'✏️', before:'「享」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['8','13','17'], correct:'8', hint:'提示:「享」共有8畫。', blanks:1 },
-      { id:52, title:'造詞', photo:'📖', before:'祝你生日', after:'!', zh:'💡 選出正確的詞語,填入空格', options:['煙火','快樂','午飯'], correct:'快樂', hint:'提示:「快樂」是用「快」字造的詞。', blanks:1 },
-      { id:53, title:'造詞', photo:'📖', before:'天空中出現美麗的', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['下雪','享受','煙火'], correct:'煙火', hint:'提示:「煙火」是用「火」字造的詞。', blanks:1 },
-      { id:54, title:'筆畫', photo:'✏️', before:'「滑」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['12','13','9'], correct:'13', hint:'提示:「滑」共有13畫。', blanks:1 },
-      { id:55, title:'筆畫', photo:'✏️', before:'「煙」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['17','13','9'], correct:'13', hint:'提示:「煙」共有13畫。', blanks:1 },
-      { id:56, title:'造詞', photo:'📖', before:'天氣變冷,要小心', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['感冒','吃驚','享用'], correct:'感冒', hint:'提示:「感冒」是用「冒」字造的詞。', blanks:1 },
-      { id:57, title:'造詞', photo:'📖', before:'消防車', after:'地趕到現場。', zh:'💡 選出正確的詞語,填入空格', options:['團體','快速','飯菜'], correct:'快速', hint:'提示:「快速」是用「快」字造的詞。', blanks:1 },
-      { id:58, title:'筆畫', photo:'✏️', before:'「雪」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['7','12','11'], correct:'11', hint:'提示:「雪」共有11畫。', blanks:1 },
-      { id:59, title:'造詞', photo:'📖', before:'大家一起', after:'美味的晚餐。', zh:'💡 選出正確的詞語,填入空格', options:['享用','滑倒','滑雪'], correct:'享用', hint:'提示:「享用」是用「享」字造的詞。', blanks:1 },
-      { id:60, title:'部首', photo:'📝', before:'「鍋」的部首是', after:'?', zh:'💡 選出正確的部首', options:['金部','火部','食部'], correct:'金部', hint:'提示:「鍋」的部首是「金部」。', blanks:1 }
+      { id:1, title:'部首', photo:'📝', before:'「相」的部首是', after:'?', zh:'💡 選出正確的部首', options:["食部","目部","木部"], correct:'目部', hint:'提示:「相」的部首是「目部」。', blanks:1 },
+      { id:2, title:'破音字挑戰', photo:'🔀', before:'「相」在「我們互相祝福新年快樂。」這句話裡要唸', after:'', zh:'💡 選出正確的讀音', options:["ㄒㄧㄤ","ㄒㄧㄤˋ","ㄓㄨㄥˇ"], correct:'ㄒㄧㄤ', hint:'提示:「相」是破音字,在這句話裡要唸 ㄒㄧㄤ。', blanks:1 },
+      { id:3, title:'造詞', photo:'📖', before:'', after:'的星星好美。', zh:'💡 選出正確的詞語,填入空格', options:["互相","夜晚","春聯"], correct:'夜晚', hint:'提示:「夜晚」是用「夜」字造的詞。', blanks:1 },
+      { id:4, title:'部首', photo:'📝', before:'「雞」的部首是', after:'?', zh:'💡 選出正確的部首', options:["隹部","食部","冫部"], correct:'隹部', hint:'提示:「雞」的部首是「隹部」。', blanks:1 },
+      { id:5, title:'造詞', photo:'📖', before:'', after:'時大家一起吃團圓飯。', zh:'💡 選出正確的詞語,填入空格', options:["季軍","半夜","春節"], correct:'春節', hint:'提示:「春節」是用「春」字造的詞。', blanks:1 },
+      { id:6, title:'筆畫', photo:'✏️', before:'「待」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["10","9","8"], correct:'9', hint:'提示:「待」共有9畫。', blanks:1 },
+      { id:7, title:'筆畫', photo:'✏️', before:'「卻」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["8","10","9"], correct:'9', hint:'提示:「卻」共有9畫。', blanks:1 },
+      { id:8, title:'造詞', photo:'📖', before:'全家一起去買', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["年貨","臺灣","梨子"], correct:'年貨', hint:'提示:「年貨」是用「貨」字造的詞。', blanks:1 },
+      { id:9, title:'造詞', photo:'📖', before:'冬天過後就是', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["鳳梨","貨品","春天"], correct:'春天', hint:'提示:「春天」是用「春」字造的詞。', blanks:1 },
+      { id:10, title:'造詞', photo:'📖', before:'我們一起堆', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["日期","雪人","梨子"], correct:'雪人', hint:'提示:「雪人」是用「雪」字造的詞。', blanks:1 },
+      { id:11, title:'造詞', photo:'📖', before:'河水摸起來', after:'冰冷的。', zh:'💡 選出正確的詞語,填入空格', options:["假期","冰冷","夜市"], correct:'冰冷', hint:'提示:「冰冷」是用「冷」字造的詞。', blanks:1 },
+      { id:12, title:'造詞', photo:'📖', before:'他得到了游泳比賽的', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["季軍","相反","吃飯"], correct:'季軍', hint:'提示:「季軍」是用「季」字造的詞。', blanks:1 },
+      { id:13, title:'造詞', photo:'📖', before:'鍋子裡的湯正在', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["年貨","雞肉","冒煙"], correct:'冒煙', hint:'提示:「冒煙」是用「煙」字造的詞。', blanks:1 },
+      { id:14, title:'造詞', photo:'📖', before:'小鳥飛去溫暖的地方', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["等待","過冬","春聯"], correct:'過冬', hint:'提示:「過冬」是用「冬」字造的詞。', blanks:1 },
+      { id:15, title:'部首', photo:'📝', before:'「火」的部首是', after:'?', zh:'💡 選出正確的部首', options:["貝部","彳部","火部"], correct:'火部', hint:'提示:「火」的部首是「火部」。', blanks:1 },
+      { id:16, title:'造詞', photo:'📖', before:'冬天山上會', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["貨品","下雪","假期"], correct:'下雪', hint:'提示:「下雪」是用「雪」字造的詞。', blanks:1 },
+      { id:17, title:'造詞', photo:'📖', before:'我', after:'明天會下雪。', zh:'💡 選出正確的詞語,填入空格', options:["春天","相信","等待"], correct:'相信', hint:'提示:「相信」是用「相」字造的詞。', blanks:1 },
+      { id:18, title:'造詞', photo:'📖', before:'我們住在', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["水梨","臺灣","反覆"], correct:'臺灣', hint:'提示:「臺灣」是用「臺」字造的詞。', blanks:1 },
+      { id:19, title:'造詞', photo:'📖', before:'我盛了一碗', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["白飯","相同","春節"], correct:'白飯', hint:'提示:「白飯」是用「飯」字造的詞。', blanks:1 },
+      { id:20, title:'造詞', photo:'📖', before:'她站在', after:'上唱歌。', zh:'💡 選出正確的詞語,填入空格', options:["冷風","舞臺","期待"], correct:'舞臺', hint:'提示:「舞臺」是用「臺」字造的詞。', blanks:1 },
+      { id:21, title:'筆畫', photo:'✏️', before:'「反」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["5","4","3"], correct:'4', hint:'提示:「反」共有4畫。', blanks:1 },
+      { id:22, title:'造詞', photo:'📖', before:'阿嬤買了甜甜的', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["卻是","冬天","水梨"], correct:'水梨', hint:'提示:「水梨」是用「梨」字造的詞。', blanks:1 },
+      { id:23, title:'部首', photo:'📝', before:'「飯」的部首是', after:'?', zh:'💡 選出正確的部首', options:["月部","食部","火部"], correct:'食部', hint:'提示:「飯」的部首是「食部」。', blanks:1 },
+      { id:24, title:'部首', photo:'📝', before:'「冷」的部首是', after:'?', zh:'💡 選出正確的部首', options:["雨部","貝部","冫部"], correct:'冫部', hint:'提示:「冷」的部首是「冫部」。', blanks:1 },
+      { id:25, title:'部首', photo:'📝', before:'「臺」的部首是', after:'?', zh:'💡 選出正確的部首', options:["火部","子部","至部"], correct:'至部', hint:'提示:「臺」的部首是「至部」。', blanks:1 },
+      { id:26, title:'造詞', photo:'📖', before:'寒假是我最喜歡的', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["貨物","假期","下雪"], correct:'假期', hint:'提示:「假期」是用「期」字造的詞。', blanks:1 },
+      { id:27, title:'筆畫', photo:'✏️', before:'「梨」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["11","12","10"], correct:'11', hint:'提示:「梨」共有11畫。', blanks:1 },
+      { id:28, title:'造詞', photo:'📖', before:'一陣', after:'吹了過來。', zh:'💡 選出正確的詞語,填入空格', options:["年貨","冷風","日期"], correct:'冷風', hint:'提示:「冷風」是用「冷」字造的詞。', blanks:1 },
+      { id:29, title:'部首', photo:'📝', before:'「卻」的部首是', after:'?', zh:'💡 選出正確的部首', options:["夕部","彳部","卩部"], correct:'卩部', hint:'提示:「卻」的部首是「卩部」。', blanks:1 },
+      { id:30, title:'部首', photo:'📝', before:'「期」的部首是', after:'?', zh:'💡 選出正確的部首', options:["月部","雨部","貝部"], correct:'月部', hint:'提示:「期」的部首是「月部」。', blanks:1 },
+      { id:31, title:'造詞', photo:'📖', before:'爺爺在院子裡', after:'取暖。', zh:'💡 選出正確的詞語,填入空格', options:["過冬","反而","生火"], correct:'生火', hint:'提示:「生火」是用「火」字造的詞。', blanks:1 },
+      { id:32, title:'造詞', photo:'📖', before:'我很', after:'新年的到來。', zh:'💡 選出正確的詞語,填入空格', options:["公雞","期待","四季"], correct:'期待', hint:'提示:「期待」是用「期」字造的詞。', blanks:1 },
+      { id:33, title:'筆畫', photo:'✏️', before:'「煙」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["14","12","13"], correct:'13', hint:'提示:「煙」共有13畫。', blanks:1 },
+      { id:34, title:'造詞', photo:'📖', before:'商店裡擺滿了新年', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["半夜","陽臺","貨品"], correct:'貨品', hint:'提示:「貨品」是用「貨」字造的詞。', blanks:1 },
+      { id:35, title:'部首', photo:'📝', before:'「待」的部首是', after:'?', zh:'💡 選出正確的部首', options:["彳部","木部","冫部"], correct:'彳部', hint:'提示:「待」的部首是「彳部」。', blanks:1 },
+      { id:36, title:'造詞', photo:'📖', before:'過年的', after:'擠滿了人。', zh:'💡 選出正確的詞語,填入空格', options:["四季","夜市","白雪"], correct:'夜市', hint:'提示:「夜市」是用「夜」字造的詞。', blanks:1 },
+      { id:37, title:'造詞', photo:'📖', before:'我最喜歡吃', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["寒冷","夜市","梨子"], correct:'梨子', hint:'提示:「梨子」是用「梨」字造的詞。', blanks:1 },
+      { id:38, title:'筆畫', photo:'✏️', before:'「冬」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["6","4","5"], correct:'5', hint:'提示:「冬」共有5畫。', blanks:1 },
+      { id:39, title:'造詞', photo:'📖', before:'外面下著雪,家裡', after:'溫暖的。', zh:'💡 選出正確的詞語,填入空格', options:["卻是","過冬","煙火"], correct:'卻是', hint:'提示:「卻是」是用「卻」字造的詞。', blanks:1 },
+      { id:40, title:'造詞', photo:'📖', before:'除夕夜全家人一起', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["吃飯","陽臺","相反"], correct:'吃飯', hint:'提示:「吃飯」是用「飯」字造的詞。', blanks:1 },
+      { id:41, title:'造詞', photo:'📖', before:'', after:'我們一起去逛夜市。', zh:'💡 選出正確的詞語,填入空格', options:["煙火","待會兒","春節"], correct:'待會兒', hint:'提示:「待會兒」是用「待」字造的詞。', blanks:1 },
+      { id:42, title:'部首', photo:'📝', before:'「貨」的部首是', after:'?', zh:'💡 選出正確的部首', options:["貝部","火部","目部"], correct:'貝部', hint:'提示:「貨」的部首是「貝部」。', blanks:1 },
+      { id:43, title:'造詞', photo:'📖', before:'台灣有春夏秋冬', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["四季","雞蛋","吃飯"], correct:'四季', hint:'提示:「四季」是用「季」字造的詞。', blanks:1 },
+      { id:44, title:'造詞', photo:'📖', before:'我最喜歡吃', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["半夜","日期","雞肉"], correct:'雞肉', hint:'提示:「雞肉」是用「雞」字造的詞。', blanks:1 },
+      { id:45, title:'造詞', photo:'📖', before:'遠方傳來一陣', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["卻步","陽臺","火光"], correct:'火光', hint:'提示:「火光」是用「火」字造的詞。', blanks:1 },
+      { id:46, title:'造詞', photo:'📖', before:'桌上擺滿了年夜飯的', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["飯菜","待會兒","等待"], correct:'飯菜', hint:'提示:「飯菜」是用「飯」字造的詞。', blanks:1 },
+      { id:47, title:'造詞', photo:'📖', before:'我們在門口', after:'煙火開始。', zh:'💡 選出正確的詞語,填入空格', options:["寒冷","等待","招待"], correct:'等待', hint:'提示:「等待」是用「待」字造的詞。', blanks:1 },
+      { id:48, title:'造詞', photo:'📖', before:'我們搭', after:'回家過年。', zh:'💡 選出正確的詞語,填入空格', options:["反而","煙囪","火車"], correct:'火車', hint:'提示:「火車」是用「火」字造的詞。', blanks:1 },
+      { id:49, title:'造詞', photo:'📖', before:'爸爸在門上貼', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["貨品","寒冷","春聯"], correct:'春聯', hint:'提示:「春聯」是用「春」字造的詞。', blanks:1 },
+      { id:50, title:'筆畫', photo:'✏️', before:'「季」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["7","9","8"], correct:'8', hint:'提示:「季」共有8畫。', blanks:1 },
+      { id:51, title:'造詞', photo:'📖', before:'媽媽買了一顆', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["相反","煙火","鳳梨"], correct:'鳳梨', hint:'提示:「鳳梨」是用「梨」字造的詞。', blanks:1 },
+      { id:52, title:'部首', photo:'📝', before:'「煙」的部首是', after:'?', zh:'💡 選出正確的部首', options:["木部","目部","火部"], correct:'火部', hint:'提示:「煙」的部首是「火部」。', blanks:1 },
+      { id:53, title:'筆畫', photo:'✏️', before:'「臺」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["13","15","14"], correct:'14', hint:'提示:「臺」共有14畫。', blanks:1 },
+      { id:54, title:'筆畫', photo:'✏️', before:'「相」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["9","10","8"], correct:'9', hint:'提示:「相」共有9畫。', blanks:1 },
+      { id:55, title:'部首', photo:'📝', before:'「季」的部首是', after:'?', zh:'💡 選出正確的部首', options:["火部","食部","子部"], correct:'子部', hint:'提示:「季」的部首是「子部」。', blanks:1 },
+      { id:56, title:'造詞', photo:'📖', before:'熊在冬天會', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["卻步","互相","冬眠"], correct:'冬眠', hint:'提示:「冬眠」是用「冬」字造的詞。', blanks:1 },
+      { id:57, title:'筆畫', photo:'✏️', before:'「飯」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["12","13","11"], correct:'12', hint:'提示:「飯」共有12畫。', blanks:1 },
+      { id:58, title:'破音字挑戰', photo:'🔀', before:'「相」在「全家人一起照相留念。」這句話裡要唸', after:'', zh:'💡 選出正確的讀音', options:["ㄒㄧㄤˋ","ㄒㄧㄤ","ㄓㄨㄥˇ"], correct:'ㄒㄧㄤˋ', hint:'提示:「相」是破音字,在這句話裡要唸 ㄒㄧㄤˋ。', blanks:1 },
+      { id:59, title:'造詞', photo:'📖', before:'我', after:'被鞭炮聲吵醒。', zh:'💡 選出正確的詞語,填入空格', options:["夜晚","半夜","舞臺"], correct:'半夜', hint:'提示:「半夜」是用「夜」字造的詞。', blanks:1 },
+      { id:60, title:'造詞', photo:'📖', before:'冬天是我最喜歡的', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["季節","年貨","火車"], correct:'季節', hint:'提示:「季節」是用「季」字造的詞。', blanks:1 }
     ],
     poolSampleSize: 15,
     levels: [],
     celebrateMessage: '你完成了第十課生字挑戰,真是生字小博士!',
-    celebrateEmoji: '🎉📝❄️',
+    celebrateEmoji: '🎉📝🧧',
 
     // ---- runtime state (do not edit by hand; the app manages these) ----
     charIndex: 0,
@@ -4907,156 +4938,345 @@ const CHAPTERS = [
     subject: 'mandarin',
     category: 'character',
     unitLabel: '康軒二上 第十一課',
-    title: '庾亮不賣馬',
+    title: '遠方來的黑皮',
     zh: '生字:部首・筆畫・造詞・破音字',
-    cardEmoji: '📝🐴📯',
+    cardEmoji: '📝🐶✈️',
     headerEmoji: '📝',
     enabledTabs: ['story', 'game'],
     tabLabels: { story: '📝 生字卡', game: '🎯 生字挑戰' },
     characters: [
-      { char:'名', pinyin:'ㄇㄧㄥˊ', radical:'口部', strokeCount:6, words:[
-          {word:'名字', sentence:'請問你的名字是什麼?'},
-          {word:'有名', sentence:'這家店的蛋糕很有名。'},
-          {word:'姓名', sentence:'請在考卷上寫上姓名。'}
-        ], polyphonic:null, moreWords:['名單','出名']},
-      { char:'叫', pinyin:'ㄐㄧㄠˋ', radical:'口部', strokeCount:5, words:[
-          {word:'叫做', sentence:'這種動物叫做無尾熊。'},
-          {word:'叫喊', sentence:'他在操場上大聲叫喊。'},
-          {word:'大叫', sentence:'看到蜘蛛,妹妹嚇得大叫。'}
-        ], polyphonic:null, moreWords:['叫醒','尖叫']},
-      { char:'騎', pinyin:'ㄑㄧˊ', radical:'馬部', strokeCount:18, words:[
-          {word:'騎馬', sentence:'庾亮很喜歡騎馬出門。'},
-          {word:'騎車', sentence:'我每天騎車去上學。'},
-          {word:'騎士', sentence:'故事裡的騎士非常勇敢。'}
-        ], polyphonic:null, moreWords:['騎乘','坐騎']},
-      { char:'匹', pinyin:'ㄆㄧˇ', radical:'匚部', strokeCount:4, words:[
-          {word:'一匹馬', sentence:'他騎著一匹馬出門去玩。'},
-          {word:'馬匹', sentence:'農場裡養了好幾匹馬匹。'}
-        ], polyphonic:null },
+      { char:'者', pinyin:'ㄓㄜˇ', radical:'老部', strokeCount:8, words:[
+          {word:'作者', sentence:'這本書的作者是誰?'},
+          {word:'讀者', sentence:'讀者都很喜歡這個故事。'},
+          {word:'或者', sentence:'你要喝水,或者喝果汁?'}
+        ], polyphonic:null, moreWords:['記者']},
+      { char:'飛', pinyin:'ㄈㄟ', radical:'飛部', strokeCount:9, words:[
+          {word:'飛機', sentence:'我們搭飛機去旅行。'},
+          {word:'飛翔', sentence:'小鳥在天空飛翔。'},
+          {word:'起飛', sentence:'飛機準備起飛了。'}
+        ], polyphonic:null, moreWords:['飛快','飛舞']},
+      { char:'具', pinyin:'ㄐㄩˋ', radical:'八部', strokeCount:8, words:[
+          {word:'玩具', sentence:'黑皮最喜歡玩具骨頭。'},
+          {word:'工具', sentence:'爸爸用工具修理椅子。'},
+          {word:'用具', sentence:'學校借給我們運動用具。'}
+        ], polyphonic:null, moreWords:['具備']},
+      { char:'皮', pinyin:'ㄆㄧˊ', radical:'皮部', strokeCount:5, words:[
+          {word:'黑皮', sentence:'這隻小狗叫做黑皮。'},
+          {word:'皮膚', sentence:'曬太陽要注意保護皮膚。'},
+          {word:'皮球', sentence:'弟弟在草地上玩皮球。'}
+        ], polyphonic:null, moreWords:['皮包','調皮']},
       { char:'急', pinyin:'ㄐㄧˊ', radical:'心部', strokeCount:9, words:[
-          {word:'著急', sentence:'找不到鑰匙讓他很著急。'},
-          {word:'急忙', sentence:'他急忙跑去接電話。'},
-          {word:'緊急', sentence:'遇到緊急情況要保持冷靜。'}
-        ], polyphonic:null, moreWords:['急救','心急']},
-      { char:'剛', pinyin:'ㄍㄤ', radical:'刀部(刂)', strokeCount:10, words:[
-          {word:'剛剛', sentence:'我剛剛才到家。'},
-          {word:'剛才', sentence:'剛才是誰在敲門?'},
-          {word:'剛好', sentence:'這件衣服的大小剛好合身。'}
-        ], polyphonic:null },
-      { char:'趕', pinyin:'ㄍㄢˇ', radical:'走部', strokeCount:14, words:[
-          {word:'趕快', sentence:'快遲到了,我們趕快走吧!'},
-          {word:'趕路', sentence:'旅人日夜趕路,終於到達目的地。'},
-          {word:'趕上', sentence:'他跑得很快,終於趕上公車。'}
-        ], polyphonic:null, moreWords:['趕緊','追趕']},
-      { char:'如', pinyin:'ㄖㄨˊ', radical:'女部', strokeCount:6, words:[
-          {word:'如果', sentence:'如果明天下雨,我們就不去了。'},
-          {word:'不如', sentence:'與其抱怨,不如努力改變。'},
-          {word:'如同', sentence:'他對我如同親兄弟一樣。'}
-        ], polyphonic:null, moreWords:['如此','假如']},
-      { char:'敬', pinyin:'ㄐㄧㄥˋ', radical:'攴部(攵)', strokeCount:13, words:[
-          {word:'尊敬', sentence:'我們要尊敬長輩。'},
-          {word:'敬佩', sentence:'大家都很敬佩他的勇氣。'},
-          {word:'敬愛', sentence:'我很敬愛我的老師。'}
-        ], polyphonic:null, moreWords:['敬禮','恭敬']},
-      { char:'佩', pinyin:'ㄆㄟˋ', radical:'人部(亻)', strokeCount:8, words:[
-          {word:'佩服', sentence:'我真的很佩服他的耐心。'},
-          {word:'敬佩', sentence:'大家都敬佩他的誠實。'},
-          {word:'佩帶', sentence:'警察佩帶著配槍執勤。'}
-        ], polyphonic:null },
-      { char:'換', pinyin:'ㄏㄨㄢˋ', radical:'手部(扌)', strokeCount:12, words:[
-          {word:'交換', sentence:'我們交換玩具一起玩。'},
-          {word:'換衣服', sentence:'弟弟弄濕了衣服,要換衣服。'},
-          {word:'更換', sentence:'這個燈泡壞了,需要更換。'}
-        ], polyphonic:null, moreWords:['換錢','替換']},
-      { char:'買', pinyin:'ㄇㄞˇ', radical:'貝部', strokeCount:12, words:[
-          {word:'買賣', sentence:'這是一筆公平的買賣。'},
-          {word:'購買', sentence:'媽媽在網路上購買日用品。'},
-          {word:'買東西', sentence:'我陪媽媽去市場買東西。'}
-        ], polyphonic:null, moreWords:['買單','採買']},
-      { char:'傷', pinyin:'ㄕㄤ', radical:'人部(亻)', strokeCount:13, words:[
-          {word:'受傷', sentence:'他不小心跌倒受傷了。'},
-          {word:'傷心', sentence:'弄丟了心愛的玩具讓她很傷心。'},
-          {word:'傷口', sentence:'護士小心地包紮傷口。'}
-        ], polyphonic:null, moreWords:['傷害','悲傷']},
-      { char:'害', pinyin:'ㄏㄞˋ', radical:'宀部', strokeCount:10, words:[
-          {word:'害怕', sentence:'妹妹很害怕打雷的聲音。'},
-          {word:'傷害', sentence:'我們不可以傷害小動物。'},
-          {word:'厲害', sentence:'哥哥的籃球打得真厲害。'}
-        ], polyphonic:null, moreWords:['害羞','危害']},
-      { char:'主', pinyin:'ㄓㄨˇ', radical:'丶部', strokeCount:5, words:[
-          {word:'主人', sentence:'小狗很喜歡牠的主人。'},
-          {word:'公主', sentence:'故事裡的公主非常善良。'},
-          {word:'主意', sentence:'這是一個很棒的主意。'}
-        ], polyphonic:null, moreWords:['主角','主動']}
+          {word:'著急', sentence:'找不到黑皮讓大家很著急。'},
+          {word:'緊急', sentence:'遇到緊急狀況要保持冷靜。'},
+          {word:'急忙', sentence:'他急忙跑出門去找黑皮。'}
+        ], polyphonic:null, moreWords:['急救']},
+      { char:'伸', pinyin:'ㄕㄣ', radical:'人部', strokeCount:7, words:[
+          {word:'伸手', sentence:'他伸手摸摸黑皮的頭。'},
+          {word:'伸展', sentence:'運動前要先伸展身體。'},
+          {word:'延伸', sentence:'這條路一直延伸到海邊。'}
+        ], polyphonic:null, moreWords:['伸懶腰']},
+      { char:'嘴', pinyin:'ㄗㄨㄟˇ', radical:'口部', strokeCount:16, words:[
+          {word:'嘴巴', sentence:'黑皮的嘴巴叼著球。'},
+          {word:'嘴角', sentence:'她笑起來嘴角向上揚。'},
+          {word:'插嘴', sentence:'說話時不要隨便插嘴。'}
+        ], polyphonic:null, moreWords:['嘴唇']},
+      { char:'北', pinyin:'ㄅㄟˇ', radical:'匕部', strokeCount:5, words:[
+          {word:'北方', sentence:'黑皮從遙遠的北方來。'},
+          {word:'台北', sentence:'我們住在台北。'},
+          {word:'北風', sentence:'冬天吹起了北風。'}
+        ], polyphonic:null, moreWords:['東北']},
+      { char:'寒', pinyin:'ㄏㄢˊ', radical:'宀部', strokeCount:12, words:[
+          {word:'寒冷', sentence:'北方的天氣非常寒冷。'},
+          {word:'寒假', sentence:'寒假我們一起去爬山。'},
+          {word:'寒風', sentence:'寒風吹得大家直發抖。'}
+        ], polyphonic:null, moreWords:['寒流']},
+      { char:'洋', pinyin:'ㄧㄤˊ', radical:'水部(氵)', strokeCount:9, words:[
+          {word:'海洋', sentence:'黑皮游過寬廣的海洋。'},
+          {word:'太平洋', sentence:'台灣東邊是太平洋。'},
+          {word:'洋裝', sentence:'妹妹穿著漂亮的洋裝。'}
+        ], polyphonic:null, moreWords:['洋娃娃']},
+      { char:'翅', pinyin:'ㄔˋ', radical:'羽部', strokeCount:10, words:[
+          {word:'翅膀', sentence:'小鳥張開翅膀飛走了。'},
+          {word:'雞翅', sentence:'我最喜歡吃雞翅。'},
+          {word:'展翅', sentence:'老鷹展翅高飛。'}
+        ], polyphonic:null},
+      { char:'站', pinyin:'ㄓㄢˋ', radical:'立部', strokeCount:10, words:[
+          {word:'車站', sentence:'黑皮在車站前等主人。'},
+          {word:'站立', sentence:'小狗站立起來搖尾巴。'},
+          {word:'站崗', sentence:'警衛認真地站崗。'}
+        ], polyphonic:null, moreWords:['站起來']},
+      { char:'服', pinyin:'ㄈㄨˊ', radical:'月部', strokeCount:8, words:[
+          {word:'衣服', sentence:'黑皮的衣服全都濕透了。'},
+          {word:'服務', sentence:'店員親切地服務客人。'},
+          {word:'佩服', sentence:'我很佩服他的勇氣。'}
+        ], polyphonic:null, moreWords:['舒服','說服']},
+      { char:'沙', pinyin:'ㄕㄚ', radical:'水部(氵)', strokeCount:7, words:[
+          {word:'沙灘', sentence:'黑皮在沙灘上奔跑。'},
+          {word:'沙子', sentence:'海邊有柔軟的沙子。'},
+          {word:'沙漠', sentence:'駱駝住在乾燥的沙漠。'}
+        ], polyphonic:null, moreWords:['沙發']},
+      { char:'飽', pinyin:'ㄅㄠˇ', radical:'食部', strokeCount:13, words:[
+          {word:'吃飽', sentence:'黑皮終於吃飽了。'},
+          {word:'飽足', sentence:'吃完飯覺得很飽足。'},
+          {word:'溫飽', sentence:'努力工作是為了家人的溫飽。'}
+        ], polyphonic:null, moreWords:['飽滿']},
+      { char:'念', pinyin:'ㄋㄧㄢˋ', radical:'心部', strokeCount:8, words:[
+          {word:'想念', sentence:'主人非常想念黑皮。'},
+          {word:'念書', sentence:'哥哥在房間裡念書。'},
+          {word:'懷念', sentence:'我很懷念以前的日子。'}
+        ], polyphonic:null, moreWords:['念頭']},
+      { char:'充', pinyin:'ㄔㄨㄥ', radical:'儿部', strokeCount:5, words:[
+          {word:'充滿', sentence:'找回黑皮的那一刻,大家心裡充滿了喜悅。'},
+          {word:'充足', sentence:'睡眠充足才有精神。'},
+          {word:'補充', sentence:'媽媽幫黑皮補充水分。'}
+        ], polyphonic:null, moreWords:['充電']},
+      { char:'勝', pinyin:'ㄕㄥˋ', radical:'肉部(月)', strokeCount:14, words:[
+          {word:'勝利', sentence:'球隊贏得了勝利。'},
+          {word:'獲勝', sentence:'我們這次比賽獲勝了。'},
+          {word:'勝過', sentence:'他的勇氣勝過任何人。'}
+        ], polyphonic:null, moreWords:['名勝']}
     ],
 
     gameTitle: '🎯 生字挑戰',
     levelPool: [
-      { id:1, title:'筆畫', photo:'✏️', before:'「急」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['14','18','9'], correct:'9', hint:'提示:「急」共有9畫。', blanks:1 },
-      { id:2, title:'造詞', photo:'📖', before:'我陪媽媽去市場', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['厲害','有名','買東西'], correct:'買東西', hint:'提示:「買東西」是用「買」字造的詞。', blanks:1 },
-      { id:3, title:'筆畫', photo:'✏️', before:'「佩」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['10','4','8'], correct:'8', hint:'提示:「佩」共有8畫。', blanks:1 },
-      { id:4, title:'造詞', photo:'📖', before:'我們', after:'玩具一起玩。', zh:'💡 選出正確的詞語,填入空格', options:['買東西','佩服','交換'], correct:'交換', hint:'提示:「交換」是用「換」字造的詞。', blanks:1 },
-      { id:5, title:'造詞', photo:'📖', before:'請問你的', after:'是什麼?', zh:'💡 選出正確的詞語,填入空格', options:['名字','馬匹','主意'], correct:'名字', hint:'提示:「名字」是用「名」字造的詞。', blanks:1 },
-      { id:6, title:'部首', photo:'📝', before:'「名」的部首是', after:'?', zh:'💡 選出正確的部首', options:['口部','馬部','刀部(刂)'], correct:'口部', hint:'提示:「名」的部首是「口部」。', blanks:1 },
-      { id:7, title:'造詞', photo:'📖', before:'弟弟弄濕了衣服,要', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['尊敬','大叫','換衣服'], correct:'換衣服', hint:'提示:「換衣服」是用「換」字造的詞。', blanks:1 },
-      { id:8, title:'部首', photo:'📝', before:'「換」的部首是', after:'?', zh:'💡 選出正確的部首', options:['口部','人部(亻)','手部(扌)'], correct:'手部(扌)', hint:'提示:「換」的部首是「手部(扌)」。', blanks:1 },
-      { id:9, title:'部首', photo:'📝', before:'「如」的部首是', after:'?', zh:'💡 選出正確的部首', options:['宀部','心部','女部'], correct:'女部', hint:'提示:「如」的部首是「女部」。', blanks:1 },
-      { id:10, title:'造詞', photo:'📖', before:'他在操場上大聲', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['佩服','趕上','叫喊'], correct:'叫喊', hint:'提示:「叫喊」是用「叫」字造的詞。', blanks:1 },
-      { id:11, title:'部首', photo:'📝', before:'「匹」的部首是', after:'?', zh:'💡 選出正確的部首', options:['馬部','匚部','人部(亻)'], correct:'匚部', hint:'提示:「匹」的部首是「匚部」。', blanks:1 },
-      { id:12, title:'部首', photo:'📝', before:'「剛」的部首是', after:'?', zh:'💡 選出正確的部首', options:['手部(扌)','攴部(攵)','刀部(刂)'], correct:'刀部(刂)', hint:'提示:「剛」的部首是「刀部(刂)」。', blanks:1 },
-      { id:13, title:'造詞', photo:'📖', before:'這件衣服的大小', after:'合身。', zh:'💡 選出正確的詞語,填入空格', options:['剛好','敬愛','主意'], correct:'剛好', hint:'提示:「剛好」是用「剛」字造的詞。', blanks:1 },
-      { id:14, title:'筆畫', photo:'✏️', before:'「匹」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['9','5','4'], correct:'4', hint:'提示:「匹」共有4畫。', blanks:1 },
-      { id:15, title:'造詞', photo:'📖', before:'我真的很', after:'他的耐心。', zh:'💡 選出正確的詞語,填入空格', options:['受傷','佩服','名字'], correct:'佩服', hint:'提示:「佩服」是用「佩」字造的詞。', blanks:1 },
-      { id:16, title:'造詞', photo:'📖', before:'這種動物', after:'無尾熊。', zh:'💡 選出正確的詞語,填入空格', options:['一匹馬','叫做','如同'], correct:'叫做', hint:'提示:「叫做」是用「叫」字造的詞。', blanks:1 },
-      { id:17, title:'造詞', photo:'📖', before:'媽媽在網路上', after:'日用品。', zh:'💡 選出正確的詞語,填入空格', options:['更換','名字','購買'], correct:'購買', hint:'提示:「購買」是用「買」字造的詞。', blanks:1 },
-      { id:18, title:'筆畫', photo:'✏️', before:'「害」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['9','10','14'], correct:'10', hint:'提示:「害」共有10畫。', blanks:1 },
-      { id:19, title:'造詞', photo:'📖', before:'故事裡的', after:'非常善良。', zh:'💡 選出正確的詞語,填入空格', options:['公主','大叫','剛剛'], correct:'公主', hint:'提示:「公主」是用「主」字造的詞。', blanks:1 },
-      { id:20, title:'造詞', photo:'📖', before:'他不小心跌倒', after:'了。', zh:'💡 選出正確的詞語,填入空格', options:['不如','換衣服','受傷'], correct:'受傷', hint:'提示:「受傷」是用「傷」字造的詞。', blanks:1 },
-      { id:21, title:'造詞', photo:'📖', before:'這個燈泡壞了,需要', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['姓名','害怕','更換'], correct:'更換', hint:'提示:「更換」是用「換」字造的詞。', blanks:1 },
-      { id:22, title:'造詞', photo:'📖', before:'快遲到了,我們', after:'走吧!', zh:'💡 選出正確的詞語,填入空格', options:['趕快','如果','叫喊'], correct:'趕快', hint:'提示:「趕快」是用「趕」字造的詞。', blanks:1 },
-      { id:23, title:'造詞', photo:'📖', before:'這是一個很棒的', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['主意','剛剛','如同'], correct:'主意', hint:'提示:「主意」是用「主」字造的詞。', blanks:1 },
-      { id:24, title:'造詞', photo:'📖', before:'小狗很喜歡牠的', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['主人','購買','更換'], correct:'主人', hint:'提示:「主人」是用「主」字造的詞。', blanks:1 },
-      { id:25, title:'部首', photo:'📝', before:'「叫」的部首是', after:'?', zh:'💡 選出正確的部首', options:['口部','人部(亻)','刀部(刂)'], correct:'口部', hint:'提示:「叫」的部首是「口部」。', blanks:1 },
-      { id:26, title:'造詞', photo:'📖', before:'這家店的蛋糕很', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['有名','購買','厲害'], correct:'有名', hint:'提示:「有名」是用「名」字造的詞。', blanks:1 },
-      { id:27, title:'造詞', photo:'📖', before:'我們要', after:'長輩。', zh:'💡 選出正確的詞語,填入空格', options:['尊敬','叫喊','換衣服'], correct:'尊敬', hint:'提示:「尊敬」是用「敬」字造的詞。', blanks:1 },
-      { id:28, title:'部首', photo:'📝', before:'「騎」的部首是', after:'?', zh:'💡 選出正確的部首', options:['走部','馬部','女部'], correct:'馬部', hint:'提示:「騎」的部首是「馬部」。', blanks:1 },
-      { id:29, title:'造詞', photo:'📖', before:'大家都', after:'他的誠實。', zh:'💡 選出正確的詞語,填入空格', options:['買東西','敬佩','一匹馬'], correct:'敬佩', hint:'提示:「敬佩」是用「佩」字造的詞。', blanks:1 },
-      { id:30, title:'筆畫', photo:'✏️', before:'「叫」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['10','5','18'], correct:'5', hint:'提示:「叫」共有5畫。', blanks:1 },
-      { id:31, title:'造詞', photo:'📖', before:'我每天', after:'去上學。', zh:'💡 選出正確的詞語,填入空格', options:['傷害','尊敬','騎車'], correct:'騎車', hint:'提示:「騎車」是用「騎」字造的詞。', blanks:1 },
-      { id:32, title:'筆畫', photo:'✏️', before:'「傷」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['6','13','14'], correct:'13', hint:'提示:「傷」共有13畫。', blanks:1 },
-      { id:33, title:'造詞', photo:'📖', before:'我們不可以', after:'小動物。', zh:'💡 選出正確的詞語,填入空格', options:['受傷','傷害','剛才'], correct:'傷害', hint:'提示:「傷害」是用「害」字造的詞。', blanks:1 },
-      { id:34, title:'造詞', photo:'📖', before:'他跑得很快,終於', after:'公車。', zh:'💡 選出正確的詞語,填入空格', options:['買賣','趕上','如同'], correct:'趕上', hint:'提示:「趕上」是用「趕」字造的詞。', blanks:1 },
-      { id:35, title:'造詞', photo:'📖', before:'這是一筆公平的', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['更換','趕路','買賣'], correct:'買賣', hint:'提示:「買賣」是用「買」字造的詞。', blanks:1 },
-      { id:36, title:'筆畫', photo:'✏️', before:'「如」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['5','13','6'], correct:'6', hint:'提示:「如」共有6畫。', blanks:1 },
-      { id:37, title:'造詞', photo:'📖', before:'他', after:'跑去接電話。', zh:'💡 選出正確的詞語,填入空格', options:['急忙','主意','敬愛'], correct:'急忙', hint:'提示:「急忙」是用「急」字造的詞。', blanks:1 },
-      { id:38, title:'造詞', photo:'📖', before:'看到蜘蛛,妹妹嚇得', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['騎馬','更換','大叫'], correct:'大叫', hint:'提示:「大叫」是用「叫」字造的詞。', blanks:1 },
-      { id:39, title:'筆畫', photo:'✏️', before:'「騎」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['14','4','18'], correct:'18', hint:'提示:「騎」共有18畫。', blanks:1 },
-      { id:40, title:'造詞', photo:'📖', before:'', after:'明天下雨,我們就不去了。', zh:'💡 選出正確的詞語,填入空格', options:['敬佩','如果','馬匹'], correct:'如果', hint:'提示:「如果」是用「如」字造的詞。', blanks:1 },
-      { id:41, title:'筆畫', photo:'✏️', before:'「主」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['8','5','6'], correct:'5', hint:'提示:「主」共有5畫。', blanks:1 },
-      { id:42, title:'造詞', photo:'📖', before:'護士小心地包紮', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['傷口','受傷','如果'], correct:'傷口', hint:'提示:「傷口」是用「傷」字造的詞。', blanks:1 },
-      { id:43, title:'筆畫', photo:'✏️', before:'「買」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['12','8','5'], correct:'12', hint:'提示:「買」共有12畫。', blanks:1 },
-      { id:44, title:'造詞', photo:'📖', before:'', after:'是誰在敲門?', zh:'💡 選出正確的詞語,填入空格', options:['剛剛','剛才','公主'], correct:'剛才', hint:'提示:「剛才」是用「剛」字造的詞。', blanks:1 },
-      { id:45, title:'造詞', photo:'📖', before:'警察', after:'著配槍執勤。', zh:'💡 選出正確的詞語,填入空格', options:['剛好','受傷','佩帶'], correct:'佩帶', hint:'提示:「佩帶」是用「佩」字造的詞。', blanks:1 },
-      { id:46, title:'造詞', photo:'📖', before:'他對我', after:'親兄弟一樣。', zh:'💡 選出正確的詞語,填入空格', options:['如同','趕快','佩服'], correct:'如同', hint:'提示:「如同」是用「如」字造的詞。', blanks:1 },
-      { id:47, title:'造詞', photo:'📖', before:'我', after:'才到家。', zh:'💡 選出正確的詞語,填入空格', options:['趕路','剛剛','緊急'], correct:'剛剛', hint:'提示:「剛剛」是用「剛」字造的詞。', blanks:1 },
-      { id:48, title:'造詞', photo:'📖', before:'大家都很', after:'他的勇氣。', zh:'💡 選出正確的詞語,填入空格', options:['敬佩','叫喊','不如'], correct:'敬佩', hint:'提示:「敬佩」是用「敬」字造的詞。', blanks:1 },
-      { id:49, title:'筆畫', photo:'✏️', before:'「趕」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:['13','18','14'], correct:'14', hint:'提示:「趕」共有14畫。', blanks:1 },
-      { id:50, title:'造詞', photo:'📖', before:'請在考卷上寫上', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['不如','姓名','大叫'], correct:'姓名', hint:'提示:「姓名」是用「名」字造的詞。', blanks:1 },
-      { id:51, title:'部首', photo:'📝', before:'「趕」的部首是', after:'?', zh:'💡 選出正確的部首', options:['心部','貝部','走部'], correct:'走部', hint:'提示:「趕」的部首是「走部」。', blanks:1 },
-      { id:52, title:'造詞', photo:'📖', before:'找不到鑰匙讓他很', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['著急','受傷','更換'], correct:'著急', hint:'提示:「著急」是用「急」字造的詞。', blanks:1 },
-      { id:53, title:'造詞', photo:'📖', before:'弄丟了心愛的玩具讓她很', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['傷心','如同','買東西'], correct:'傷心', hint:'提示:「傷心」是用「傷」字造的詞。', blanks:1 },
-      { id:54, title:'部首', photo:'📝', before:'「傷」的部首是', after:'?', zh:'💡 選出正確的部首', options:['人部(亻)','匚部','走部'], correct:'人部(亻)', hint:'提示:「傷」的部首是「人部(亻)」。', blanks:1 },
-      { id:55, title:'造詞', photo:'📖', before:'我很', after:'我的老師。', zh:'💡 選出正確的詞語,填入空格', options:['尊敬','敬愛','趕路'], correct:'敬愛', hint:'提示:「敬愛」是用「敬」字造的詞。', blanks:1 },
-      { id:56, title:'部首', photo:'📝', before:'「急」的部首是', after:'?', zh:'💡 選出正確的部首', options:['女部','貝部','心部'], correct:'心部', hint:'提示:「急」的部首是「心部」。', blanks:1 },
-      { id:57, title:'部首', photo:'📝', before:'「敬」的部首是', after:'?', zh:'💡 選出正確的部首', options:['貝部','手部(扌)','攴部(攵)'], correct:'攴部(攵)', hint:'提示:「敬」的部首是「攴部(攵)」。', blanks:1 },
-      { id:58, title:'造詞', photo:'📖', before:'農場裡養了好幾匹', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['購買','騎車','馬匹'], correct:'馬匹', hint:'提示:「馬匹」是用「匹」字造的詞。', blanks:1 },
-      { id:59, title:'造詞', photo:'📖', before:'庾亮很喜歡', after:'出門。', zh:'💡 選出正確的詞語,填入空格', options:['名字','一匹馬','騎馬'], correct:'騎馬', hint:'提示:「騎馬」是用「騎」字造的詞。', blanks:1 },
-      { id:60, title:'造詞', photo:'📖', before:'哥哥的籃球打得真', after:'。', zh:'💡 選出正確的詞語,填入空格', options:['更換','厲害','趕路'], correct:'厲害', hint:'提示:「厲害」是用「害」字造的詞。', blanks:1 }
+      { id:1, title:'筆畫', photo:'✏️', before:'「站」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["11","10","9"], correct:'10', hint:'提示:「站」共有10畫。', blanks:1 },
+      { id:2, title:'造詞', photo:'📖', before:'找回黑皮的那一刻,大家心裡', after:'了喜悅。', zh:'💡 選出正確的詞語,填入空格', options:["用具","充滿","北風"], correct:'充滿', hint:'提示:「充滿」是用「充」字造的詞。', blanks:1 },
+      { id:3, title:'造詞', photo:'📖', before:'他的勇氣', after:'任何人。', zh:'💡 選出正確的詞語,填入空格', options:["補充","起飛","勝過"], correct:'勝過', hint:'提示:「勝過」是用「勝」字造的詞。', blanks:1 },
+      { id:4, title:'部首', photo:'📝', before:'「充」的部首是', after:'?', zh:'💡 選出正確的部首', options:["儿部","八部","口部"], correct:'儿部', hint:'提示:「充」的部首是「儿部」。', blanks:1 },
+      { id:5, title:'造詞', photo:'📖', before:'小狗', after:'起來搖尾巴。', zh:'💡 選出正確的詞語,填入空格', options:["雞翅","起飛","站立"], correct:'站立', hint:'提示:「站立」是用「站」字造的詞。', blanks:1 },
+      { id:6, title:'造詞', photo:'📖', before:'吃完飯覺得很', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["讀者","飽足","懷念"], correct:'飽足', hint:'提示:「飽足」是用「飽」字造的詞。', blanks:1 },
+      { id:7, title:'造詞', photo:'📖', before:'黑皮終於', after:'了。', zh:'💡 選出正確的詞語,填入空格', options:["翅膀","吃飽","展翅"], correct:'吃飽', hint:'提示:「吃飽」是用「飽」字造的詞。', blanks:1 },
+      { id:8, title:'造詞', photo:'📖', before:'這隻小狗叫做', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["用具","充滿","黑皮"], correct:'黑皮', hint:'提示:「黑皮」是用「皮」字造的詞。', blanks:1 },
+      { id:9, title:'造詞', photo:'📖', before:'睡眠', after:'才有精神。', zh:'💡 選出正確的詞語,填入空格', options:["飽足","充足","沙灘"], correct:'充足', hint:'提示:「充足」是用「充」字造的詞。', blanks:1 },
+      { id:10, title:'造詞', photo:'📖', before:'黑皮在', after:'前等主人。', zh:'💡 選出正確的詞語,填入空格', options:["充滿","黑皮","車站"], correct:'車站', hint:'提示:「車站」是用「站」字造的詞。', blanks:1 },
+      { id:11, title:'造詞', photo:'📖', before:'黑皮的', after:'全都濕透了。', zh:'💡 選出正確的詞語,填入空格', options:["洋裝","衣服","飽足"], correct:'衣服', hint:'提示:「衣服」是用「服」字造的詞。', blanks:1 },
+      { id:12, title:'造詞', photo:'📖', before:'我們住在', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["台北","緊急","嘴角"], correct:'台北', hint:'提示:「台北」是用「北」字造的詞。', blanks:1 },
+      { id:13, title:'筆畫', photo:'✏️', before:'「充」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["6","5","4"], correct:'5', hint:'提示:「充」共有5畫。', blanks:1 },
+      { id:14, title:'造詞', photo:'📖', before:'', after:'吹得大家直發抖。', zh:'💡 選出正確的詞語,填入空格', options:["寒風","延伸","著急"], correct:'寒風', hint:'提示:「寒風」是用「寒」字造的詞。', blanks:1 },
+      { id:15, title:'部首', photo:'📝', before:'「伸」的部首是', after:'?', zh:'💡 選出正確的部首', options:["肉部(月)","食部","人部"], correct:'人部', hint:'提示:「伸」的部首是「人部」。', blanks:1 },
+      { id:16, title:'造詞', photo:'📖', before:'他', after:'摸摸黑皮的頭。', zh:'💡 選出正確的詞語,填入空格', options:["伸手","玩具","作者"], correct:'伸手', hint:'提示:「伸手」是用「伸」字造的詞。', blanks:1 },
+      { id:17, title:'造詞', photo:'📖', before:'海邊有柔軟的', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["沙子","獲勝","或者"], correct:'沙子', hint:'提示:「沙子」是用「沙」字造的詞。', blanks:1 },
+      { id:18, title:'筆畫', photo:'✏️', before:'「皮」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["6","4","5"], correct:'5', hint:'提示:「皮」共有5畫。', blanks:1 },
+      { id:19, title:'部首', photo:'📝', before:'「者」的部首是', after:'?', zh:'💡 選出正確的部首', options:["心部","八部","老部"], correct:'老部', hint:'提示:「者」的部首是「老部」。', blanks:1 },
+      { id:20, title:'造詞', photo:'📖', before:'台灣東邊是', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["車站","獲勝","太平洋"], correct:'太平洋', hint:'提示:「太平洋」是用「洋」字造的詞。', blanks:1 },
+      { id:21, title:'造詞', photo:'📖', before:'她笑起來', after:'向上揚。', zh:'💡 選出正確的詞語,填入空格', options:["雞翅","嘴角","插嘴"], correct:'嘴角', hint:'提示:「嘴角」是用「嘴」字造的詞。', blanks:1 },
+      { id:22, title:'造詞', photo:'📖', before:'店員親切地', after:'客人。', zh:'💡 選出正確的詞語,填入空格', options:["寒風","服務","起飛"], correct:'服務', hint:'提示:「服務」是用「服」字造的詞。', blanks:1 },
+      { id:23, title:'造詞', photo:'📖', before:'學校借給我們運動', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["翅膀","站立","用具"], correct:'用具', hint:'提示:「用具」是用「具」字造的詞。', blanks:1 },
+      { id:24, title:'部首', photo:'📝', before:'「服」的部首是', after:'?', zh:'💡 選出正確的部首', options:["月部","儿部","立部"], correct:'月部', hint:'提示:「服」的部首是「月部」。', blanks:1 },
+      { id:25, title:'造詞', photo:'📖', before:'我很', after:'以前的日子。', zh:'💡 選出正確的詞語,填入空格', options:["懷念","衣服","北方"], correct:'懷念', hint:'提示:「懷念」是用「念」字造的詞。', blanks:1 },
+      { id:26, title:'筆畫', photo:'✏️', before:'「具」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["9","7","8"], correct:'8', hint:'提示:「具」共有8畫。', blanks:1 },
+      { id:27, title:'筆畫', photo:'✏️', before:'「嘴」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["15","17","16"], correct:'16', hint:'提示:「嘴」共有16畫。', blanks:1 },
+      { id:28, title:'造詞', photo:'📖', before:'主人非常', after:'黑皮。', zh:'💡 選出正確的詞語,填入空格', options:["想念","溫飽","充滿"], correct:'想念', hint:'提示:「想念」是用「念」字造的詞。', blanks:1 },
+      { id:29, title:'造詞', photo:'📖', before:'弟弟在草地上玩', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["吃飽","皮球","用具"], correct:'皮球', hint:'提示:「皮球」是用「皮」字造的詞。', blanks:1 },
+      { id:30, title:'造詞', photo:'📖', before:'我很', after:'他的勇氣。', zh:'💡 選出正確的詞語,填入空格', options:["站立","佩服","充足"], correct:'佩服', hint:'提示:「佩服」是用「服」字造的詞。', blanks:1 },
+      { id:31, title:'造詞', photo:'📖', before:'', after:'我們一起去爬山。', zh:'💡 選出正確的詞語,填入空格', options:["站立","寒假","著急"], correct:'寒假', hint:'提示:「寒假」是用「寒」字造的詞。', blanks:1 },
+      { id:32, title:'造詞', photo:'📖', before:'北方的天氣非常', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["嘴巴","寒冷","勝利"], correct:'寒冷', hint:'提示:「寒冷」是用「寒」字造的詞。', blanks:1 },
+      { id:33, title:'筆畫', photo:'✏️', before:'「飛」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["10","8","9"], correct:'9', hint:'提示:「飛」共有9畫。', blanks:1 },
+      { id:34, title:'造詞', photo:'📖', before:'駱駝住在乾燥的', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["沙漠","北風","緊急"], correct:'沙漠', hint:'提示:「沙漠」是用「沙」字造的詞。', blanks:1 },
+      { id:35, title:'部首', photo:'📝', before:'「皮」的部首是', after:'?', zh:'💡 選出正確的部首', options:["儿部","口部","皮部"], correct:'皮部', hint:'提示:「皮」的部首是「皮部」。', blanks:1 },
+      { id:36, title:'造詞', photo:'📖', before:'黑皮最喜歡', after:'骨頭。', zh:'💡 選出正確的詞語,填入空格', options:["吃飽","著急","玩具"], correct:'玩具', hint:'提示:「玩具」是用「具」字造的詞。', blanks:1 },
+      { id:37, title:'造詞', photo:'📖', before:'這本書的', after:'是誰?', zh:'💡 選出正確的詞語,填入空格', options:["溫飽","作者","插嘴"], correct:'作者', hint:'提示:「作者」是用「者」字造的詞。', blanks:1 },
+      { id:38, title:'造詞', photo:'📖', before:'飛機準備', after:'了。', zh:'💡 選出正確的詞語,填入空格', options:["北風","充滿","起飛"], correct:'起飛', hint:'提示:「起飛」是用「飛」字造的詞。', blanks:1 },
+      { id:39, title:'造詞', photo:'📖', before:'小鳥在天空', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["急忙","勝過","飛翔"], correct:'飛翔', hint:'提示:「飛翔」是用「飛」字造的詞。', blanks:1 },
+      { id:40, title:'造詞', photo:'📖', before:'努力工作是為了家人的', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["衣服","溫飽","獲勝"], correct:'溫飽', hint:'提示:「溫飽」是用「飽」字造的詞。', blanks:1 },
+      { id:41, title:'部首', photo:'📝', before:'「站」的部首是', after:'?', zh:'💡 選出正確的部首', options:["立部","水部(氵)","人部"], correct:'立部', hint:'提示:「站」的部首是「立部」。', blanks:1 },
+      { id:42, title:'造詞', photo:'📖', before:'黑皮的', after:'叼著球。', zh:'💡 選出正確的詞語,填入空格', options:["北風","嘴巴","沙漠"], correct:'嘴巴', hint:'提示:「嘴巴」是用「嘴」字造的詞。', blanks:1 },
+      { id:43, title:'造詞', photo:'📖', before:'冬天吹起了', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["勝利","北風","急忙"], correct:'北風', hint:'提示:「北風」是用「北」字造的詞。', blanks:1 },
+      { id:44, title:'筆畫', photo:'✏️', before:'「者」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["7","9","8"], correct:'8', hint:'提示:「者」共有8畫。', blanks:1 },
+      { id:45, title:'造詞', photo:'📖', before:'老鷹', after:'高飛。', zh:'💡 選出正確的詞語,填入空格', options:["沙灘","站崗","展翅"], correct:'展翅', hint:'提示:「展翅」是用「翅」字造的詞。', blanks:1 },
+      { id:46, title:'部首', photo:'📝', before:'「飽」的部首是', after:'?', zh:'💡 選出正確的部首', options:["飛部","食部","儿部"], correct:'食部', hint:'提示:「飽」的部首是「食部」。', blanks:1 },
+      { id:47, title:'部首', photo:'📝', before:'「寒」的部首是', after:'?', zh:'💡 選出正確的部首', options:["羽部","宀部","儿部"], correct:'宀部', hint:'提示:「寒」的部首是「宀部」。', blanks:1 },
+      { id:48, title:'造詞', photo:'📖', before:'媽媽幫黑皮', after:'水分。', zh:'💡 選出正確的詞語,填入空格', options:["翅膀","補充","沙子"], correct:'補充', hint:'提示:「補充」是用「充」字造的詞。', blanks:1 },
+      { id:49, title:'造詞', photo:'📖', before:'我們這次比賽', after:'了。', zh:'💡 選出正確的詞語,填入空格', options:["獲勝","飛翔","伸手"], correct:'獲勝', hint:'提示:「獲勝」是用「勝」字造的詞。', blanks:1 },
+      { id:50, title:'部首', photo:'📝', before:'「嘴」的部首是', after:'?', zh:'💡 選出正確的部首', options:["水部(氵)","飛部","口部"], correct:'口部', hint:'提示:「嘴」的部首是「口部」。', blanks:1 },
+      { id:51, title:'部首', photo:'📝', before:'「北」的部首是', after:'?', zh:'💡 選出正確的部首', options:["水部(氵)","宀部","匕部"], correct:'匕部', hint:'提示:「北」的部首是「匕部」。', blanks:1 },
+      { id:52, title:'部首', photo:'📝', before:'「沙」的部首是', after:'?', zh:'💡 選出正確的部首', options:["口部","水部(氵)","八部"], correct:'水部(氵)', hint:'提示:「沙」的部首是「水部(氵)」。', blanks:1 },
+      { id:53, title:'造詞', photo:'📖', before:'我們搭', after:'去旅行。', zh:'💡 選出正確的詞語,填入空格', options:["讀者","黑皮","飛機"], correct:'飛機', hint:'提示:「飛機」是用「飛」字造的詞。', blanks:1 },
+      { id:54, title:'筆畫', photo:'✏️', before:'「翅」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["11","10","9"], correct:'10', hint:'提示:「翅」共有10畫。', blanks:1 },
+      { id:55, title:'筆畫', photo:'✏️', before:'「伸」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["6","8","7"], correct:'7', hint:'提示:「伸」共有7畫。', blanks:1 },
+      { id:56, title:'造詞', photo:'📖', before:'警衛認真地', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["充滿","玩具","站崗"], correct:'站崗', hint:'提示:「站崗」是用「站」字造的詞。', blanks:1 },
+      { id:57, title:'部首', photo:'📝', before:'「洋」的部首是', after:'?', zh:'💡 選出正確的部首', options:["宀部","水部(氵)","人部"], correct:'水部(氵)', hint:'提示:「洋」的部首是「水部(氵)」。', blanks:1 },
+      { id:58, title:'造詞', photo:'📖', before:'這條路一直', after:'到海邊。', zh:'💡 選出正確的詞語,填入空格', options:["飽足","延伸","台北"], correct:'延伸', hint:'提示:「延伸」是用「伸」字造的詞。', blanks:1 },
+      { id:59, title:'部首', photo:'📝', before:'「勝」的部首是', after:'?', zh:'💡 選出正確的部首', options:["肉部(月)","匕部","儿部"], correct:'肉部(月)', hint:'提示:「勝」的部首是「肉部(月)」。', blanks:1 },
+      { id:60, title:'筆畫', photo:'✏️', before:'「勝」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["13","14","15"], correct:'14', hint:'提示:「勝」共有14畫。', blanks:1 }
     ],
     poolSampleSize: 15,
     levels: [],
     celebrateMessage: '你完成了第十一課生字挑戰,真是生字小博士!',
-    celebrateEmoji: '🎉📝🐴',
+    celebrateEmoji: '🎉📝🐶',
+
+    // ---- runtime state (do not edit by hand; the app manages these) ----
+    charIndex: 0,
+    gameCurrentLevel: 0
+  },
+
+  {
+    id: 'character12',
+    subject: 'mandarin',
+    category: 'character',
+    unitLabel: '康軒二上 第十二課',
+    title: '我愛冬天',
+    zh: '生字:部首・筆畫・造詞・破音字',
+    cardEmoji: '📝❄️🍲',
+    headerEmoji: '📝',
+    enabledTabs: ['story', 'game'],
+    tabLabels: { story: '📝 生字卡', game: '🎯 生字挑戰' },
+    characters: [
+      { char:'絡', pinyin:'ㄌㄨㄛˋ', radical:'糸部', strokeCount:12, words:[
+          {word:'聯絡', sentence:'我們約好放學後互相聯絡。'},
+          {word:'脈絡', sentence:'這篇故事的脈絡很清楚。'}
+        ], polyphonic:null},
+      { char:'鼓', pinyin:'ㄍㄨˇ', radical:'鼓部', strokeCount:13, words:[
+          {word:'打鼓', sentence:'哥哥在學打鼓。'},
+          {word:'鼓勵', sentence:'老師鼓勵我要多多練習。'},
+          {word:'鼓掌', sentence:'表演結束後大家熱烈鼓掌。'}
+        ], polyphonic:null, moreWords:['鼓聲']},
+      { char:'牠', pinyin:'ㄊㄚ', radical:'牛部', strokeCount:7, words:[
+          {word:'牠是', sentence:'牠是我家的小狗。'},
+          {word:'牠的', sentence:'牠的尾巴一直搖來搖去。'}
+        ], polyphonic:null},
+      { char:'涼', pinyin:'ㄌㄧㄤˊ', radical:'水部(氵)', strokeCount:11, words:[
+          {word:'涼爽', sentence:'冬天的空氣涼爽又清新。'},
+          {word:'涼水', sentence:'天氣熱,他喝了一杯涼水。'},
+          {word:'涼亭', sentence:'我們在涼亭裡休息。'}
+        ], polyphonic:null, moreWords:['清涼']},
+      { char:'灰', pinyin:'ㄏㄨㄟ', radical:'火部', strokeCount:6, words:[
+          {word:'灰塵', sentence:'桌上有一層灰塵。'},
+          {word:'灰色', sentence:'冬天的天空常常是灰色的。'},
+          {word:'灰心', sentence:'失敗了也不要灰心。'}
+        ], polyphonic:null, moreWords:['灰暗']},
+      { char:'圍', pinyin:'ㄨㄟˊ', radical:'囗部', strokeCount:12, words:[
+          {word:'圍巾', sentence:'冬天要記得戴圍巾。'},
+          {word:'包圍', sentence:'全家人把暖爐包圍起來一起取暖。'},
+          {word:'周圍', sentence:'我們的周圍下起了雪。'}
+        ], polyphonic:null, moreWords:['圍牆']},
+      { char:'冒', pinyin:'ㄇㄠˋ', radical:'冂部', strokeCount:9, words:[
+          {word:'冒煙', sentence:'熱湯正在冒煙。'},
+          {word:'冒險', sentence:'他喜歡到處冒險。'},
+          {word:'感冒', sentence:'天氣冷要小心感冒。'}
+        ], polyphonic:null, moreWords:['冒出']},
+      { char:'居', pinyin:'ㄐㄩ', radical:'尸部', strokeCount:8, words:[
+          {word:'居住', sentence:'我們一家人居住在一起。'},
+          {word:'鄰居', sentence:'隔壁鄰居送來熱騰騰的湯圓。'},
+          {word:'居然', sentence:'天氣居然這麼冷。'}
+        ], polyphonic:null, moreWords:['居民']},
+      { char:'發', pinyin:'ㄈㄚ', radical:'癶部', strokeCount:12, words:[
+          {word:'出發', sentence:'我們準備出發去賞雪。'},
+          {word:'發現', sentence:'我發現外面下雪了。'},
+          {word:'發抖', sentence:'冷風吹得我直發抖。'}
+        ], polyphonic:null, moreWords:['發亮','發芽']},
+      { char:'欣', pinyin:'ㄒㄧㄣ', radical:'欠部', strokeCount:8, words:[
+          {word:'欣賞', sentence:'我們一起欣賞美麗的雪景。'},
+          {word:'欣喜', sentence:'大家欣喜地迎接新年。'},
+          {word:'歡欣', sentence:'全家人歡欣地團聚在一起。'}
+        ], polyphonic:null},
+      { char:'幸', pinyin:'ㄒㄧㄥˋ', radical:'干部', strokeCount:8, words:[
+          {word:'幸福', sentence:'一家人團聚在一起真幸福。'},
+          {word:'幸運', sentence:'能認識你真是太幸運了。'},
+          {word:'慶幸', sentence:'我很慶幸沒有錯過這場雪。'}
+        ], polyphonic:null, moreWords:['幸好']},
+      { char:'聚', pinyin:'ㄐㄩˋ', radical:'耳部', strokeCount:14, words:[
+          {word:'聚會', sentence:'冬天全家人聚會吃火鍋。'},
+          {word:'聚在一起', sentence:'大家聚在一起烤火取暖。'},
+          {word:'團聚', sentence:'過年時全家人團聚。'}
+        ], polyphonic:null, moreWords:['聚集']},
+      { char:'團', pinyin:'ㄊㄨㄢˊ', radical:'囗部', strokeCount:14, words:[
+          {word:'團圓', sentence:'過年全家人團圓真開心。'},
+          {word:'團體', sentence:'我們是一個團結的團體。'},
+          {word:'飯團', sentence:'早餐我吃了一個飯團。'}
+        ], polyphonic:null, moreWords:['團隊']},
+      { char:'咪', pinyin:'ㄇㄧ', radical:'口部', strokeCount:9, words:[
+          {word:'貓咪', sentence:'貓咪縮在暖爐旁邊睡覺。'},
+          {word:'笑咪咪', sentence:'奶奶總是笑咪咪的。'}
+        ], polyphonic:null},
+      { char:'冰', pinyin:'ㄅㄧㄥ', radical:'冫部', strokeCount:6, words:[
+          {word:'冰冷', sentence:'冬天的湖水冰冷刺骨。'},
+          {word:'結冰', sentence:'池塘的水結冰了。'},
+          {word:'冰塊', sentence:'媽媽在杯子裡加了冰塊。'}
+        ], polyphonic:null, moreWords:['冰淇淋']},
+      { char:'妙', pinyin:'ㄇㄧㄠˋ', radical:'女部', strokeCount:7, words:[
+          {word:'美妙', sentence:'冬天的雪景真美妙。'},
+          {word:'巧妙', sentence:'他想出一個巧妙的辦法。'},
+          {word:'奇妙', sentence:'大自然真是奇妙。'}
+        ], polyphonic:null, moreWords:['妙用']},
+      { char:'鍋', pinyin:'ㄍㄨㄛ', radical:'金部', strokeCount:17, words:[
+          {word:'火鍋', sentence:'冬天全家一起吃火鍋真溫暖。'},
+          {word:'鍋子', sentence:'媽媽用鍋子煮湯。'},
+          {word:'湯鍋', sentence:'這個湯鍋剛煮好熱湯。'}
+        ], polyphonic:null, moreWords:['鍋鏟','電鍋']},
+      { char:'愉', pinyin:'ㄩˊ', radical:'心部(忄)', strokeCount:12, words:[
+          {word:'愉快', sentence:'祝你有個愉快的冬天。'},
+          {word:'愉悅', sentence:'圍爐吃飯讓人心情愉悅。'}
+        ], polyphonic:null}
+    ],
+
+    gameTitle: '🎯 生字挑戰',
+    levelPool: [
+      { id:1, title:'造詞', photo:'📖', before:'他想出一個', after:'的辦法。', zh:'💡 選出正確的詞語,填入空格', options:["牠是","巧妙","鼓掌"], correct:'巧妙', hint:'提示:「巧妙」是用「妙」字造的詞。', blanks:1 },
+      { id:2, title:'造詞', photo:'📖', before:'冬天的湖水', after:'刺骨。', zh:'💡 選出正確的詞語,填入空格', options:["冰冷","圍巾","發抖"], correct:'冰冷', hint:'提示:「冰冷」是用「冰」字造的詞。', blanks:1 },
+      { id:3, title:'部首', photo:'📝', before:'「欣」的部首是', after:'?', zh:'💡 選出正確的部首', options:["欠部","牛部","干部"], correct:'欠部', hint:'提示:「欣」的部首是「欠部」。', blanks:1 },
+      { id:4, title:'部首', photo:'📝', before:'「鍋」的部首是', after:'?', zh:'💡 選出正確的部首', options:["金部","口部","心部(忄)"], correct:'金部', hint:'提示:「鍋」的部首是「金部」。', blanks:1 },
+      { id:5, title:'筆畫', photo:'✏️', before:'「圍」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["11","13","12"], correct:'12', hint:'提示:「圍」共有12畫。', blanks:1 },
+      { id:6, title:'筆畫', photo:'✏️', before:'「咪」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["9","10","8"], correct:'9', hint:'提示:「咪」共有9畫。', blanks:1 },
+      { id:7, title:'造詞', photo:'📖', before:'隔壁', after:'送來熱騰騰的湯圓。', zh:'💡 選出正確的詞語,填入空格', options:["鄰居","愉快","慶幸"], correct:'鄰居', hint:'提示:「鄰居」是用「居」字造的詞。', blanks:1 },
+      { id:8, title:'造詞', photo:'📖', before:'表演結束後大家熱烈', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["火鍋","周圍","鼓掌"], correct:'鼓掌', hint:'提示:「鼓掌」是用「鼓」字造的詞。', blanks:1 },
+      { id:9, title:'筆畫', photo:'✏️', before:'「妙」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["7","8","6"], correct:'7', hint:'提示:「妙」共有7畫。', blanks:1 },
+      { id:10, title:'造詞', photo:'📖', before:'冬天全家人', after:'吃火鍋。', zh:'💡 選出正確的詞語,填入空格', options:["冒煙","飯團","聚會"], correct:'聚會', hint:'提示:「聚會」是用「聚」字造的詞。', blanks:1 },
+      { id:11, title:'造詞', photo:'📖', before:'我們約好放學後互相', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["奇妙","聯絡","飯團"], correct:'聯絡', hint:'提示:「聯絡」是用「絡」字造的詞。', blanks:1 },
+      { id:12, title:'部首', photo:'📝', before:'「聚」的部首是', after:'?', zh:'💡 選出正確的部首', options:["耳部","囗部","鼓部"], correct:'耳部', hint:'提示:「聚」的部首是「耳部」。', blanks:1 },
+      { id:13, title:'造詞', photo:'📖', before:'我', after:'外面下雪了。', zh:'💡 選出正確的詞語,填入空格', options:["包圍","發現","冰冷"], correct:'發現', hint:'提示:「發現」是用「發」字造的詞。', blanks:1 },
+      { id:14, title:'造詞', photo:'📖', before:'奶奶總是', after:'的。', zh:'💡 選出正確的詞語,填入空格', options:["笑咪咪","鍋子","周圍"], correct:'笑咪咪', hint:'提示:「笑咪咪」是用「咪」字造的詞。', blanks:1 },
+      { id:15, title:'造詞', photo:'📖', before:'圍爐吃飯讓人心情', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["居然","愉悅","打鼓"], correct:'愉悅', hint:'提示:「愉悅」是用「愉」字造的詞。', blanks:1 },
+      { id:16, title:'部首', photo:'📝', before:'「發」的部首是', after:'?', zh:'💡 選出正確的部首', options:["干部","欠部","癶部"], correct:'癶部', hint:'提示:「發」的部首是「癶部」。', blanks:1 },
+      { id:17, title:'造詞', photo:'📖', before:'冬天的空氣', after:'又清新。', zh:'💡 選出正確的詞語,填入空格', options:["鼓掌","火鍋","涼爽"], correct:'涼爽', hint:'提示:「涼爽」是用「涼」字造的詞。', blanks:1 },
+      { id:18, title:'筆畫', photo:'✏️', before:'「鍋」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["18","17","16"], correct:'17', hint:'提示:「鍋」共有17畫。', blanks:1 },
+      { id:19, title:'筆畫', photo:'✏️', before:'「絡」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["11","12","13"], correct:'12', hint:'提示:「絡」共有12畫。', blanks:1 },
+      { id:20, title:'造詞', photo:'📖', before:'能認識你真是太', after:'了。', zh:'💡 選出正確的詞語,填入空格', options:["涼水","欣喜","幸運"], correct:'幸運', hint:'提示:「幸運」是用「幸」字造的詞。', blanks:1 },
+      { id:21, title:'筆畫', photo:'✏️', before:'「團」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["15","14","13"], correct:'14', hint:'提示:「團」共有14畫。', blanks:1 },
+      { id:22, title:'造詞', photo:'📖', before:'這篇故事的', after:'很清楚。', zh:'💡 選出正確的詞語,填入空格', options:["涼爽","脈絡","幸運"], correct:'脈絡', hint:'提示:「脈絡」是用「絡」字造的詞。', blanks:1 },
+      { id:23, title:'部首', photo:'📝', before:'「愉」的部首是', after:'?', zh:'💡 選出正確的部首', options:["心部(忄)","鼓部","水部(氵)"], correct:'心部(忄)', hint:'提示:「愉」的部首是「心部(忄)」。', blanks:1 },
+      { id:24, title:'筆畫', photo:'✏️', before:'「涼」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["12","10","11"], correct:'11', hint:'提示:「涼」共有11畫。', blanks:1 },
+      { id:25, title:'造詞', photo:'📖', before:'我們的', after:'下起了雪。', zh:'💡 選出正確的詞語,填入空格', options:["周圍","湯鍋","巧妙"], correct:'周圍', hint:'提示:「周圍」是用「圍」字造的詞。', blanks:1 },
+      { id:26, title:'造詞', photo:'📖', before:'這個', after:'剛煮好熱湯。', zh:'💡 選出正確的詞語,填入空格', options:["聚會","湯鍋","欣賞"], correct:'湯鍋', hint:'提示:「湯鍋」是用「鍋」字造的詞。', blanks:1 },
+      { id:27, title:'造詞', photo:'📖', before:'早餐我吃了一個', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["團聚","飯團","慶幸"], correct:'飯團', hint:'提示:「飯團」是用「團」字造的詞。', blanks:1 },
+      { id:28, title:'造詞', photo:'📖', before:'老師', after:'我要多多練習。', zh:'💡 選出正確的詞語,填入空格', options:["牠是","聚會","鼓勵"], correct:'鼓勵', hint:'提示:「鼓勵」是用「鼓」字造的詞。', blanks:1 },
+      { id:29, title:'筆畫', photo:'✏️', before:'「冒」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["8","10","9"], correct:'9', hint:'提示:「冒」共有9畫。', blanks:1 },
+      { id:30, title:'造詞', photo:'📖', before:'我們在', after:'裡休息。', zh:'💡 選出正確的詞語,填入空格', options:["欣賞","居住","涼亭"], correct:'涼亭', hint:'提示:「涼亭」是用「涼」字造的詞。', blanks:1 },
+      { id:31, title:'部首', photo:'📝', before:'「鼓」的部首是', after:'?', zh:'💡 選出正確的部首', options:["囗部","女部","鼓部"], correct:'鼓部', hint:'提示:「鼓」的部首是「鼓部」。', blanks:1 },
+      { id:32, title:'造詞', photo:'📖', before:'冷風吹得我直', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["打鼓","發抖","團體"], correct:'發抖', hint:'提示:「發抖」是用「發」字造的詞。', blanks:1 },
+      { id:33, title:'造詞', photo:'📖', before:'熱湯正在', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["冒煙","灰色","欣賞"], correct:'冒煙', hint:'提示:「冒煙」是用「冒」字造的詞。', blanks:1 },
+      { id:34, title:'筆畫', photo:'✏️', before:'「居」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["9","7","8"], correct:'8', hint:'提示:「居」共有8畫。', blanks:1 },
+      { id:35, title:'造詞', photo:'📖', before:'冬天全家一起吃', after:'真溫暖。', zh:'💡 選出正確的詞語,填入空格', options:["火鍋","周圍","聚會"], correct:'火鍋', hint:'提示:「火鍋」是用「鍋」字造的詞。', blanks:1 },
+      { id:36, title:'筆畫', photo:'✏️', before:'「鼓」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["14","12","13"], correct:'13', hint:'提示:「鼓」共有13畫。', blanks:1 },
+      { id:37, title:'造詞', photo:'📖', before:'冬天的天空常常是', after:'的。', zh:'💡 選出正確的詞語,填入空格', options:["包圍","灰色","涼水"], correct:'灰色', hint:'提示:「灰色」是用「灰」字造的詞。', blanks:1 },
+      { id:38, title:'部首', photo:'📝', before:'「居」的部首是', after:'?', zh:'💡 選出正確的部首', options:["心部(忄)","鼓部","尸部"], correct:'尸部', hint:'提示:「居」的部首是「尸部」。', blanks:1 },
+      { id:39, title:'部首', photo:'📝', before:'「團」的部首是', after:'?', zh:'💡 選出正確的部首', options:["水部(氵)","囗部","欠部"], correct:'囗部', hint:'提示:「團」的部首是「囗部」。', blanks:1 },
+      { id:40, title:'造詞', photo:'📖', before:'天氣', after:'這麼冷。', zh:'💡 選出正確的詞語,填入空格', options:["居然","包圍","冰冷"], correct:'居然', hint:'提示:「居然」是用「居」字造的詞。', blanks:1 },
+      { id:41, title:'造詞', photo:'📖', before:'冬天的雪景真', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["團體","美妙","感冒"], correct:'美妙', hint:'提示:「美妙」是用「妙」字造的詞。', blanks:1 },
+      { id:42, title:'部首', photo:'📝', before:'「妙」的部首是', after:'?', zh:'💡 選出正確的部首', options:["冫部","女部","金部"], correct:'女部', hint:'提示:「妙」的部首是「女部」。', blanks:1 },
+      { id:43, title:'造詞', photo:'📖', before:'全家人', after:'地團聚在一起。', zh:'💡 選出正確的詞語,填入空格', options:["歡欣","團體","灰心"], correct:'歡欣', hint:'提示:「歡欣」是用「欣」字造的詞。', blanks:1 },
+      { id:44, title:'部首', photo:'📝', before:'「圍」的部首是', after:'?', zh:'💡 選出正確的部首', options:["冂部","牛部","囗部"], correct:'囗部', hint:'提示:「圍」的部首是「囗部」。', blanks:1 },
+      { id:45, title:'部首', photo:'📝', before:'「冰」的部首是', after:'?', zh:'💡 選出正確的部首', options:["牛部","冫部","口部"], correct:'冫部', hint:'提示:「冰」的部首是「冫部」。', blanks:1 },
+      { id:46, title:'造詞', photo:'📖', before:'桌上有一層', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["發抖","愉悅","灰塵"], correct:'灰塵', hint:'提示:「灰塵」是用「灰」字造的詞。', blanks:1 },
+      { id:47, title:'造詞', photo:'📖', before:'大家', after:'烤火取暖。', zh:'💡 選出正確的詞語,填入空格', options:["脈絡","冒煙","聚在一起"], correct:'聚在一起', hint:'提示:「聚在一起」是用「聚」字造的詞。', blanks:1 },
+      { id:48, title:'部首', photo:'📝', before:'「冒」的部首是', after:'?', zh:'💡 選出正確的部首', options:["耳部","金部","冂部"], correct:'冂部', hint:'提示:「冒」的部首是「冂部」。', blanks:1 },
+      { id:49, title:'筆畫', photo:'✏️', before:'「聚」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["15","14","13"], correct:'14', hint:'提示:「聚」共有14畫。', blanks:1 },
+      { id:50, title:'部首', photo:'📝', before:'「咪」的部首是', after:'?', zh:'💡 選出正確的部首', options:["欠部","口部","耳部"], correct:'口部', hint:'提示:「咪」的部首是「口部」。', blanks:1 },
+      { id:51, title:'造詞', photo:'📖', before:'媽媽用', after:'煮湯。', zh:'💡 選出正確的詞語,填入空格', options:["鍋子","團圓","聚會"], correct:'鍋子', hint:'提示:「鍋子」是用「鍋」字造的詞。', blanks:1 },
+      { id:52, title:'造詞', photo:'📖', before:'', after:'尾巴一直搖來搖去。', zh:'💡 選出正確的詞語,填入空格', options:["結冰","愉悅","牠的"], correct:'牠的', hint:'提示:「牠的」是用「牠」字造的詞。', blanks:1 },
+      { id:53, title:'筆畫', photo:'✏️', before:'「發」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["13","11","12"], correct:'12', hint:'提示:「發」共有12畫。', blanks:1 },
+      { id:54, title:'造詞', photo:'📖', before:'天氣冷要小心', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["涼爽","感冒","冒險"], correct:'感冒', hint:'提示:「感冒」是用「冒」字造的詞。', blanks:1 },
+      { id:55, title:'造詞', photo:'📖', before:'過年時全家人', after:'。', zh:'💡 選出正確的詞語,填入空格', options:["冰塊","涼水","團聚"], correct:'團聚', hint:'提示:「團聚」是用「聚」字造的詞。', blanks:1 },
+      { id:56, title:'造詞', photo:'📖', before:'我很', after:'沒有錯過這場雪。', zh:'💡 選出正確的詞語,填入空格', options:["聚會","結冰","慶幸"], correct:'慶幸', hint:'提示:「慶幸」是用「幸」字造的詞。', blanks:1 },
+      { id:57, title:'造詞', photo:'📖', before:'池塘的水', after:'了。', zh:'💡 選出正確的詞語,填入空格', options:["結冰","打鼓","灰心"], correct:'結冰', hint:'提示:「結冰」是用「冰」字造的詞。', blanks:1 },
+      { id:58, title:'部首', photo:'📝', before:'「牠」的部首是', after:'?', zh:'💡 選出正確的部首', options:["癶部","欠部","牛部"], correct:'牛部', hint:'提示:「牠」的部首是「牛部」。', blanks:1 },
+      { id:59, title:'造詞', photo:'📖', before:'我們準備', after:'去賞雪。', zh:'💡 選出正確的詞語,填入空格', options:["出發","涼亭","牠是"], correct:'出發', hint:'提示:「出發」是用「發」字造的詞。', blanks:1 },
+      { id:60, title:'筆畫', photo:'✏️', before:'「灰」這個字共有', after:'畫', zh:'💡 選出正確的筆畫數', options:["5","7","6"], correct:'6', hint:'提示:「灰」共有6畫。', blanks:1 }
+    ],
+    poolSampleSize: 15,
+    levels: [],
+    celebrateMessage: '你完成了第十二課生字挑戰,真是生字小博士!',
+    celebrateEmoji: '🎉📝❄️',
 
     // ---- runtime state (do not edit by hand; the app manages these) ----
     charIndex: 0,
@@ -6844,6 +7064,346 @@ const CHAPTERS = [
     gameCurrentLevel: 0
   },
   {
+    id: 'mult6',
+    subject: 'math',
+    category: 'multiplication',
+    unitLabel: '數學 17',
+    title: '6 的乘法',
+    zh: '格子圖 · 規律心法 · 過關挑戰',
+    cardEmoji: '6️⃣',
+    headerEmoji: '🔢',
+    enabledTabs: ['story', 'grammar', 'game'],
+    tabLabels: { story: '📊 格子圖', grammar: '🔍 規律心法', game: '🎮 過關挑戰' },
+
+    multiplier: 6,
+
+    ruleType: 'mathPattern',
+    ruleHeading: '6 的乘法規律筆記',
+    patternNotes: [
+      {
+        heading: '🔑 秘密規律:個位數字 6,2,8,4,0 輪流出現',
+        body: [
+          '把 6 的乘法列出來看看:6×1=<span class=\"mult-pattern-eq\">06</span>,6×2=<span class=\"mult-pattern-eq\">12</span>,6×3=<span class=\"mult-pattern-eq\">18</span>...一直到 6×9=<span class=\"mult-pattern-eq\">54</span>。',
+          '你會發現個位數字是 6,2,8,4,0 這五個數字一直輪流出現,背熟這個順序,就能很快檢查自己算的答案有沒有抓錯位數。'
+        ]
+      },
+      {
+        heading: '🧩 拆解法:6 = 5 + 1',
+        body: [
+          '6 只比 5 多 1,所以 6×n 可以想成「先算 5×n,再多加一個 n」。5 的乘法通常比較好記(個位數不是 0 就是 5)。',
+          '例如 6×7 = 5×7 + 7 = 35 + 7 = <span class=\"mult-pattern-eq\">42</span>。'
+        ]
+      },
+      {
+        heading: '🔄 加倍法:6 = 3 × 2',
+        body: [
+          '6 也可以想成「3 的 2 倍」,所以 6×n 就是先算 3×n,再把答案加倍(乘以 2)一次。',
+          '例如 6×8:先算 3×8=24,再把 24 加倍變成 <span class=\"mult-pattern-eq\">48</span>,就是答案。'
+        ]
+      }
+    ],
+
+    gameTitle: '6 的乘法過關挑戰',
+    levelPool: [
+      { id:1, title:'第1題:直接背誦', photo:'🔢', before:'6 × 1 = ', after:'', zh:'💡 算算看,答案是多少?', options:['6','12','0'], correct:'6', hint:'提示:6 × 1 就是 1 個 6 加起來(或 6 個 1 加起來)。', blanks:1 },
+      { id:2, title:'第2題:直接背誦', photo:'🔢', before:'6 × 2 = ', after:'', zh:'💡 算算看,答案是多少?', options:['12','18','6'], correct:'12', hint:'提示:6 × 2 就是 2 個 6 加起來(或 6 個 2 加起來)。', blanks:1 },
+      { id:3, title:'第3題:直接背誦', photo:'🔢', before:'6 × 3 = ', after:'', zh:'💡 算算看,答案是多少?', options:['18','24','12'], correct:'18', hint:'提示:6 × 3 就是 3 個 6 加起來(或 6 個 3 加起來)。', blanks:1 },
+      { id:4, title:'第4題:直接背誦', photo:'🔢', before:'6 × 4 = ', after:'', zh:'💡 算算看,答案是多少?', options:['30','24','18'], correct:'24', hint:'提示:6 × 4 就是 4 個 6 加起來(或 6 個 4 加起來)。', blanks:1 },
+      { id:5, title:'第5題:直接背誦', photo:'🔢', before:'6 × 5 = ', after:'', zh:'💡 算算看,答案是多少?', options:['24','30','36'], correct:'30', hint:'提示:6 × 5 就是 5 個 6 加起來(或 6 個 5 加起來)。', blanks:1 },
+      { id:6, title:'第6題:直接背誦', photo:'🔢', before:'6 × 6 = ', after:'', zh:'💡 算算看,答案是多少?', options:['30','36','42'], correct:'36', hint:'提示:6 × 6 就是 6 個 6 加起來(或 6 個 6 加起來)。', blanks:1 },
+      { id:7, title:'第7題:直接背誦', photo:'🔢', before:'6 × 7 = ', after:'', zh:'💡 算算看,答案是多少?', options:['42','36','48'], correct:'42', hint:'提示:6 × 7 就是 7 個 6 加起來(或 6 個 7 加起來)。', blanks:1 },
+      { id:8, title:'第8題:直接背誦', photo:'🔢', before:'6 × 8 = ', after:'', zh:'💡 算算看,答案是多少?', options:['48','42','54'], correct:'48', hint:'提示:6 × 8 就是 8 個 6 加起來(或 6 個 8 加起來)。', blanks:1 },
+      { id:9, title:'第9題:直接背誦', photo:'🔢', before:'6 × 9 = ', after:'', zh:'💡 算算看,答案是多少?', options:['54','48','60'], correct:'54', hint:'提示:6 × 9 就是 9 個 6 加起來(或 6 個 9 加起來)。', blanks:1 },
+      { id:10, title:'複習:6的乘法', photo:'🔢', before:'6 × 1 = ', after:'', zh:'💡 算算看,答案是多少?', options:['6','12','0'], correct:'6', hint:'提示:6 × 1 就是 1 個 6 加起來(或 6 個 1 加起來)。', blanks:1 },
+      { id:11, title:'複習:6的乘法', photo:'🔢', before:'6 × 2 = ', after:'', zh:'💡 算算看,答案是多少?', options:['18','12','6'], correct:'12', hint:'提示:6 × 2 就是 2 個 6 加起來(或 6 個 2 加起來)。', blanks:1 },
+      { id:12, title:'複習:6的乘法', photo:'🔢', before:'6 × 3 = ', after:'', zh:'💡 算算看,答案是多少?', options:['24','18','12'], correct:'18', hint:'提示:6 × 3 就是 3 個 6 加起來(或 6 個 3 加起來)。', blanks:1 },
+      { id:13, title:'複習:6的乘法', photo:'🔢', before:'6 × 4 = ', after:'', zh:'💡 算算看,答案是多少?', options:['30','24','18'], correct:'24', hint:'提示:6 × 4 就是 4 個 6 加起來(或 6 個 4 加起來)。', blanks:1 },
+      { id:14, title:'複習:6的乘法', photo:'🔢', before:'6 × 5 = ', after:'', zh:'💡 算算看,答案是多少?', options:['30','36','24'], correct:'30', hint:'提示:6 × 5 就是 5 個 6 加起來(或 6 個 5 加起來)。', blanks:1 },
+      { id:15, title:'複習:6的乘法', photo:'🔢', before:'6 × 6 = ', after:'', zh:'💡 算算看,答案是多少?', options:['36','42','30'], correct:'36', hint:'提示:6 × 6 就是 6 個 6 加起來(或 6 個 6 加起來)。', blanks:1 },
+      { id:16, title:'複習:6的乘法', photo:'🔢', before:'6 × 7 = ', after:'', zh:'💡 算算看,答案是多少?', options:['42','36','48'], correct:'42', hint:'提示:6 × 7 就是 7 個 6 加起來(或 6 個 7 加起來)。', blanks:1 },
+      { id:17, title:'複習:6的乘法', photo:'🔢', before:'6 × 8 = ', after:'', zh:'💡 算算看,答案是多少?', options:['42','48','54'], correct:'48', hint:'提示:6 × 8 就是 8 個 6 加起來(或 6 個 8 加起來)。', blanks:1 },
+      { id:18, title:'複習:6的乘法', photo:'🔢', before:'6 × 9 = ', after:'', zh:'💡 算算看,答案是多少?', options:['48','54','60'], correct:'54', hint:'提示:6 × 9 就是 9 個 6 加起來(或 6 個 9 加起來)。', blanks:1 },
+      { id:19, title:'缺格找答案', photo:'❓', before:'6 × ', after:' = 6', zh:'💡 空格應該填什麼數字?', options:['3','1','2'], correct:'1', hint:'提示:想想看6的幾倍是6。', blanks:1 },
+      { id:20, title:'缺格找答案', photo:'❓', before:'6 × ', after:' = 12', zh:'💡 空格應該填什麼數字?', options:['3','2','1'], correct:'2', hint:'提示:想想看6的幾倍是12。', blanks:1 },
+      { id:21, title:'缺格找答案', photo:'❓', before:'6 × ', after:' = 18', zh:'💡 空格應該填什麼數字?', options:['3','4','2'], correct:'3', hint:'提示:想想看6的幾倍是18。', blanks:1 },
+      { id:22, title:'缺格找答案', photo:'❓', before:'6 × ', after:' = 24', zh:'💡 空格應該填什麼數字?', options:['4','5','3'], correct:'4', hint:'提示:想想看6的幾倍是24。', blanks:1 },
+      { id:23, title:'缺格找答案', photo:'❓', before:'6 × ', after:' = 30', zh:'💡 空格應該填什麼數字?', options:['5','6','4'], correct:'5', hint:'提示:想想看6的幾倍是30。', blanks:1 },
+      { id:24, title:'缺格找答案', photo:'❓', before:'6 × ', after:' = 36', zh:'💡 空格應該填什麼數字?', options:['7','6','5'], correct:'6', hint:'提示:想想看6的幾倍是36。', blanks:1 },
+      { id:25, title:'缺格找答案', photo:'❓', before:'6 × ', after:' = 42', zh:'💡 空格應該填什麼數字?', options:['6','7','8'], correct:'7', hint:'提示:想想看6的幾倍是42。', blanks:1 },
+      { id:26, title:'缺格找答案', photo:'❓', before:'6 × ', after:' = 48', zh:'💡 空格應該填什麼數字?', options:['7','8','9'], correct:'8', hint:'提示:想想看6的幾倍是48。', blanks:1 },
+      { id:27, title:'缺格找答案', photo:'❓', before:'6 × ', after:' = 54', zh:'💡 空格應該填什麼數字?', options:['9','8','10'], correct:'9', hint:'提示:想想看6的幾倍是54。', blanks:1 },
+      { id:28, title:'缺格找答案', photo:'❓', before:'6 × ', after:' = 18', zh:'💡 空格應該填什麼數字?', options:['3','2','4'], correct:'3', hint:'提示:想想看6的幾倍是18。', blanks:1 },
+      { id:29, title:'缺格找答案', photo:'❓', before:'6 × ', after:' = 30', zh:'💡 空格應該填什麼數字?', options:['5','4','6'], correct:'5', hint:'提示:想想看6的幾倍是30。', blanks:1 },
+      { id:30, title:'缺格找答案', photo:'❓', before:'6 × ', after:' = 42', zh:'💡 空格應該填什麼數字?', options:['6','7','8'], correct:'7', hint:'提示:想想看6的幾倍是42。', blanks:1 },
+      { id:31, title:'缺格找答案', photo:'❓', before:'', after:' × 6 = 12', zh:'💡 空格應該填什麼數字?', options:['2','3','1'], correct:'2', hint:'提示:想想看6的幾倍是12。', blanks:1 },
+      { id:32, title:'缺格找答案', photo:'❓', before:'', after:' × 6 = 18', zh:'💡 空格應該填什麼數字?', options:['3','4','2'], correct:'3', hint:'提示:想想看6的幾倍是18。', blanks:1 },
+      { id:33, title:'缺格找答案', photo:'❓', before:'', after:' × 6 = 24', zh:'💡 空格應該填什麼數字?', options:['5','4','3'], correct:'4', hint:'提示:想想看6的幾倍是24。', blanks:1 },
+      { id:34, title:'缺格找答案', photo:'❓', before:'', after:' × 6 = 30', zh:'💡 空格應該填什麼數字?', options:['6','5','4'], correct:'5', hint:'提示:想想看6的幾倍是30。', blanks:1 },
+      { id:35, title:'缺格找答案', photo:'❓', before:'', after:' × 6 = 36', zh:'💡 空格應該填什麼數字?', options:['7','6','5'], correct:'6', hint:'提示:想想看6的幾倍是36。', blanks:1 },
+      { id:36, title:'缺格找答案', photo:'❓', before:'', after:' × 6 = 42', zh:'💡 空格應該填什麼數字?', options:['7','8','6'], correct:'7', hint:'提示:想想看6的幾倍是42。', blanks:1 },
+      { id:37, title:'缺格找答案', photo:'❓', before:'', after:' × 6 = 48', zh:'💡 空格應該填什麼數字?', options:['8','7','9'], correct:'8', hint:'提示:想想看6的幾倍是48。', blanks:1 },
+      { id:38, title:'缺格找答案', photo:'❓', before:'', after:' × 6 = 54', zh:'💡 空格應該填什麼數字?', options:['9','8','10'], correct:'9', hint:'提示:想想看6的幾倍是54。', blanks:1 },
+      { id:39, title:'缺格找答案', photo:'❓', before:'', after:' × 6 = 6', zh:'💡 空格應該填什麼數字?', options:['2','1','3'], correct:'1', hint:'提示:想想看6的幾倍是6。', blanks:1 },
+      { id:40, title:'缺格找答案', photo:'❓', before:'', after:' × 6 = 36', zh:'💡 空格應該填什麼數字?', options:['5','6','7'], correct:'6', hint:'提示:想想看6的幾倍是36。', blanks:1 },
+      { id:41, title:'缺格找答案', photo:'❓', before:'', after:' × 6 = 24', zh:'💡 空格應該填什麼數字?', options:['3','4','5'], correct:'4', hint:'提示:想想看6的幾倍是24。', blanks:1 },
+      { id:42, title:'缺格找答案', photo:'❓', before:'', after:' × 6 = 48', zh:'💡 空格應該填什麼數字?', options:['8','7','9'], correct:'8', hint:'提示:想想看6的幾倍是48。', blanks:1 },
+      { id:43, title:'拆解法挑戰', photo:'🧩', before:'用拆解法算算看:6 × 2 = 5 × 2 + 2 = 10 + 2 = ', after:'', zh:'💡 練習用「6的拆解法」', options:['13','12','11'], correct:'12', hint:'提示:6比5多1,所以6×n就是5×n再加一個n。', blanks:1 },
+      { id:44, title:'拆解法挑戰', photo:'🧩', before:'用拆解法算算看:6 × 3 = 5 × 3 + 3 = 15 + 3 = ', after:'', zh:'💡 練習用「6的拆解法」', options:['19','18','17'], correct:'18', hint:'提示:6比5多1,所以6×n就是5×n再加一個n。', blanks:1 },
+      { id:45, title:'拆解法挑戰', photo:'🧩', before:'用拆解法算算看:6 × 4 = 5 × 4 + 4 = 20 + 4 = ', after:'', zh:'💡 練習用「6的拆解法」', options:['25','24','23'], correct:'24', hint:'提示:6比5多1,所以6×n就是5×n再加一個n。', blanks:1 },
+      { id:46, title:'拆解法挑戰', photo:'🧩', before:'用拆解法算算看:6 × 5 = 5 × 5 + 5 = 25 + 5 = ', after:'', zh:'💡 練習用「6的拆解法」', options:['30','31','29'], correct:'30', hint:'提示:6比5多1,所以6×n就是5×n再加一個n。', blanks:1 },
+      { id:47, title:'拆解法挑戰', photo:'🧩', before:'用拆解法算算看:6 × 6 = 5 × 6 + 6 = 30 + 6 = ', after:'', zh:'💡 練習用「6的拆解法」', options:['36','37','35'], correct:'36', hint:'提示:6比5多1,所以6×n就是5×n再加一個n。', blanks:1 },
+      { id:48, title:'拆解法挑戰', photo:'🧩', before:'用拆解法算算看:6 × 7 = 5 × 7 + 7 = 35 + 7 = ', after:'', zh:'💡 練習用「6的拆解法」', options:['42','43','41'], correct:'42', hint:'提示:6比5多1,所以6×n就是5×n再加一個n。', blanks:1 },
+      { id:49, title:'拆解法挑戰', photo:'🧩', before:'用拆解法算算看:6 × 8 = 5 × 8 + 8 = 40 + 8 = ', after:'', zh:'💡 練習用「6的拆解法」', options:['49','48','47'], correct:'48', hint:'提示:6比5多1,所以6×n就是5×n再加一個n。', blanks:1 },
+      { id:50, title:'拆解法挑戰', photo:'🧩', before:'用拆解法算算看:6 × 9 = 5 × 9 + 9 = 45 + 9 = ', after:'', zh:'💡 練習用「6的拆解法」', options:['53','54','55'], correct:'54', hint:'提示:6比5多1,所以6×n就是5×n再加一個n。', blanks:1 },
+      { id:51, title:'生活應用題', photo:'📖', before:'一包餅乾有 6 片,2 包餅乾共有幾片?答案是 ', after:' 片', zh:'💡 想想看要用哪個算式', options:['12','18','6'], correct:'12', hint:'提示:2 個 6 相加,就是 6×2。', blanks:1 },
+      { id:52, title:'生活應用題', photo:'📖', before:'一排椅子有 6 張,3 排椅子共有幾張?答案是 ', after:' 張', zh:'💡 想想看要用哪個算式', options:['18','24','12'], correct:'18', hint:'提示:3 個 6 相加,就是 6×3。', blanks:1 },
+      { id:53, title:'生活應用題', photo:'📖', before:'一袋橘子有 6 顆,4 袋橘子共有幾顆?答案是 ', after:' 顆', zh:'💡 想想看要用哪個算式', options:['24','30','18'], correct:'24', hint:'提示:4 個 6 相加,就是 6×4。', blanks:1 },
+      { id:54, title:'生活應用題', photo:'📖', before:'一串葡萄有 6 顆,5 串葡萄共有幾顆?答案是 ', after:' 顆', zh:'💡 想想看要用哪個算式', options:['36','30','24'], correct:'30', hint:'提示:5 個 6 相加,就是 6×5。', blanks:1 },
+      { id:55, title:'生活應用題', photo:'📖', before:'一盒色鉛筆有 6 支,6 盒色鉛筆共有幾支?答案是 ', after:' 支', zh:'💡 想想看要用哪個算式', options:['42','36','30'], correct:'36', hint:'提示:6 個 6 相加,就是 6×6。', blanks:1 },
+      { id:56, title:'生活應用題', photo:'📖', before:'一籃雞蛋有 6 顆,7 籃雞蛋共有幾顆?答案是 ', after:' 顆', zh:'💡 想想看要用哪個算式', options:['48','42','36'], correct:'42', hint:'提示:7 個 6 相加,就是 6×7。', blanks:1 },
+      { id:57, title:'生活應用題', photo:'📖', before:'一束花有 6 朵,8 束花共有幾朵?答案是 ', after:' 朵', zh:'💡 想想看要用哪個算式', options:['48','54','42'], correct:'48', hint:'提示:8 個 6 相加,就是 6×8。', blanks:1 },
+      { id:58, title:'生活應用題', photo:'📖', before:'一箱牛奶有 6 瓶,9 箱牛奶共有幾瓶?答案是 ', after:' 瓶', zh:'💡 想想看要用哪個算式', options:['54','48','60'], correct:'54', hint:'提示:9 個 6 相加,就是 6×9。', blanks:1 },
+      { id:59, title:'生活應用題', photo:'📖', before:'一袋彈珠有 6 顆,3 袋彈珠共有幾顆?答案是 ', after:' 顆', zh:'💡 想想看要用哪個算式', options:['18','12','24'], correct:'18', hint:'提示:3 個 6 相加,就是 6×3。', blanks:1 },
+      { id:60, title:'生活應用題', photo:'📖', before:'一盤水果有 6 顆,5 盤水果共有幾顆?答案是 ', after:' 顆', zh:'💡 想想看要用哪個算式', options:['24','30','36'], correct:'30', hint:'提示:5 個 6 相加,就是 6×5。', blanks:1 },
+    ],
+    poolSampleSize: 15,
+    levels: [],
+    celebrateMessage: '你把 6 的乘法都學會了,太厲害了!',
+    celebrateEmoji: '🎉🔢',
+
+    // ---- runtime state (do not edit by hand; the app manages these) ----
+    multIndex: 0,
+    multFlipped: false,
+    gameCurrentLevel: 0
+  },
+
+  {
+    id: 'mult7',
+    subject: 'math',
+    category: 'multiplication',
+    unitLabel: '數學 18',
+    title: '7 的乘法',
+    zh: '格子圖 · 規律心法 · 過關挑戰',
+    cardEmoji: '7️⃣',
+    headerEmoji: '🔢',
+    enabledTabs: ['story', 'grammar', 'game'],
+    tabLabels: { story: '📊 格子圖', grammar: '🔍 規律心法', game: '🎮 過關挑戰' },
+
+    multiplier: 7,
+
+    ruleType: 'mathPattern',
+    ruleHeading: '7 的乘法規律筆記',
+    patternNotes: [
+      {
+        heading: '🔑 跳著數 7:7,14,21,28,35,42,49,56,63',
+        body: [
+          '7 的乘法沒有像 9 那樣清楚的十位加個位規律,最實用的方法是「跳著數 7」——每次多加 7,一路數下去:7、14、21、28、35、42、49、56、63。',
+          '常常照這個順序唸幾遍,自然就會記起來了。'
+        ]
+      },
+      {
+        heading: '🧩 拆解法:7 = 5 + 2',
+        body: [
+          '7 可以想成「5 加 2」,所以 7×n 可以拆成「5×n 加上 2×n」,兩個都是比較好算的乘法。',
+          '例如 7×8 = 5×8 + 2×8 = 40 + 16 = <span class=\"mult-pattern-eq\">56</span>。'
+        ]
+      },
+      {
+        heading: '⚠️ 容易搞混的三題',
+        body: [
+          '7×7=<span class=\"mult-pattern-eq\">49</span>、7×8=<span class=\"mult-pattern-eq\">56</span>、7×9=<span class=\"mult-pattern-eq\">63</span> 這三個特別容易記混,可以多練習幾次,單獨把它們記熟。'
+        ]
+      }
+    ],
+
+    gameTitle: '7 的乘法過關挑戰',
+    levelPool: [
+      { id:1, title:'第1題:直接背誦', photo:'🔢', before:'7 × 1 = ', after:'', zh:'💡 算算看,答案是多少?', options:['7','14','0'], correct:'7', hint:'提示:7 × 1 就是 1 個 7 加起來(或 7 個 1 加起來)。', blanks:1 },
+      { id:2, title:'第2題:直接背誦', photo:'🔢', before:'7 × 2 = ', after:'', zh:'💡 算算看,答案是多少?', options:['14','21','7'], correct:'14', hint:'提示:7 × 2 就是 2 個 7 加起來(或 7 個 2 加起來)。', blanks:1 },
+      { id:3, title:'第3題:直接背誦', photo:'🔢', before:'7 × 3 = ', after:'', zh:'💡 算算看,答案是多少?', options:['28','21','14'], correct:'21', hint:'提示:7 × 3 就是 3 個 7 加起來(或 7 個 3 加起來)。', blanks:1 },
+      { id:4, title:'第4題:直接背誦', photo:'🔢', before:'7 × 4 = ', after:'', zh:'💡 算算看,答案是多少?', options:['35','28','21'], correct:'28', hint:'提示:7 × 4 就是 4 個 7 加起來(或 7 個 4 加起來)。', blanks:1 },
+      { id:5, title:'第5題:直接背誦', photo:'🔢', before:'7 × 5 = ', after:'', zh:'💡 算算看,答案是多少?', options:['42','35','28'], correct:'35', hint:'提示:7 × 5 就是 5 個 7 加起來(或 7 個 5 加起來)。', blanks:1 },
+      { id:6, title:'第6題:直接背誦', photo:'🔢', before:'7 × 6 = ', after:'', zh:'💡 算算看,答案是多少?', options:['42','49','35'], correct:'42', hint:'提示:7 × 6 就是 6 個 7 加起來(或 7 個 6 加起來)。', blanks:1 },
+      { id:7, title:'第7題:直接背誦', photo:'🔢', before:'7 × 7 = ', after:'', zh:'💡 算算看,答案是多少?', options:['49','56','42'], correct:'49', hint:'提示:7 × 7 就是 7 個 7 加起來(或 7 個 7 加起來)。', blanks:1 },
+      { id:8, title:'第8題:直接背誦', photo:'🔢', before:'7 × 8 = ', after:'', zh:'💡 算算看,答案是多少?', options:['56','63','49'], correct:'56', hint:'提示:7 × 8 就是 8 個 7 加起來(或 7 個 8 加起來)。', blanks:1 },
+      { id:9, title:'第9題:直接背誦', photo:'🔢', before:'7 × 9 = ', after:'', zh:'💡 算算看,答案是多少?', options:['56','63','70'], correct:'63', hint:'提示:7 × 9 就是 9 個 7 加起來(或 7 個 9 加起來)。', blanks:1 },
+      { id:10, title:'複習:7的乘法', photo:'🔢', before:'7 × 1 = ', after:'', zh:'💡 算算看,答案是多少?', options:['14','0','7'], correct:'7', hint:'提示:7 × 1 就是 1 個 7 加起來(或 7 個 1 加起來)。', blanks:1 },
+      { id:11, title:'複習:7的乘法', photo:'🔢', before:'7 × 2 = ', after:'', zh:'💡 算算看,答案是多少?', options:['21','14','7'], correct:'14', hint:'提示:7 × 2 就是 2 個 7 加起來(或 7 個 2 加起來)。', blanks:1 },
+      { id:12, title:'複習:7的乘法', photo:'🔢', before:'7 × 3 = ', after:'', zh:'💡 算算看,答案是多少?', options:['28','21','14'], correct:'21', hint:'提示:7 × 3 就是 3 個 7 加起來(或 7 個 3 加起來)。', blanks:1 },
+      { id:13, title:'複習:7的乘法', photo:'🔢', before:'7 × 4 = ', after:'', zh:'💡 算算看,答案是多少?', options:['35','28','21'], correct:'28', hint:'提示:7 × 4 就是 4 個 7 加起來(或 7 個 4 加起來)。', blanks:1 },
+      { id:14, title:'複習:7的乘法', photo:'🔢', before:'7 × 5 = ', after:'', zh:'💡 算算看,答案是多少?', options:['35','42','28'], correct:'35', hint:'提示:7 × 5 就是 5 個 7 加起來(或 7 個 5 加起來)。', blanks:1 },
+      { id:15, title:'複習:7的乘法', photo:'🔢', before:'7 × 6 = ', after:'', zh:'💡 算算看,答案是多少?', options:['42','49','35'], correct:'42', hint:'提示:7 × 6 就是 6 個 7 加起來(或 7 個 6 加起來)。', blanks:1 },
+      { id:16, title:'複習:7的乘法', photo:'🔢', before:'7 × 7 = ', after:'', zh:'💡 算算看,答案是多少?', options:['49','56','42'], correct:'49', hint:'提示:7 × 7 就是 7 個 7 加起來(或 7 個 7 加起來)。', blanks:1 },
+      { id:17, title:'複習:7的乘法', photo:'🔢', before:'7 × 8 = ', after:'', zh:'💡 算算看,答案是多少?', options:['63','56','49'], correct:'56', hint:'提示:7 × 8 就是 8 個 7 加起來(或 7 個 8 加起來)。', blanks:1 },
+      { id:18, title:'複習:7的乘法', photo:'🔢', before:'7 × 9 = ', after:'', zh:'💡 算算看,答案是多少?', options:['70','63','56'], correct:'63', hint:'提示:7 × 9 就是 9 個 7 加起來(或 7 個 9 加起來)。', blanks:1 },
+      { id:19, title:'缺格找答案', photo:'❓', before:'7 × ', after:' = 7', zh:'💡 空格應該填什麼數字?', options:['2','3','1'], correct:'1', hint:'提示:想想看7的幾倍是7。', blanks:1 },
+      { id:20, title:'缺格找答案', photo:'❓', before:'7 × ', after:' = 14', zh:'💡 空格應該填什麼數字?', options:['2','3','1'], correct:'2', hint:'提示:想想看7的幾倍是14。', blanks:1 },
+      { id:21, title:'缺格找答案', photo:'❓', before:'7 × ', after:' = 21', zh:'💡 空格應該填什麼數字?', options:['3','4','2'], correct:'3', hint:'提示:想想看7的幾倍是21。', blanks:1 },
+      { id:22, title:'缺格找答案', photo:'❓', before:'7 × ', after:' = 28', zh:'💡 空格應該填什麼數字?', options:['4','5','3'], correct:'4', hint:'提示:想想看7的幾倍是28。', blanks:1 },
+      { id:23, title:'缺格找答案', photo:'❓', before:'7 × ', after:' = 35', zh:'💡 空格應該填什麼數字?', options:['6','5','4'], correct:'5', hint:'提示:想想看7的幾倍是35。', blanks:1 },
+      { id:24, title:'缺格找答案', photo:'❓', before:'7 × ', after:' = 42', zh:'💡 空格應該填什麼數字?', options:['7','6','5'], correct:'6', hint:'提示:想想看7的幾倍是42。', blanks:1 },
+      { id:25, title:'缺格找答案', photo:'❓', before:'7 × ', after:' = 49', zh:'💡 空格應該填什麼數字?', options:['8','7','6'], correct:'7', hint:'提示:想想看7的幾倍是49。', blanks:1 },
+      { id:26, title:'缺格找答案', photo:'❓', before:'7 × ', after:' = 56', zh:'💡 空格應該填什麼數字?', options:['8','9','7'], correct:'8', hint:'提示:想想看7的幾倍是56。', blanks:1 },
+      { id:27, title:'缺格找答案', photo:'❓', before:'7 × ', after:' = 63', zh:'💡 空格應該填什麼數字?', options:['9','10','8'], correct:'9', hint:'提示:想想看7的幾倍是63。', blanks:1 },
+      { id:28, title:'缺格找答案', photo:'❓', before:'7 × ', after:' = 21', zh:'💡 空格應該填什麼數字?', options:['3','2','4'], correct:'3', hint:'提示:想想看7的幾倍是21。', blanks:1 },
+      { id:29, title:'缺格找答案', photo:'❓', before:'7 × ', after:' = 35', zh:'💡 空格應該填什麼數字?', options:['4','5','6'], correct:'5', hint:'提示:想想看7的幾倍是35。', blanks:1 },
+      { id:30, title:'缺格找答案', photo:'❓', before:'7 × ', after:' = 49', zh:'💡 空格應該填什麼數字?', options:['6','7','8'], correct:'7', hint:'提示:想想看7的幾倍是49。', blanks:1 },
+      { id:31, title:'缺格找答案', photo:'❓', before:'', after:' × 7 = 14', zh:'💡 空格應該填什麼數字?', options:['3','1','2'], correct:'2', hint:'提示:想想看7的幾倍是14。', blanks:1 },
+      { id:32, title:'缺格找答案', photo:'❓', before:'', after:' × 7 = 21', zh:'💡 空格應該填什麼數字?', options:['3','4','2'], correct:'3', hint:'提示:想想看7的幾倍是21。', blanks:1 },
+      { id:33, title:'缺格找答案', photo:'❓', before:'', after:' × 7 = 28', zh:'💡 空格應該填什麼數字?', options:['5','4','3'], correct:'4', hint:'提示:想想看7的幾倍是28。', blanks:1 },
+      { id:34, title:'缺格找答案', photo:'❓', before:'', after:' × 7 = 35', zh:'💡 空格應該填什麼數字?', options:['6','5','4'], correct:'5', hint:'提示:想想看7的幾倍是35。', blanks:1 },
+      { id:35, title:'缺格找答案', photo:'❓', before:'', after:' × 7 = 42', zh:'💡 空格應該填什麼數字?', options:['7','6','5'], correct:'6', hint:'提示:想想看7的幾倍是42。', blanks:1 },
+      { id:36, title:'缺格找答案', photo:'❓', before:'', after:' × 7 = 49', zh:'💡 空格應該填什麼數字?', options:['7','8','6'], correct:'7', hint:'提示:想想看7的幾倍是49。', blanks:1 },
+      { id:37, title:'缺格找答案', photo:'❓', before:'', after:' × 7 = 56', zh:'💡 空格應該填什麼數字?', options:['8','9','7'], correct:'8', hint:'提示:想想看7的幾倍是56。', blanks:1 },
+      { id:38, title:'缺格找答案', photo:'❓', before:'', after:' × 7 = 63', zh:'💡 空格應該填什麼數字?', options:['9','10','8'], correct:'9', hint:'提示:想想看7的幾倍是63。', blanks:1 },
+      { id:39, title:'缺格找答案', photo:'❓', before:'', after:' × 7 = 7', zh:'💡 空格應該填什麼數字?', options:['3','1','2'], correct:'1', hint:'提示:想想看7的幾倍是7。', blanks:1 },
+      { id:40, title:'缺格找答案', photo:'❓', before:'', after:' × 7 = 42', zh:'💡 空格應該填什麼數字?', options:['7','6','5'], correct:'6', hint:'提示:想想看7的幾倍是42。', blanks:1 },
+      { id:41, title:'缺格找答案', photo:'❓', before:'', after:' × 7 = 28', zh:'💡 空格應該填什麼數字?', options:['3','4','5'], correct:'4', hint:'提示:想想看7的幾倍是28。', blanks:1 },
+      { id:42, title:'缺格找答案', photo:'❓', before:'', after:' × 7 = 56', zh:'💡 空格應該填什麼數字?', options:['8','7','9'], correct:'8', hint:'提示:想想看7的幾倍是56。', blanks:1 },
+      { id:43, title:'拆解法挑戰', photo:'🧩', before:'用拆解法算算看:7 × 2 = 5 × 2 + 2 × 2 = 10 + 4 = ', after:'', zh:'💡 練習用「7的拆解法」', options:['13','15','14'], correct:'14', hint:'提示:7=5+2,所以7×n就是5×n再加上2×n。', blanks:1 },
+      { id:44, title:'拆解法挑戰', photo:'🧩', before:'用拆解法算算看:7 × 3 = 5 × 3 + 2 × 3 = 15 + 6 = ', after:'', zh:'💡 練習用「7的拆解法」', options:['20','22','21'], correct:'21', hint:'提示:7=5+2,所以7×n就是5×n再加上2×n。', blanks:1 },
+      { id:45, title:'拆解法挑戰', photo:'🧩', before:'用拆解法算算看:7 × 4 = 5 × 4 + 2 × 4 = 20 + 8 = ', after:'', zh:'💡 練習用「7的拆解法」', options:['28','29','27'], correct:'28', hint:'提示:7=5+2,所以7×n就是5×n再加上2×n。', blanks:1 },
+      { id:46, title:'拆解法挑戰', photo:'🧩', before:'用拆解法算算看:7 × 5 = 5 × 5 + 2 × 5 = 25 + 10 = ', after:'', zh:'💡 練習用「7的拆解法」', options:['35','36','34'], correct:'35', hint:'提示:7=5+2,所以7×n就是5×n再加上2×n。', blanks:1 },
+      { id:47, title:'拆解法挑戰', photo:'🧩', before:'用拆解法算算看:7 × 6 = 5 × 6 + 2 × 6 = 30 + 12 = ', after:'', zh:'💡 練習用「7的拆解法」', options:['42','43','41'], correct:'42', hint:'提示:7=5+2,所以7×n就是5×n再加上2×n。', blanks:1 },
+      { id:48, title:'拆解法挑戰', photo:'🧩', before:'用拆解法算算看:7 × 7 = 5 × 7 + 2 × 7 = 35 + 14 = ', after:'', zh:'💡 練習用「7的拆解法」', options:['50','49','48'], correct:'49', hint:'提示:7=5+2,所以7×n就是5×n再加上2×n。', blanks:1 },
+      { id:49, title:'拆解法挑戰', photo:'🧩', before:'用拆解法算算看:7 × 8 = 5 × 8 + 2 × 8 = 40 + 16 = ', after:'', zh:'💡 練習用「7的拆解法」', options:['57','56','55'], correct:'56', hint:'提示:7=5+2,所以7×n就是5×n再加上2×n。', blanks:1 },
+      { id:50, title:'拆解法挑戰', photo:'🧩', before:'用拆解法算算看:7 × 9 = 5 × 9 + 2 × 9 = 45 + 18 = ', after:'', zh:'💡 練習用「7的拆解法」', options:['64','63','62'], correct:'63', hint:'提示:7=5+2,所以7×n就是5×n再加上2×n。', blanks:1 },
+      { id:51, title:'生活應用題', photo:'📖', before:'一包餅乾有 7 片,2 包餅乾共有幾片?答案是 ', after:' 片', zh:'💡 想想看要用哪個算式', options:['21','7','14'], correct:'14', hint:'提示:2 個 7 相加,就是 7×2。', blanks:1 },
+      { id:52, title:'生活應用題', photo:'📖', before:'一排椅子有 7 張,3 排椅子共有幾張?答案是 ', after:' 張', zh:'💡 想想看要用哪個算式', options:['28','14','21'], correct:'21', hint:'提示:3 個 7 相加,就是 7×3。', blanks:1 },
+      { id:53, title:'生活應用題', photo:'📖', before:'一袋橘子有 7 顆,4 袋橘子共有幾顆?答案是 ', after:' 顆', zh:'💡 想想看要用哪個算式', options:['28','35','21'], correct:'28', hint:'提示:4 個 7 相加,就是 7×4。', blanks:1 },
+      { id:54, title:'生活應用題', photo:'📖', before:'一串葡萄有 7 顆,5 串葡萄共有幾顆?答案是 ', after:' 顆', zh:'💡 想想看要用哪個算式', options:['42','35','28'], correct:'35', hint:'提示:5 個 7 相加,就是 7×5。', blanks:1 },
+      { id:55, title:'生活應用題', photo:'📖', before:'一盒色鉛筆有 7 支,6 盒色鉛筆共有幾支?答案是 ', after:' 支', zh:'💡 想想看要用哪個算式', options:['49','42','35'], correct:'42', hint:'提示:6 個 7 相加,就是 7×6。', blanks:1 },
+      { id:56, title:'生活應用題', photo:'📖', before:'一籃雞蛋有 7 顆,7 籃雞蛋共有幾顆?答案是 ', after:' 顆', zh:'💡 想想看要用哪個算式', options:['56','49','42'], correct:'49', hint:'提示:7 個 7 相加,就是 7×7。', blanks:1 },
+      { id:57, title:'生活應用題', photo:'📖', before:'一束花有 7 朵,8 束花共有幾朵?答案是 ', after:' 朵', zh:'💡 想想看要用哪個算式', options:['56','63','49'], correct:'56', hint:'提示:8 個 7 相加,就是 7×8。', blanks:1 },
+      { id:58, title:'生活應用題', photo:'📖', before:'一箱牛奶有 7 瓶,9 箱牛奶共有幾瓶?答案是 ', after:' 瓶', zh:'💡 想想看要用哪個算式', options:['63','70','56'], correct:'63', hint:'提示:9 個 7 相加,就是 7×9。', blanks:1 },
+      { id:59, title:'生活應用題', photo:'📖', before:'一袋彈珠有 7 顆,3 袋彈珠共有幾顆?答案是 ', after:' 顆', zh:'💡 想想看要用哪個算式', options:['21','28','14'], correct:'21', hint:'提示:3 個 7 相加,就是 7×3。', blanks:1 },
+      { id:60, title:'生活應用題', photo:'📖', before:'一盤水果有 7 顆,5 盤水果共有幾顆?答案是 ', after:' 顆', zh:'💡 想想看要用哪個算式', options:['42','35','28'], correct:'35', hint:'提示:5 個 7 相加,就是 7×5。', blanks:1 },
+    ],
+    poolSampleSize: 15,
+    levels: [],
+    celebrateMessage: '你把 7 的乘法都學會了,太厲害了!',
+    celebrateEmoji: '🎉🔢',
+
+    // ---- runtime state (do not edit by hand; the app manages these) ----
+    multIndex: 0,
+    multFlipped: false,
+    gameCurrentLevel: 0
+  },
+
+  {
+    id: 'mult8',
+    subject: 'math',
+    category: 'multiplication',
+    unitLabel: '數學 19',
+    title: '8 的乘法',
+    zh: '格子圖 · 規律心法 · 過關挑戰',
+    cardEmoji: '8️⃣',
+    headerEmoji: '🔢',
+    enabledTabs: ['story', 'grammar', 'game'],
+    tabLabels: { story: '📊 格子圖', grammar: '🔍 規律心法', game: '🎮 過關挑戰' },
+
+    multiplier: 8,
+
+    ruleType: 'mathPattern',
+    ruleHeading: '8 的乘法規律筆記',
+    patternNotes: [
+      {
+        heading: '🔑 秘密規律:個位數字 8,6,4,2,0 輪流出現',
+        body: [
+          '把 8 的乘法列出來看看:8×1=<span class=\"mult-pattern-eq\">08</span>,8×2=<span class=\"mult-pattern-eq\">16</span>,8×3=<span class=\"mult-pattern-eq\">24</span>...一直到 8×9=<span class=\"mult-pattern-eq\">72</span>。',
+          '你會發現個位數字是 8,6,4,2,0 這五個數字一直輪流出現(每次少 2),背熟這個順序,可以很快檢查答案的個位數對不對。'
+        ]
+      },
+      {
+        heading: '✋ 連續加倍法:8 = 2×2×2',
+        body: [
+          '8×n 可以想成「把 n 連續加倍三次」(因為 2×2×2=8)。',
+          '例如 8×6:6 先加倍變 12,12 再加倍變 24,24 再加倍變 <span class=\"mult-pattern-eq\">48</span>,就是答案。'
+        ]
+      },
+      {
+        heading: '🧩 拆解法:8 = 10 − 2',
+        body: [
+          '8 比 10 少 2,所以 8×n 可以想成「先算 10×n,再減掉 2×n」。',
+          '例如 8×7 = 10×7 − 2×7 = 70 − 14 = <span class=\"mult-pattern-eq\">56</span>。'
+        ]
+      }
+    ],
+
+    gameTitle: '8 的乘法過關挑戰',
+    levelPool: [
+      { id:1, title:'第1題:直接背誦', photo:'🔢', before:'8 × 1 = ', after:'', zh:'💡 算算看,答案是多少?', options:['16','0','8'], correct:'8', hint:'提示:8 × 1 就是 1 個 8 加起來(或 8 個 1 加起來)。', blanks:1 },
+      { id:2, title:'第2題:直接背誦', photo:'🔢', before:'8 × 2 = ', after:'', zh:'💡 算算看,答案是多少?', options:['8','24','16'], correct:'16', hint:'提示:8 × 2 就是 2 個 8 加起來(或 8 個 2 加起來)。', blanks:1 },
+      { id:3, title:'第3題:直接背誦', photo:'🔢', before:'8 × 3 = ', after:'', zh:'💡 算算看,答案是多少?', options:['32','24','16'], correct:'24', hint:'提示:8 × 3 就是 3 個 8 加起來(或 8 個 3 加起來)。', blanks:1 },
+      { id:4, title:'第4題:直接背誦', photo:'🔢', before:'8 × 4 = ', after:'', zh:'💡 算算看,答案是多少?', options:['40','32','24'], correct:'32', hint:'提示:8 × 4 就是 4 個 8 加起來(或 8 個 4 加起來)。', blanks:1 },
+      { id:5, title:'第5題:直接背誦', photo:'🔢', before:'8 × 5 = ', after:'', zh:'💡 算算看,答案是多少?', options:['48','40','32'], correct:'40', hint:'提示:8 × 5 就是 5 個 8 加起來(或 8 個 5 加起來)。', blanks:1 },
+      { id:6, title:'第6題:直接背誦', photo:'🔢', before:'8 × 6 = ', after:'', zh:'💡 算算看,答案是多少?', options:['48','56','40'], correct:'48', hint:'提示:8 × 6 就是 6 個 8 加起來(或 8 個 6 加起來)。', blanks:1 },
+      { id:7, title:'第7題:直接背誦', photo:'🔢', before:'8 × 7 = ', after:'', zh:'💡 算算看,答案是多少?', options:['56','64','48'], correct:'56', hint:'提示:8 × 7 就是 7 個 8 加起來(或 8 個 7 加起來)。', blanks:1 },
+      { id:8, title:'第8題:直接背誦', photo:'🔢', before:'8 × 8 = ', after:'', zh:'💡 算算看,答案是多少?', options:['64','72','56'], correct:'64', hint:'提示:8 × 8 就是 8 個 8 加起來(或 8 個 8 加起來)。', blanks:1 },
+      { id:9, title:'第9題:直接背誦', photo:'🔢', before:'8 × 9 = ', after:'', zh:'💡 算算看,答案是多少?', options:['80','72','64'], correct:'72', hint:'提示:8 × 9 就是 9 個 8 加起來(或 8 個 9 加起來)。', blanks:1 },
+      { id:10, title:'複習:8的乘法', photo:'🔢', before:'8 × 1 = ', after:'', zh:'💡 算算看,答案是多少?', options:['0','16','8'], correct:'8', hint:'提示:8 × 1 就是 1 個 8 加起來(或 8 個 1 加起來)。', blanks:1 },
+      { id:11, title:'複習:8的乘法', photo:'🔢', before:'8 × 2 = ', after:'', zh:'💡 算算看,答案是多少?', options:['8','24','16'], correct:'16', hint:'提示:8 × 2 就是 2 個 8 加起來(或 8 個 2 加起來)。', blanks:1 },
+      { id:12, title:'複習:8的乘法', photo:'🔢', before:'8 × 3 = ', after:'', zh:'💡 算算看,答案是多少?', options:['16','32','24'], correct:'24', hint:'提示:8 × 3 就是 3 個 8 加起來(或 8 個 3 加起來)。', blanks:1 },
+      { id:13, title:'複習:8的乘法', photo:'🔢', before:'8 × 4 = ', after:'', zh:'💡 算算看,答案是多少?', options:['40','24','32'], correct:'32', hint:'提示:8 × 4 就是 4 個 8 加起來(或 8 個 4 加起來)。', blanks:1 },
+      { id:14, title:'複習:8的乘法', photo:'🔢', before:'8 × 5 = ', after:'', zh:'💡 算算看,答案是多少?', options:['40','48','32'], correct:'40', hint:'提示:8 × 5 就是 5 個 8 加起來(或 8 個 5 加起來)。', blanks:1 },
+      { id:15, title:'複習:8的乘法', photo:'🔢', before:'8 × 6 = ', after:'', zh:'💡 算算看,答案是多少?', options:['48','56','40'], correct:'48', hint:'提示:8 × 6 就是 6 個 8 加起來(或 8 個 6 加起來)。', blanks:1 },
+      { id:16, title:'複習:8的乘法', photo:'🔢', before:'8 × 7 = ', after:'', zh:'💡 算算看,答案是多少?', options:['64','56','48'], correct:'56', hint:'提示:8 × 7 就是 7 個 8 加起來(或 8 個 7 加起來)。', blanks:1 },
+      { id:17, title:'複習:8的乘法', photo:'🔢', before:'8 × 8 = ', after:'', zh:'💡 算算看,答案是多少?', options:['72','64','56'], correct:'64', hint:'提示:8 × 8 就是 8 個 8 加起來(或 8 個 8 加起來)。', blanks:1 },
+      { id:18, title:'複習:8的乘法', photo:'🔢', before:'8 × 9 = ', after:'', zh:'💡 算算看,答案是多少?', options:['80','72','64'], correct:'72', hint:'提示:8 × 9 就是 9 個 8 加起來(或 8 個 9 加起來)。', blanks:1 },
+      { id:19, title:'缺格找答案', photo:'❓', before:'8 × ', after:' = 8', zh:'💡 空格應該填什麼數字?', options:['2','3','1'], correct:'1', hint:'提示:想想看8的幾倍是8。', blanks:1 },
+      { id:20, title:'缺格找答案', photo:'❓', before:'8 × ', after:' = 16', zh:'💡 空格應該填什麼數字?', options:['3','1','2'], correct:'2', hint:'提示:想想看8的幾倍是16。', blanks:1 },
+      { id:21, title:'缺格找答案', photo:'❓', before:'8 × ', after:' = 24', zh:'💡 空格應該填什麼數字?', options:['4','2','3'], correct:'3', hint:'提示:想想看8的幾倍是24。', blanks:1 },
+      { id:22, title:'缺格找答案', photo:'❓', before:'8 × ', after:' = 32', zh:'💡 空格應該填什麼數字?', options:['5','3','4'], correct:'4', hint:'提示:想想看8的幾倍是32。', blanks:1 },
+      { id:23, title:'缺格找答案', photo:'❓', before:'8 × ', after:' = 40', zh:'💡 空格應該填什麼數字?', options:['6','5','4'], correct:'5', hint:'提示:想想看8的幾倍是40。', blanks:1 },
+      { id:24, title:'缺格找答案', photo:'❓', before:'8 × ', after:' = 48', zh:'💡 空格應該填什麼數字?', options:['7','6','5'], correct:'6', hint:'提示:想想看8的幾倍是48。', blanks:1 },
+      { id:25, title:'缺格找答案', photo:'❓', before:'8 × ', after:' = 56', zh:'💡 空格應該填什麼數字?', options:['8','7','6'], correct:'7', hint:'提示:想想看8的幾倍是56。', blanks:1 },
+      { id:26, title:'缺格找答案', photo:'❓', before:'8 × ', after:' = 64', zh:'💡 空格應該填什麼數字?', options:['8','9','7'], correct:'8', hint:'提示:想想看8的幾倍是64。', blanks:1 },
+      { id:27, title:'缺格找答案', photo:'❓', before:'8 × ', after:' = 72', zh:'💡 空格應該填什麼數字?', options:['9','10','8'], correct:'9', hint:'提示:想想看8的幾倍是72。', blanks:1 },
+      { id:28, title:'缺格找答案', photo:'❓', before:'8 × ', after:' = 24', zh:'💡 空格應該填什麼數字?', options:['3','4','2'], correct:'3', hint:'提示:想想看8的幾倍是24。', blanks:1 },
+      { id:29, title:'缺格找答案', photo:'❓', before:'8 × ', after:' = 40', zh:'💡 空格應該填什麼數字?', options:['6','5','4'], correct:'5', hint:'提示:想想看8的幾倍是40。', blanks:1 },
+      { id:30, title:'缺格找答案', photo:'❓', before:'8 × ', after:' = 56', zh:'💡 空格應該填什麼數字?', options:['8','7','6'], correct:'7', hint:'提示:想想看8的幾倍是56。', blanks:1 },
+      { id:31, title:'缺格找答案', photo:'❓', before:'', after:' × 8 = 16', zh:'💡 空格應該填什麼數字?', options:['3','1','2'], correct:'2', hint:'提示:想想看8的幾倍是16。', blanks:1 },
+      { id:32, title:'缺格找答案', photo:'❓', before:'', after:' × 8 = 24', zh:'💡 空格應該填什麼數字?', options:['2','4','3'], correct:'3', hint:'提示:想想看8的幾倍是24。', blanks:1 },
+      { id:33, title:'缺格找答案', photo:'❓', before:'', after:' × 8 = 32', zh:'💡 空格應該填什麼數字?', options:['3','5','4'], correct:'4', hint:'提示:想想看8的幾倍是32。', blanks:1 },
+      { id:34, title:'缺格找答案', photo:'❓', before:'', after:' × 8 = 40', zh:'💡 空格應該填什麼數字?', options:['4','6','5'], correct:'5', hint:'提示:想想看8的幾倍是40。', blanks:1 },
+      { id:35, title:'缺格找答案', photo:'❓', before:'', after:' × 8 = 48', zh:'💡 空格應該填什麼數字?', options:['6','7','5'], correct:'6', hint:'提示:想想看8的幾倍是48。', blanks:1 },
+      { id:36, title:'缺格找答案', photo:'❓', before:'', after:' × 8 = 56', zh:'💡 空格應該填什麼數字?', options:['7','8','6'], correct:'7', hint:'提示:想想看8的幾倍是56。', blanks:1 },
+      { id:37, title:'缺格找答案', photo:'❓', before:'', after:' × 8 = 64', zh:'💡 空格應該填什麼數字?', options:['8','9','7'], correct:'8', hint:'提示:想想看8的幾倍是64。', blanks:1 },
+      { id:38, title:'缺格找答案', photo:'❓', before:'', after:' × 8 = 72', zh:'💡 空格應該填什麼數字?', options:['10','9','8'], correct:'9', hint:'提示:想想看8的幾倍是72。', blanks:1 },
+      { id:39, title:'缺格找答案', photo:'❓', before:'', after:' × 8 = 8', zh:'💡 空格應該填什麼數字?', options:['3','1','2'], correct:'1', hint:'提示:想想看8的幾倍是8。', blanks:1 },
+      { id:40, title:'缺格找答案', photo:'❓', before:'', after:' × 8 = 48', zh:'💡 空格應該填什麼數字?', options:['7','6','5'], correct:'6', hint:'提示:想想看8的幾倍是48。', blanks:1 },
+      { id:41, title:'缺格找答案', photo:'❓', before:'', after:' × 8 = 32', zh:'💡 空格應該填什麼數字?', options:['4','5','3'], correct:'4', hint:'提示:想想看8的幾倍是32。', blanks:1 },
+      { id:42, title:'缺格找答案', photo:'❓', before:'', after:' × 8 = 64', zh:'💡 空格應該填什麼數字?', options:['8','9','7'], correct:'8', hint:'提示:想想看8的幾倍是64。', blanks:1 },
+      { id:43, title:'拆解法挑戰', photo:'🧩', before:'用拆解法算算看:8 × 2 = 10 × 2 − 2 × 2 = 20 − 4 = ', after:'', zh:'💡 練習用「8的拆解法」', options:['15','17','16'], correct:'16', hint:'提示:8比10少2,所以8×n就是10×n再減掉2×n。', blanks:1 },
+      { id:44, title:'拆解法挑戰', photo:'🧩', before:'用拆解法算算看:8 × 3 = 10 × 3 − 2 × 3 = 30 − 6 = ', after:'', zh:'💡 練習用「8的拆解法」', options:['23','25','24'], correct:'24', hint:'提示:8比10少2,所以8×n就是10×n再減掉2×n。', blanks:1 },
+      { id:45, title:'拆解法挑戰', photo:'🧩', before:'用拆解法算算看:8 × 4 = 10 × 4 − 2 × 4 = 40 − 8 = ', after:'', zh:'💡 練習用「8的拆解法」', options:['33','31','32'], correct:'32', hint:'提示:8比10少2,所以8×n就是10×n再減掉2×n。', blanks:1 },
+      { id:46, title:'拆解法挑戰', photo:'🧩', before:'用拆解法算算看:8 × 5 = 10 × 5 − 2 × 5 = 50 − 10 = ', after:'', zh:'💡 練習用「8的拆解法」', options:['41','39','40'], correct:'40', hint:'提示:8比10少2,所以8×n就是10×n再減掉2×n。', blanks:1 },
+      { id:47, title:'拆解法挑戰', photo:'🧩', before:'用拆解法算算看:8 × 6 = 10 × 6 − 2 × 6 = 60 − 12 = ', after:'', zh:'💡 練習用「8的拆解法」', options:['49','47','48'], correct:'48', hint:'提示:8比10少2,所以8×n就是10×n再減掉2×n。', blanks:1 },
+      { id:48, title:'拆解法挑戰', photo:'🧩', before:'用拆解法算算看:8 × 7 = 10 × 7 − 2 × 7 = 70 − 14 = ', after:'', zh:'💡 練習用「8的拆解法」', options:['57','56','55'], correct:'56', hint:'提示:8比10少2,所以8×n就是10×n再減掉2×n。', blanks:1 },
+      { id:49, title:'拆解法挑戰', photo:'🧩', before:'用拆解法算算看:8 × 8 = 10 × 8 − 2 × 8 = 80 − 16 = ', after:'', zh:'💡 練習用「8的拆解法」', options:['65','64','63'], correct:'64', hint:'提示:8比10少2,所以8×n就是10×n再減掉2×n。', blanks:1 },
+      { id:50, title:'拆解法挑戰', photo:'🧩', before:'用拆解法算算看:8 × 9 = 10 × 9 − 2 × 9 = 90 − 18 = ', after:'', zh:'💡 練習用「8的拆解法」', options:['73','72','71'], correct:'72', hint:'提示:8比10少2,所以8×n就是10×n再減掉2×n。', blanks:1 },
+      { id:51, title:'生活應用題', photo:'📖', before:'一包餅乾有 8 片,2 包餅乾共有幾片?答案是 ', after:' 片', zh:'💡 想想看要用哪個算式', options:['24','8','16'], correct:'16', hint:'提示:2 個 8 相加,就是 8×2。', blanks:1 },
+      { id:52, title:'生活應用題', photo:'📖', before:'一排椅子有 8 張,3 排椅子共有幾張?答案是 ', after:' 張', zh:'💡 想想看要用哪個算式', options:['32','16','24'], correct:'24', hint:'提示:3 個 8 相加,就是 8×3。', blanks:1 },
+      { id:53, title:'生活應用題', photo:'📖', before:'一袋橘子有 8 顆,4 袋橘子共有幾顆?答案是 ', after:' 顆', zh:'💡 想想看要用哪個算式', options:['24','40','32'], correct:'32', hint:'提示:4 個 8 相加,就是 8×4。', blanks:1 },
+      { id:54, title:'生活應用題', photo:'📖', before:'一串葡萄有 8 顆,5 串葡萄共有幾顆?答案是 ', after:' 顆', zh:'💡 想想看要用哪個算式', options:['32','48','40'], correct:'40', hint:'提示:5 個 8 相加,就是 8×5。', blanks:1 },
+      { id:55, title:'生活應用題', photo:'📖', before:'一盒色鉛筆有 8 支,6 盒色鉛筆共有幾支?答案是 ', after:' 支', zh:'💡 想想看要用哪個算式', options:['40','56','48'], correct:'48', hint:'提示:6 個 8 相加,就是 8×6。', blanks:1 },
+      { id:56, title:'生活應用題', photo:'📖', before:'一籃雞蛋有 8 顆,7 籃雞蛋共有幾顆?答案是 ', after:' 顆', zh:'💡 想想看要用哪個算式', options:['56','64','48'], correct:'56', hint:'提示:7 個 8 相加,就是 8×7。', blanks:1 },
+      { id:57, title:'生活應用題', photo:'📖', before:'一束花有 8 朵,8 束花共有幾朵?答案是 ', after:' 朵', zh:'💡 想想看要用哪個算式', options:['64','72','56'], correct:'64', hint:'提示:8 個 8 相加,就是 8×8。', blanks:1 },
+      { id:58, title:'生活應用題', photo:'📖', before:'一箱牛奶有 8 瓶,9 箱牛奶共有幾瓶?答案是 ', after:' 瓶', zh:'💡 想想看要用哪個算式', options:['72','80','64'], correct:'72', hint:'提示:9 個 8 相加,就是 8×9。', blanks:1 },
+      { id:59, title:'生活應用題', photo:'📖', before:'一袋彈珠有 8 顆,3 袋彈珠共有幾顆?答案是 ', after:' 顆', zh:'💡 想想看要用哪個算式', options:['32','24','16'], correct:'24', hint:'提示:3 個 8 相加,就是 8×3。', blanks:1 },
+      { id:60, title:'生活應用題', photo:'📖', before:'一盤水果有 8 顆,5 盤水果共有幾顆?答案是 ', after:' 顆', zh:'💡 想想看要用哪個算式', options:['48','40','32'], correct:'40', hint:'提示:5 個 8 相加,就是 8×5。', blanks:1 },
+    ],
+    poolSampleSize: 15,
+    levels: [],
+    celebrateMessage: '你把 8 的乘法都學會了,太厲害了!',
+    celebrateEmoji: '🎉🔢',
+
+    // ---- runtime state (do not edit by hand; the app manages these) ----
+    multIndex: 0,
+    multFlipped: false,
+    gameCurrentLevel: 0
+  },
+  {
     id: 'charDiscrim1',
     subject: 'mandarin',
     category: 'charDiscrimination',
@@ -7150,10 +7710,10 @@ levelPool: [
       { id:54, title:'複習:字音字形', photo:'🔤', before:'除了功課以外,', after:'他的事情也不用太擔心。', zh:'💡 選出正確的字', options:['旗','騎','其'], correct:'其', hint:'提示:「其」「旗」「騎」都唸ㄑㄧˊ,其他的其跟國旗的旗是同音字。', blanks:1 },
       { id:55, title:'複習:字音字形', photo:'🔤', before:'除了功課以外,', after:'他的事情也不用太擔心。', zh:'💡 選出正確的字', options:['騎','旗','其'], correct:'其', hint:'提示:「其」「旗」「騎」都唸ㄑㄧˊ,其他的其跟國旗的旗是同音字。', blanks:1 },
       { id:56, title:'複習:字音字形', photo:'🔤', before:'除了功課以外,', after:'他的事情也不用太擔心。', zh:'💡 選出正確的字', options:['旗','騎','其'], correct:'其', hint:'提示:「其」「旗」「騎」都唸ㄑㄧˊ,其他的其跟國旗的旗是同音字。', blanks:1 },
-      { id:57, title:'字音字形挑戰', photo:'🔤', before:'火車快要', after:'站了,大家準備下車。', zh:'💡 選出正確的字', options:['到','倒','道'], correct:'到', hint:'提示:「到」「道」都唸ㄉㄠˋ,到達的到跟知道的道是同音字。', blanks:1 },
-      { id:58, title:'複習:字音字形', photo:'🔤', before:'火車快要', after:'站了,大家準備下車。', zh:'💡 選出正確的字', options:['倒','到','道'], correct:'到', hint:'提示:「到」「道」都唸ㄉㄠˋ,到達的到跟知道的道是同音字。', blanks:1 },
-      { id:59, title:'複習:字音字形', photo:'🔤', before:'火車快要', after:'站了,大家準備下車。', zh:'💡 選出正確的字', options:['到','道','倒'], correct:'到', hint:'提示:「到」「道」都唸ㄉㄠˋ,到達的到跟知道的道是同音字。', blanks:1 },
-      { id:60, title:'複習:字音字形', photo:'🔤', before:'火車快要', after:'站了,大家準備下車。', zh:'💡 選出正確的字', options:['道','到','倒'], correct:'到', hint:'提示:「到」「道」都唸ㄉㄠˋ,到達的到跟知道的道是同音字。', blanks:1 }
+      { id:57, title:'字音字形挑戰', photo:'🔤', before:'動物園裡有一隻大', after:'。', zh:'💡 選出正確的字', options:['象','像','向'], correct:'象', hint:'提示:「象」「像」都唸ㄒㄧㄤˋ,大象的象跟好像的像是同音字。', blanks:1 },
+      { id:58, title:'複習:字音字形', photo:'🔤', before:'動物園裡有一隻大', after:'。', zh:'💡 選出正確的字', options:['像','象','向'], correct:'象', hint:'提示:「象」「像」都唸ㄒㄧㄤˋ,大象的象跟好像的像是同音字。', blanks:1 },
+      { id:59, title:'複習:字音字形', photo:'🔤', before:'動物園裡有一隻大', after:'。', zh:'💡 選出正確的字', options:['象','向','像'], correct:'象', hint:'提示:「象」「像」都唸ㄒㄧㄤˋ,大象的象跟好像的像是同音字。', blanks:1 },
+      { id:60, title:'複習:字音字形', photo:'🔤', before:'動物園裡有一隻大', after:'。', zh:'💡 選出正確的字', options:['向','象','像'], correct:'象', hint:'提示:「象」「像」都唸ㄒㄧㄤˋ,大象的象跟好像的像是同音字。', blanks:1 }
     ],
     poolSampleSize: 15,
     levels: [],
@@ -7169,7 +7729,7 @@ levelPool: [
     subject: 'mandarin',
     category: 'charDiscrimination',
     unitLabel: '字音字形 4',
-    title: '字音字形:生字10~11課',
+    title: '字音字形:生字10~12課',
     zh: '字音字形練習 · 過關挑戰',
     cardEmoji: '🔤',
     headerEmoji: '🔤',
@@ -7182,7 +7742,7 @@ levelPool: [
       {
         heading: '🔑 什麼是字音字形?',
         body: [
-          '很多國字唸起來一模一樣(同音字),或是長得很像只差一點點(形似字),很容易寫錯、選錯。這個練習專門挑出第10~11課(第12課使用者尚未提供,暫不包含)生字裡容易跟別的字搞混的部分,幫助分辨清楚。'
+          '很多國字唸起來一模一樣(同音字),或是長得很像只差一點點(形似字),很容易寫錯、選錯。這個練習專門挑出第10~12課生字裡容易跟別的字搞混的部分,幫助分辨清楚。'
         ]
       },
       {
@@ -7201,66 +7761,66 @@ levelPool: [
 
     gameTitle: '字音字形過關挑戰',
 levelPool: [
-      { id:1, title:'字音字形挑戰', photo:'🔤', before:'今天家裡來了很多', after:'人,媽媽準備了好多菜。', zh:'💡 選出正確的字', options:['課','刻','客'], correct:'客', hint:'提示:「客」「課」「刻」都唸ㄎㄜˋ,客人的客跟上課的課是同音字。', blanks:1 },
-      { id:2, title:'複習:字音字形', photo:'🔤', before:'今天家裡來了很多', after:'人,媽媽準備了好多菜。', zh:'💡 選出正確的字', options:['刻','課','客'], correct:'客', hint:'提示:「客」「課」「刻」都唸ㄎㄜˋ,客人的客跟上課的課是同音字。', blanks:1 },
-      { id:3, title:'複習:字音字形', photo:'🔤', before:'今天家裡來了很多', after:'人,媽媽準備了好多菜。', zh:'💡 選出正確的字', options:['刻','客','課'], correct:'客', hint:'提示:「客」「課」「刻」都唸ㄎㄜˋ,客人的客跟上課的課是同音字。', blanks:1 },
-      { id:4, title:'複習:字音字形', photo:'🔤', before:'今天家裡來了很多', after:'人,媽媽準備了好多菜。', zh:'💡 選出正確的字', options:['客','刻','課'], correct:'客', hint:'提示:「客」「課」「刻」都唸ㄎㄜˋ,客人的客跟上課的課是同音字。', blanks:1 },
-      { id:5, title:'字音字形挑戰', photo:'🔤', before:'他難過的時候,常常會', after:'著淚水說故事。', zh:'💡 選出正確的字', options:['冒','貌','帽'], correct:'冒', hint:'提示:「冒」「貌」「帽」都唸ㄇㄠˋ,冒煙的冒跟帽子的帽是同音字。', blanks:1 },
-      { id:6, title:'複習:字音字形', photo:'🔤', before:'他難過的時候,常常會', after:'著淚水說故事。', zh:'💡 選出正確的字', options:['貌','冒','帽'], correct:'冒', hint:'提示:「冒」「貌」「帽」都唸ㄇㄠˋ,冒煙的冒跟帽子的帽是同音字。', blanks:1 },
-      { id:7, title:'複習:字音字形', photo:'🔤', before:'他難過的時候,常常會', after:'著淚水說故事。', zh:'💡 選出正確的字', options:['冒','貌','帽'], correct:'冒', hint:'提示:「冒」「貌」「帽」都唸ㄇㄠˋ,冒煙的冒跟帽子的帽是同音字。', blanks:1 },
-      { id:8, title:'複習:字音字形', photo:'🔤', before:'他難過的時候,常常會', after:'著淚水說故事。', zh:'💡 選出正確的字', options:['貌','帽','冒'], correct:'冒', hint:'提示:「冒」「貌」「帽」都唸ㄇㄠˋ,冒煙的冒跟帽子的帽是同音字。', blanks:1 },
-      { id:9, title:'字音字形挑戰', photo:'🔤', before:'同學們趁下課時間', after:'在一起聊天。', zh:'💡 選出正確的字', options:['劇','句','聚'], correct:'聚', hint:'提示:「聚」「句」「劇」都唸ㄐㄩˋ,聚會的聚跟句子的句是同音字。', blanks:1 },
-      { id:10, title:'複習:字音字形', photo:'🔤', before:'同學們趁下課時間', after:'在一起聊天。', zh:'💡 選出正確的字', options:['句','劇','聚'], correct:'聚', hint:'提示:「聚」「句」「劇」都唸ㄐㄩˋ,聚會的聚跟句子的句是同音字。', blanks:1 },
-      { id:11, title:'複習:字音字形', photo:'🔤', before:'同學們趁下課時間', after:'在一起聊天。', zh:'💡 選出正確的字', options:['聚','劇','句'], correct:'聚', hint:'提示:「聚」「句」「劇」都唸ㄐㄩˋ,聚會的聚跟句子的句是同音字。', blanks:1 },
-      { id:12, title:'複習:字音字形', photo:'🔤', before:'同學們趁下課時間', after:'在一起聊天。', zh:'💡 選出正確的字', options:['劇','聚','句'], correct:'聚', hint:'提示:「聚」「句」「劇」都唸ㄐㄩˋ,聚會的聚跟句子的句是同音字。', blanks:1 },
-      { id:13, title:'字音字形挑戰', photo:'🔤', before:'媽媽煮了一大鍋香噴噴的', after:'菜。', zh:'💡 選出正確的字', options:['飯','犯','範'], correct:'飯', hint:'提示:「飯」「犯」「範」都唸ㄈㄢˋ,吃飯的飯跟犯錯的犯是同音字。', blanks:1 },
-      { id:14, title:'複習:字音字形', photo:'🔤', before:'媽媽煮了一大鍋香噴噴的', after:'菜。', zh:'💡 選出正確的字', options:['犯','飯','範'], correct:'飯', hint:'提示:「飯」「犯」「範」都唸ㄈㄢˋ,吃飯的飯跟犯錯的犯是同音字。', blanks:1 },
-      { id:15, title:'複習:字音字形', photo:'🔤', before:'媽媽煮了一大鍋香噴噴的', after:'菜。', zh:'💡 選出正確的字', options:['飯','犯','範'], correct:'飯', hint:'提示:「飯」「犯」「範」都唸ㄈㄢˋ,吃飯的飯跟犯錯的犯是同音字。', blanks:1 },
-      { id:16, title:'複習:字音字形', photo:'🔤', before:'媽媽煮了一大鍋香噴噴的', after:'菜。', zh:'💡 選出正確的字', options:['犯','範','飯'], correct:'飯', hint:'提示:「飯」「犯」「範」都唸ㄈㄢˋ,吃飯的飯跟犯錯的犯是同音字。', blanks:1 },
-      { id:17, title:'字音字形挑戰', photo:'🔤', before:'和好朋友一起玩,心情特別', after:'快。', zh:'💡 選出正確的字', options:['於','魚','愉'], correct:'愉', hint:'提示:「愉」「魚」「於」都唸ㄩˊ,愉快的愉跟魚的魚是同音字。', blanks:1 },
-      { id:18, title:'複習:字音字形', photo:'🔤', before:'和好朋友一起玩,心情特別', after:'快。', zh:'💡 選出正確的字', options:['於','愉','魚'], correct:'愉', hint:'提示:「愉」「魚」「於」都唸ㄩˊ,愉快的愉跟魚的魚是同音字。', blanks:1 },
-      { id:19, title:'複習:字音字形', photo:'🔤', before:'和好朋友一起玩,心情特別', after:'快。', zh:'💡 選出正確的字', options:['愉','於','魚'], correct:'愉', hint:'提示:「愉」「魚」「於」都唸ㄩˊ,愉快的愉跟魚的魚是同音字。', blanks:1 },
-      { id:20, title:'複習:字音字形', photo:'🔤', before:'和好朋友一起玩,心情特別', after:'快。', zh:'💡 選出正確的字', options:['於','愉','魚'], correct:'愉', hint:'提示:「愉」「魚」「於」都唸ㄩˊ,愉快的愉跟魚的魚是同音字。', blanks:1 },
-      { id:21, title:'字音字形挑戰', photo:'🔤', before:'能夠一起', after:'受美食,是件很幸福的事。', zh:'💡 選出正確的字', options:['想','享','響'], correct:'享', hint:'提示:「享」「想」「響」都唸ㄒㄧㄤˇ,享受的享跟想要的想是同音字。', blanks:1 },
-      { id:22, title:'複習:字音字形', photo:'🔤', before:'能夠一起', after:'受美食,是件很幸福的事。', zh:'💡 選出正確的字', options:['享','想','響'], correct:'享', hint:'提示:「享」「想」「響」都唸ㄒㄧㄤˇ,享受的享跟想要的想是同音字。', blanks:1 },
-      { id:23, title:'複習:字音字形', photo:'🔤', before:'能夠一起', after:'受美食,是件很幸福的事。', zh:'💡 選出正確的字', options:['想','享','響'], correct:'享', hint:'提示:「享」「想」「響」都唸ㄒㄧㄤˇ,享受的享跟想要的想是同音字。', blanks:1 },
-      { id:24, title:'複習:字音字形', photo:'🔤', before:'能夠一起', after:'受美食,是件很幸福的事。', zh:'💡 選出正確的字', options:['響','想','享'], correct:'享', hint:'提示:「享」「想」「響」都唸ㄒㄧㄤˇ,享受的享跟想要的想是同音字。', blanks:1 },
-      { id:25, title:'字音字形挑戰', photo:'🔤', before:'冬天到了,山上開始下雪,可以去', after:'雪。', zh:'💡 選出正確的字', options:['華','化','滑'], correct:'滑', hint:'提示:「滑」「華」都唸ㄏㄨㄚˊ,滑雪的滑跟中華的華是同音字。', blanks:1 },
-      { id:26, title:'複習:字音字形', photo:'🔤', before:'冬天到了,山上開始下雪,可以去', after:'雪。', zh:'💡 選出正確的字', options:['滑','化','華'], correct:'滑', hint:'提示:「滑」「華」都唸ㄏㄨㄚˊ,滑雪的滑跟中華的華是同音字。', blanks:1 },
-      { id:27, title:'複習:字音字形', photo:'🔤', before:'冬天到了,山上開始下雪,可以去', after:'雪。', zh:'💡 選出正確的字', options:['化','滑','華'], correct:'滑', hint:'提示:「滑」「華」都唸ㄏㄨㄚˊ,滑雪的滑跟中華的華是同音字。', blanks:1 },
-      { id:28, title:'複習:字音字形', photo:'🔤', before:'冬天到了,山上開始下雪,可以去', after:'雪。', zh:'💡 選出正確的字', options:['滑','化','華'], correct:'滑', hint:'提示:「滑」「華」都唸ㄏㄨㄚˊ,滑雪的滑跟中華的華是同音字。', blanks:1 },
-      { id:29, title:'字音字形挑戰', photo:'🔤', before:'媽媽在遠處大聲', after:'我回家吃飯。', zh:'💡 選出正確的字', options:['教','叫','轎'], correct:'叫', hint:'提示:「叫」「教」都唸ㄐㄧㄠˋ,叫做的叫跟教室的教是同音字。', blanks:1 },
-      { id:30, title:'複習:字音字形', photo:'🔤', before:'媽媽在遠處大聲', after:'我回家吃飯。', zh:'💡 選出正確的字', options:['叫','教','轎'], correct:'叫', hint:'提示:「叫」「教」都唸ㄐㄧㄠˋ,叫做的叫跟教室的教是同音字。', blanks:1 },
-      { id:31, title:'複習:字音字形', photo:'🔤', before:'媽媽在遠處大聲', after:'我回家吃飯。', zh:'💡 選出正確的字', options:['教','轎','叫'], correct:'叫', hint:'提示:「叫」「教」都唸ㄐㄧㄠˋ,叫做的叫跟教室的教是同音字。', blanks:1 },
-      { id:32, title:'複習:字音字形', photo:'🔤', before:'媽媽在遠處大聲', after:'我回家吃飯。', zh:'💡 選出正確的字', options:['轎','教','叫'], correct:'叫', hint:'提示:「叫」「教」都唸ㄐㄧㄠˋ,叫做的叫跟教室的教是同音字。', blanks:1 },
-      { id:33, title:'字音字形挑戰', photo:'🔤', before:'快遲到了,我們得', after:'快出發才行。', zh:'💡 選出正確的字', options:['敢','感','趕'], correct:'趕', hint:'提示:「趕」「敢」「感」都唸ㄍㄢˇ,趕快的趕跟勇敢的敢是同音字。', blanks:1 },
-      { id:34, title:'複習:字音字形', photo:'🔤', before:'快遲到了,我們得', after:'快出發才行。', zh:'💡 選出正確的字', options:['趕','感','敢'], correct:'趕', hint:'提示:「趕」「敢」「感」都唸ㄍㄢˇ,趕快的趕跟勇敢的敢是同音字。', blanks:1 },
-      { id:35, title:'複習:字音字形', photo:'🔤', before:'快遲到了,我們得', after:'快出發才行。', zh:'💡 選出正確的字', options:['感','趕','敢'], correct:'趕', hint:'提示:「趕」「敢」「感」都唸ㄍㄢˇ,趕快的趕跟勇敢的敢是同音字。', blanks:1 },
-      { id:36, title:'複習:字音字形', photo:'🔤', before:'快遲到了,我們得', after:'快出發才行。', zh:'💡 選出正確的字', options:['趕','感','敢'], correct:'趕', hint:'提示:「趕」「敢」「感」都唸ㄍㄢˇ,趕快的趕跟勇敢的敢是同音字。', blanks:1 },
-      { id:37, title:'字音字形挑戰', photo:'🔤', before:'我們要', after:'愛師長,尊重每一位長輩。', zh:'💡 選出正確的字', options:['敬','淨','競'], correct:'敬', hint:'提示:「敬」「淨」「競」都唸ㄐㄧㄥˋ,敬愛的敬跟乾淨的淨是同音字。', blanks:1 },
-      { id:38, title:'複習:字音字形', photo:'🔤', before:'我們要', after:'愛師長,尊重每一位長輩。', zh:'💡 選出正確的字', options:['淨','敬','競'], correct:'敬', hint:'提示:「敬」「淨」「競」都唸ㄐㄧㄥˋ,敬愛的敬跟乾淨的淨是同音字。', blanks:1 },
-      { id:39, title:'複習:字音字形', photo:'🔤', before:'我們要', after:'愛師長,尊重每一位長輩。', zh:'💡 選出正確的字', options:['競','淨','敬'], correct:'敬', hint:'提示:「敬」「淨」「競」都唸ㄐㄧㄥˋ,敬愛的敬跟乾淨的淨是同音字。', blanks:1 },
-      { id:40, title:'複習:字音字形', photo:'🔤', before:'我們要', after:'愛師長,尊重每一位長輩。', zh:'💡 選出正確的字', options:['淨','競','敬'], correct:'敬', hint:'提示:「敬」「淨」「競」都唸ㄐㄧㄥˋ,敬愛的敬跟乾淨的淨是同音字。', blanks:1 },
-      { id:41, title:'字音字形挑戰', photo:'🔤', before:'大家都很', after:'服他認真學習的態度。', zh:'💡 選出正確的字', options:['佩','沛','配'], correct:'佩', hint:'提示:「佩」「配」都唸ㄆㄟˋ,佩服的佩跟配合的配是同音字。', blanks:1 },
-      { id:42, title:'複習:字音字形', photo:'🔤', before:'大家都很', after:'服他認真學習的態度。', zh:'💡 選出正確的字', options:['沛','佩','配'], correct:'佩', hint:'提示:「佩」「配」都唸ㄆㄟˋ,佩服的佩跟配合的配是同音字。', blanks:1 },
-      { id:43, title:'複習:字音字形', photo:'🔤', before:'大家都很', after:'服他認真學習的態度。', zh:'💡 選出正確的字', options:['佩','沛','配'], correct:'佩', hint:'提示:「佩」「配」都唸ㄆㄟˋ,佩服的佩跟配合的配是同音字。', blanks:1 },
-      { id:44, title:'複習:字音字形', photo:'🔤', before:'大家都很', after:'服他認真學習的態度。', zh:'💡 選出正確的字', options:['配','佩','沛'], correct:'佩', hint:'提示:「佩」「配」都唸ㄆㄟˋ,佩服的佩跟配合的配是同音字。', blanks:1 },
-      { id:45, title:'字音字形挑戰', photo:'🔤', before:'弟弟想跟哥哥', after:'玩具,哥哥答應了。', zh:'💡 選出正確的字', options:['換','喚','患'], correct:'換', hint:'提示:「換」「喚」「患」都唸ㄏㄨㄢˋ,交換的換跟呼喚的喚是同音字。', blanks:1 },
-      { id:46, title:'複習:字音字形', photo:'🔤', before:'弟弟想跟哥哥', after:'玩具,哥哥答應了。', zh:'💡 選出正確的字', options:['喚','換','患'], correct:'換', hint:'提示:「換」「喚」「患」都唸ㄏㄨㄢˋ,交換的換跟呼喚的喚是同音字。', blanks:1 },
-      { id:47, title:'複習:字音字形', photo:'🔤', before:'弟弟想跟哥哥', after:'玩具,哥哥答應了。', zh:'💡 選出正確的字', options:['患','喚','換'], correct:'換', hint:'提示:「換」「喚」「患」都唸ㄏㄨㄢˋ,交換的換跟呼喚的喚是同音字。', blanks:1 },
-      { id:48, title:'複習:字音字形', photo:'🔤', before:'弟弟想跟哥哥', after:'玩具,哥哥答應了。', zh:'💡 選出正確的字', options:['喚','患','換'], correct:'換', hint:'提示:「換」「喚」「患」都唸ㄏㄨㄢˋ,交換的換跟呼喚的喚是同音字。', blanks:1 },
-      { id:49, title:'字音字形挑戰', photo:'🔤', before:'媽媽去超市', after:'了很多水果和蔬菜。', zh:'💡 選出正確的字', options:['麥','買','賣'], correct:'買', hint:'提示:「買」唸ㄇㄞˇ(三聲),「賣」「麥」都唸ㄇㄞˋ(四聲),買東西的買要小心聲調。', blanks:1 },
-      { id:50, title:'複習:字音字形', photo:'🔤', before:'媽媽去超市', after:'了很多水果和蔬菜。', zh:'💡 選出正確的字', options:['買','麥','賣'], correct:'買', hint:'提示:「買」唸ㄇㄞˇ(三聲),「賣」「麥」都唸ㄇㄞˋ(四聲),買東西的買要小心聲調。', blanks:1 },
-      { id:51, title:'複習:字音字形', photo:'🔤', before:'媽媽去超市', after:'了很多水果和蔬菜。', zh:'💡 選出正確的字', options:['麥','買','賣'], correct:'買', hint:'提示:「買」唸ㄇㄞˇ(三聲),「賣」「麥」都唸ㄇㄞˋ(四聲),買東西的買要小心聲調。', blanks:1 },
-      { id:52, title:'複習:字音字形', photo:'🔤', before:'媽媽去超市', after:'了很多水果和蔬菜。', zh:'💡 選出正確的字', options:['買','賣','麥'], correct:'買', hint:'提示:「買」唸ㄇㄞˇ(三聲),「賣」「麥」都唸ㄇㄞˋ(四聲),買東西的買要小心聲調。', blanks:1 },
-      { id:53, title:'字音字形挑戰', photo:'🔤', before:'小狗不小心被車撞', after:',大家都很擔心牠。', zh:'💡 選出正確的字', options:['商','傷','賞'], correct:'傷', hint:'提示:「傷」「商」都唸ㄕㄤ,受傷的傷跟商店的商是同音字。', blanks:1 },
-      { id:54, title:'複習:字音字形', photo:'🔤', before:'小狗不小心被車撞', after:',大家都很擔心牠。', zh:'💡 選出正確的字', options:['賞','商','傷'], correct:'傷', hint:'提示:「傷」「商」都唸ㄕㄤ,受傷的傷跟商店的商是同音字。', blanks:1 },
-      { id:55, title:'複習:字音字形', photo:'🔤', before:'小狗不小心被車撞', after:',大家都很擔心牠。', zh:'💡 選出正確的字', options:['商','賞','傷'], correct:'傷', hint:'提示:「傷」「商」都唸ㄕㄤ,受傷的傷跟商店的商是同音字。', blanks:1 },
-      { id:56, title:'複習:字音字形', photo:'🔤', before:'小狗不小心被車撞', after:',大家都很擔心牠。', zh:'💡 選出正確的字', options:['賞','商','傷'], correct:'傷', hint:'提示:「傷」「商」都唸ㄕㄤ,受傷的傷跟商店的商是同音字。', blanks:1 },
-      { id:57, title:'字音字形挑戰', photo:'🔤', before:'我家', after:'的地方離學校很近,走路就可以到。', zh:'💡 選出正確的字', options:['注','住','主'], correct:'住', hint:'提示:「住」「主」「注」讀音很接近,住的地方的住是居住的意思,不要跟主人的主搞混了。', blanks:1 },
-      { id:58, title:'複習:字音字形', photo:'🔤', before:'我家', after:'的地方離學校很近,走路就可以到。', zh:'💡 選出正確的字', options:['住','注','主'], correct:'住', hint:'提示:「住」「主」「注」讀音很接近,住的地方的住是居住的意思,不要跟主人的主搞混了。', blanks:1 },
-      { id:59, title:'複習:字音字形', photo:'🔤', before:'我家', after:'的地方離學校很近,走路就可以到。', zh:'💡 選出正確的字', options:['注','住','主'], correct:'住', hint:'提示:「住」「主」「注」讀音很接近,住的地方的住是居住的意思,不要跟主人的主搞混了。', blanks:1 },
-      { id:60, title:'複習:字音字形', photo:'🔤', before:'我家', after:'的地方離學校很近,走路就可以到。', zh:'💡 選出正確的字', options:['住','主','注'], correct:'住', hint:'提示:「住」「主」「注」讀音很接近,住的地方的住是居住的意思,不要跟主人的主搞混了。', blanks:1 }
+      { id:1, title:'字音字形挑戰', photo:'🔤', before:'', after:'天到了,天氣變冷了。', zh:'💡 選出正確的字', options:["懂","東","冬"], correct:'冬', hint:'提示:「冬」「東」都唸ㄉㄨㄥ,冬天的冬跟東西的東是同音字。', blanks:1 },
+      { id:2, title:'複習:字音字形', photo:'🔤', before:'', after:'天到了,天氣變冷了。', zh:'💡 選出正確的字', options:["東","懂","冬"], correct:'冬', hint:'提示:「冬」「東」都唸ㄉㄨㄥ,冬天的冬跟東西的東是同音字。', blanks:1 },
+      { id:3, title:'複習:字音字形', photo:'🔤', before:'', after:'天到了,天氣變冷了。', zh:'💡 選出正確的字', options:["懂","東","冬"], correct:'冬', hint:'提示:「冬」「東」都唸ㄉㄨㄥ,冬天的冬跟東西的東是同音字。', blanks:1 },
+      { id:4, title:'複習:字音字形', photo:'🔤', before:'', after:'天到了,天氣變冷了。', zh:'💡 選出正確的字', options:["懂","冬","東"], correct:'冬', hint:'提示:「冬」「東」都唸ㄉㄨㄥ,冬天的冬跟東西的東是同音字。', blanks:1 },
+      { id:5, title:'字音字形挑戰', photo:'🔤', before:'他難過的時候,常常會', after:'著淚水說故事。', zh:'💡 選出正確的字', options:["帽","冒","貌"], correct:'冒', hint:'提示:「冒」「貌」「帽」都唸ㄇㄠˋ,冒煙的冒跟帽子的帽是同音字。', blanks:1 },
+      { id:6, title:'複習:字音字形', photo:'🔤', before:'他難過的時候,常常會', after:'著淚水說故事。', zh:'💡 選出正確的字', options:["冒","帽","貌"], correct:'冒', hint:'提示:「冒」「貌」「帽」都唸ㄇㄠˋ,冒煙的冒跟帽子的帽是同音字。', blanks:1 },
+      { id:7, title:'複習:字音字形', photo:'🔤', before:'他難過的時候,常常會', after:'著淚水說故事。', zh:'💡 選出正確的字', options:["帽","冒","貌"], correct:'冒', hint:'提示:「冒」「貌」「帽」都唸ㄇㄠˋ,冒煙的冒跟帽子的帽是同音字。', blanks:1 },
+      { id:8, title:'複習:字音字形', photo:'🔤', before:'他難過的時候,常常會', after:'著淚水說故事。', zh:'💡 選出正確的字', options:["冒","貌","帽"], correct:'冒', hint:'提示:「冒」「貌」「帽」都唸ㄇㄠˋ,冒煙的冒跟帽子的帽是同音字。', blanks:1 },
+      { id:9, title:'字音字形挑戰', photo:'🔤', before:'同學們趁下課時間', after:'在一起聊天。', zh:'💡 選出正確的字', options:["劇","聚","句"], correct:'聚', hint:'提示:「聚」「句」「劇」都唸ㄐㄩˋ,聚會的聚跟句子的句是同音字。', blanks:1 },
+      { id:10, title:'複習:字音字形', photo:'🔤', before:'同學們趁下課時間', after:'在一起聊天。', zh:'💡 選出正確的字', options:["聚","句","劇"], correct:'聚', hint:'提示:「聚」「句」「劇」都唸ㄐㄩˋ,聚會的聚跟句子的句是同音字。', blanks:1 },
+      { id:11, title:'複習:字音字形', photo:'🔤', before:'同學們趁下課時間', after:'在一起聊天。', zh:'💡 選出正確的字', options:["句","聚","劇"], correct:'聚', hint:'提示:「聚」「句」「劇」都唸ㄐㄩˋ,聚會的聚跟句子的句是同音字。', blanks:1 },
+      { id:12, title:'複習:字音字形', photo:'🔤', before:'同學們趁下課時間', after:'在一起聊天。', zh:'💡 選出正確的字', options:["聚","句","劇"], correct:'聚', hint:'提示:「聚」「句」「劇」都唸ㄐㄩˋ,聚會的聚跟句子的句是同音字。', blanks:1 },
+      { id:13, title:'字音字形挑戰', photo:'🔤', before:'媽媽煮了一大鍋香噴噴的', after:'菜。', zh:'💡 選出正確的字', options:["犯","飯","範"], correct:'飯', hint:'提示:「飯」「犯」「範」都唸ㄈㄢˋ,吃飯的飯跟犯錯的犯是同音字。', blanks:1 },
+      { id:14, title:'複習:字音字形', photo:'🔤', before:'媽媽煮了一大鍋香噴噴的', after:'菜。', zh:'💡 選出正確的字', options:["範","犯","飯"], correct:'飯', hint:'提示:「飯」「犯」「範」都唸ㄈㄢˋ,吃飯的飯跟犯錯的犯是同音字。', blanks:1 },
+      { id:15, title:'複習:字音字形', photo:'🔤', before:'媽媽煮了一大鍋香噴噴的', after:'菜。', zh:'💡 選出正確的字', options:["犯","範","飯"], correct:'飯', hint:'提示:「飯」「犯」「範」都唸ㄈㄢˋ,吃飯的飯跟犯錯的犯是同音字。', blanks:1 },
+      { id:16, title:'複習:字音字形', photo:'🔤', before:'媽媽煮了一大鍋香噴噴的', after:'菜。', zh:'💡 選出正確的字', options:["範","犯","飯"], correct:'飯', hint:'提示:「飯」「犯」「範」都唸ㄈㄢˋ,吃飯的飯跟犯錯的犯是同音字。', blanks:1 },
+      { id:17, title:'字音字形挑戰', photo:'🔤', before:'和好朋友一起玩,心情特別', after:'快。', zh:'💡 選出正確的字', options:["於","魚","愉"], correct:'愉', hint:'提示:「愉」「魚」「於」都唸ㄩˊ,愉快的愉跟魚的魚是同音字。', blanks:1 },
+      { id:18, title:'複習:字音字形', photo:'🔤', before:'和好朋友一起玩,心情特別', after:'快。', zh:'💡 選出正確的字', options:["魚","於","愉"], correct:'愉', hint:'提示:「愉」「魚」「於」都唸ㄩˊ,愉快的愉跟魚的魚是同音字。', blanks:1 },
+      { id:19, title:'複習:字音字形', photo:'🔤', before:'和好朋友一起玩,心情特別', after:'快。', zh:'💡 選出正確的字', options:["魚","愉","於"], correct:'愉', hint:'提示:「愉」「魚」「於」都唸ㄩˊ,愉快的愉跟魚的魚是同音字。', blanks:1 },
+      { id:20, title:'複習:字音字形', photo:'🔤', before:'和好朋友一起玩,心情特別', after:'快。', zh:'💡 選出正確的字', options:["愉","魚","於"], correct:'愉', hint:'提示:「愉」「魚」「於」都唸ㄩˊ,愉快的愉跟魚的魚是同音字。', blanks:1 },
+      { id:21, title:'字音字形挑戰', photo:'🔤', before:'海', after:'裡有各種美麗的魚。', zh:'💡 選出正確的字', options:["洋","陽","羊"], correct:'洋', hint:'提示:「洋」「羊」「陽」都唸ㄧㄤˊ,海洋的洋跟山羊的羊是同音字。', blanks:1 },
+      { id:22, title:'複習:字音字形', photo:'🔤', before:'海', after:'裡有各種美麗的魚。', zh:'💡 選出正確的字', options:["陽","洋","羊"], correct:'洋', hint:'提示:「洋」「羊」「陽」都唸ㄧㄤˊ,海洋的洋跟山羊的羊是同音字。', blanks:1 },
+      { id:23, title:'複習:字音字形', photo:'🔤', before:'海', after:'裡有各種美麗的魚。', zh:'💡 選出正確的字', options:["洋","羊","陽"], correct:'洋', hint:'提示:「洋」「羊」「陽」都唸ㄧㄤˊ,海洋的洋跟山羊的羊是同音字。', blanks:1 },
+      { id:24, title:'複習:字音字形', photo:'🔤', before:'海', after:'裡有各種美麗的魚。', zh:'💡 選出正確的字', options:["羊","洋","陽"], correct:'洋', hint:'提示:「洋」「羊」「陽」都唸ㄧㄤˊ,海洋的洋跟山羊的羊是同音字。', blanks:1 },
+      { id:25, title:'字音字形挑戰', photo:'🔤', before:'寒冷的冬天,湖面結成了', after:'。', zh:'💡 選出正確的字', options:["冰","兵","餅"], correct:'冰', hint:'提示:「冰」「兵」都唸ㄅㄧㄥ,「餅」唸ㄅㄧㄥˇ,結冰的冰跟士兵的兵是同音字。', blanks:1 },
+      { id:26, title:'複習:字音字形', photo:'🔤', before:'寒冷的冬天,湖面結成了', after:'。', zh:'💡 選出正確的字', options:["兵","冰","餅"], correct:'冰', hint:'提示:「冰」「兵」都唸ㄅㄧㄥ,「餅」唸ㄅㄧㄥˇ,結冰的冰跟士兵的兵是同音字。', blanks:1 },
+      { id:27, title:'複習:字音字形', photo:'🔤', before:'寒冷的冬天,湖面結成了', after:'。', zh:'💡 選出正確的字', options:["冰","兵","餅"], correct:'冰', hint:'提示:「冰」「兵」都唸ㄅㄧㄥ,「餅」唸ㄅㄧㄥˇ,結冰的冰跟士兵的兵是同音字。', blanks:1 },
+      { id:28, title:'複習:字音字形', photo:'🔤', before:'寒冷的冬天,湖面結成了', after:'。', zh:'💡 選出正確的字', options:["兵","餅","冰"], correct:'冰', hint:'提示:「冰」「兵」都唸ㄅㄧㄥ,「餅」唸ㄅㄧㄥˇ,結冰的冰跟士兵的兵是同音字。', blanks:1 },
+      { id:29, title:'字音字形挑戰', photo:'🔤', before:'這真是一個美', after:'的點子。', zh:'💡 選出正確的字', options:["秒","廟","妙"], correct:'妙', hint:'提示:「妙」「廟」都唸ㄇㄧㄠˋ,「秒」唸ㄇㄧㄠˇ,美妙的妙跟廟宇的廟是同音字。', blanks:1 },
+      { id:30, title:'複習:字音字形', photo:'🔤', before:'這真是一個美', after:'的點子。', zh:'💡 選出正確的字', options:["廟","秒","妙"], correct:'妙', hint:'提示:「妙」「廟」都唸ㄇㄧㄠˋ,「秒」唸ㄇㄧㄠˇ,美妙的妙跟廟宇的廟是同音字。', blanks:1 },
+      { id:31, title:'複習:字音字形', photo:'🔤', before:'這真是一個美', after:'的點子。', zh:'💡 選出正確的字', options:["秒","廟","妙"], correct:'妙', hint:'提示:「妙」「廟」都唸ㄇㄧㄠˋ,「秒」唸ㄇㄧㄠˇ,美妙的妙跟廟宇的廟是同音字。', blanks:1 },
+      { id:32, title:'複習:字音字形', photo:'🔤', before:'這真是一個美', after:'的點子。', zh:'💡 選出正確的字', options:["秒","妙","廟"], correct:'妙', hint:'提示:「妙」「廟」都唸ㄇㄧㄠˋ,「秒」唸ㄇㄧㄠˇ,美妙的妙跟廟宇的廟是同音字。', blanks:1 },
+      { id:33, title:'字音字形挑戰', photo:'🔤', before:'火車快要到', after:'了,大家準備下車。', zh:'💡 選出正確的字', options:["戰","佔","站"], correct:'站', hint:'提示:「站」「戰」「佔」都唸ㄓㄢˋ,車站的站跟戰爭的戰是同音字。', blanks:1 },
+      { id:34, title:'複習:字音字形', photo:'🔤', before:'火車快要到', after:'了,大家準備下車。', zh:'💡 選出正確的字', options:["站","佔","戰"], correct:'站', hint:'提示:「站」「戰」「佔」都唸ㄓㄢˋ,車站的站跟戰爭的戰是同音字。', blanks:1 },
+      { id:35, title:'複習:字音字形', photo:'🔤', before:'火車快要到', after:'了,大家準備下車。', zh:'💡 選出正確的字', options:["佔","站","戰"], correct:'站', hint:'提示:「站」「戰」「佔」都唸ㄓㄢˋ,車站的站跟戰爭的戰是同音字。', blanks:1 },
+      { id:36, title:'複習:字音字形', photo:'🔤', before:'火車快要到', after:'了,大家準備下車。', zh:'💡 選出正確的字', options:["站","戰","佔"], correct:'站', hint:'提示:「站」「戰」「佔」都唸ㄓㄢˋ,車站的站跟戰爭的戰是同音字。', blanks:1 },
+      { id:37, title:'字音字形挑戰', photo:'🔤', before:'樹蔭下的風很', after:'爽。', zh:'💡 選出正確的字', options:["糧","涼","量"], correct:'涼', hint:'提示:「涼」「糧」都唸ㄌㄧㄤˊ,涼爽的涼跟糧食的糧是同音字。', blanks:1 },
+      { id:38, title:'複習:字音字形', photo:'🔤', before:'樹蔭下的風很', after:'爽。', zh:'💡 選出正確的字', options:["涼","量","糧"], correct:'涼', hint:'提示:「涼」「糧」都唸ㄌㄧㄤˊ,涼爽的涼跟糧食的糧是同音字。', blanks:1 },
+      { id:39, title:'複習:字音字形', photo:'🔤', before:'樹蔭下的風很', after:'爽。', zh:'💡 選出正確的字', options:["量","涼","糧"], correct:'涼', hint:'提示:「涼」「糧」都唸ㄌㄧㄤˊ,涼爽的涼跟糧食的糧是同音字。', blanks:1 },
+      { id:40, title:'複習:字音字形', photo:'🔤', before:'樹蔭下的風很', after:'爽。', zh:'💡 選出正確的字', options:["涼","量","糧"], correct:'涼', hint:'提示:「涼」「糧」都唸ㄌㄧㄤˊ,涼爽的涼跟糧食的糧是同音字。', blanks:1 },
+      { id:41, title:'字音字形挑戰', photo:'🔤', before:'能認識大家真是太', after:'運了。', zh:'💡 選出正確的字', options:["興","幸","杏"], correct:'幸', hint:'提示:「幸」「興」「杏」都唸ㄒㄧㄥˋ,幸運的幸跟高興的興是同音字。', blanks:1 },
+      { id:42, title:'複習:字音字形', photo:'🔤', before:'能認識大家真是太', after:'運了。', zh:'💡 選出正確的字', options:["幸","興","杏"], correct:'幸', hint:'提示:「幸」「興」「杏」都唸ㄒㄧㄥˋ,幸運的幸跟高興的興是同音字。', blanks:1 },
+      { id:43, title:'複習:字音字形', photo:'🔤', before:'能認識大家真是太', after:'運了。', zh:'💡 選出正確的字', options:["興","杏","幸"], correct:'幸', hint:'提示:「幸」「興」「杏」都唸ㄒㄧㄥˋ,幸運的幸跟高興的興是同音字。', blanks:1 },
+      { id:44, title:'複習:字音字形', photo:'🔤', before:'能認識大家真是太', after:'運了。', zh:'💡 選出正確的字', options:["杏","興","幸"], correct:'幸', hint:'提示:「幸」「興」「杏」都唸ㄒㄧㄥˋ,幸運的幸跟高興的興是同音字。', blanks:1 },
+      { id:45, title:'字音字形挑戰', photo:'🔤', before:'我們在門口耐心等', after:'。', zh:'💡 選出正確的字', options:["戴","代","待"], correct:'待', hint:'提示:「待」「代」「戴」都唸ㄉㄞˋ,等待的待跟現代的代是同音字。', blanks:1 },
+      { id:46, title:'複習:字音字形', photo:'🔤', before:'我們在門口耐心等', after:'。', zh:'💡 選出正確的字', options:["代","戴","待"], correct:'待', hint:'提示:「待」「代」「戴」都唸ㄉㄞˋ,等待的待跟現代的代是同音字。', blanks:1 },
+      { id:47, title:'複習:字音字形', photo:'🔤', before:'我們在門口耐心等', after:'。', zh:'💡 選出正確的字', options:["待","戴","代"], correct:'待', hint:'提示:「待」「代」「戴」都唸ㄉㄞˋ,等待的待跟現代的代是同音字。', blanks:1 },
+      { id:48, title:'複習:字音字形', photo:'🔤', before:'我們在門口耐心等', after:'。', zh:'💡 選出正確的字', options:["待","戴","代"], correct:'待', hint:'提示:「待」「代」「戴」都唸ㄉㄞˋ,等待的待跟現代的代是同音字。', blanks:1 },
+      { id:49, title:'字音字形挑戰', photo:'🔤', before:'大家一起去市場買年', after:'。', zh:'💡 選出正確的字', options:["貨","獲","或"], correct:'貨', hint:'提示:「貨」「或」「獲」都唸ㄏㄨㄛˋ,年貨的貨跟或者的或是同音字。', blanks:1 },
+      { id:50, title:'複習:字音字形', photo:'🔤', before:'大家一起去市場買年', after:'。', zh:'💡 選出正確的字', options:["獲","貨","或"], correct:'貨', hint:'提示:「貨」「或」「獲」都唸ㄏㄨㄛˋ,年貨的貨跟或者的或是同音字。', blanks:1 },
+      { id:51, title:'複習:字音字形', photo:'🔤', before:'大家一起去市場買年', after:'。', zh:'💡 選出正確的字', options:["貨","或","獲"], correct:'貨', hint:'提示:「貨」「或」「獲」都唸ㄏㄨㄛˋ,年貨的貨跟或者的或是同音字。', blanks:1 },
+      { id:52, title:'複習:字音字形', photo:'🔤', before:'大家一起去市場買年', after:'。', zh:'💡 選出正確的字', options:["或","貨","獲"], correct:'貨', hint:'提示:「貨」「或」「獲」都唸ㄏㄨㄛˋ,年貨的貨跟或者的或是同音字。', blanks:1 },
+      { id:53, title:'字音字形挑戰', photo:'🔤', before:'桌上積了一層', after:'塵。', zh:'💡 選出正確的字', options:["灰","揮","輝"], correct:'灰', hint:'提示:「灰」「揮」「輝」都唸ㄏㄨㄟ,灰塵的灰跟揮手的揮是同音字。', blanks:1 },
+      { id:54, title:'複習:字音字形', photo:'🔤', before:'桌上積了一層', after:'塵。', zh:'💡 選出正確的字', options:["揮","灰","輝"], correct:'灰', hint:'提示:「灰」「揮」「輝」都唸ㄏㄨㄟ,灰塵的灰跟揮手的揮是同音字。', blanks:1 },
+      { id:55, title:'複習:字音字形', photo:'🔤', before:'桌上積了一層', after:'塵。', zh:'💡 選出正確的字', options:["灰","揮","輝"], correct:'灰', hint:'提示:「灰」「揮」「輝」都唸ㄏㄨㄟ,灰塵的灰跟揮手的揮是同音字。', blanks:1 },
+      { id:56, title:'複習:字音字形', photo:'🔤', before:'桌上積了一層', after:'塵。', zh:'💡 選出正確的字', options:["揮","輝","灰"], correct:'灰', hint:'提示:「灰」「揮」「輝」都唸ㄏㄨㄟ,灰塵的灰跟揮手的揮是同音字。', blanks:1 },
+      { id:57, title:'字音字形挑戰', photo:'🔤', before:'除夕', after:'大家一起吃團圓飯。', zh:'💡 選出正確的字', options:["夜","也","野"], correct:'夜', hint:'提示:「夜」唸ㄧㄝˋ,「也」「野」都唸ㄧㄝˇ,除夕夜的夜要小心聲調。', blanks:1 },
+      { id:58, title:'複習:字音字形', photo:'🔤', before:'除夕', after:'大家一起吃團圓飯。', zh:'💡 選出正確的字', options:["也","野","夜"], correct:'夜', hint:'提示:「夜」唸ㄧㄝˋ,「也」「野」都唸ㄧㄝˇ,除夕夜的夜要小心聲調。', blanks:1 },
+      { id:59, title:'複習:字音字形', photo:'🔤', before:'除夕', after:'大家一起吃團圓飯。', zh:'💡 選出正確的字', options:["野","也","夜"], correct:'夜', hint:'提示:「夜」唸ㄧㄝˋ,「也」「野」都唸ㄧㄝˇ,除夕夜的夜要小心聲調。', blanks:1 },
+      { id:60, title:'複習:字音字形', photo:'🔤', before:'除夕', after:'大家一起吃團圓飯。', zh:'💡 選出正確的字', options:["野","夜","也"], correct:'夜', hint:'提示:「夜」唸ㄧㄝˋ,「也」「野」都唸ㄧㄝˇ,除夕夜的夜要小心聲調。', blanks:1 }
     ],
     poolSampleSize: 15,
     levels: [],
@@ -7633,11 +8193,12 @@ function startDailyChallenge(){
   enterSyntheticQuizSession(synthetic);
 }
 
-function collectMistakeQuestions(){
+function collectMistakeQuestions(subject){
   const items = [];
   Object.keys(PROGRESS.mistakes).forEach(chId=>{
     const ch = CHAPTERS.find(c=>c.id === chId);
     if(!ch){ delete PROGRESS.mistakes[chId]; return; } // chapter no longer exists
+    if(ch.subject !== subject) return;
     const pool = ch.levelPool || ch.levels;
     Object.keys(PROGRESS.mistakes[chId]).forEach(key=>{
       const found = pool.find(l=>questionKey(l) === key);
@@ -7651,19 +8212,20 @@ function collectMistakeQuestions(){
   return items;
 }
 function startMistakeReview(){
-  const raw = collectMistakeQuestions();
+  const subjectLabel = { english:'英文', mandarin:'國語', math:'數學' }[currentSubject] || '';
+  const raw = collectMistakeQuestions(currentSubject);
   saveProgress();
   updateMistakeBookBadge();
   if(raw.length === 0){
-    alert('太棒了,目前沒有錯題,妳都會了!🎉');
+    alert(`太棒了,目前${subjectLabel}沒有錯題,妳都會了!🎉`);
     return;
   }
   const chosen = shuffleArray(raw).map((l, idx)=> ({ ...l, id: idx+1, attempts:0, stars:0, done:false }));
   const synthetic = {
     id: '__mistakeReview__', subject:'mixed', category:'mistakeReview',
-    title:'錯題複習', unitLabel:'錯題本', headerEmoji:'📕',
+    title:`${subjectLabel}錯題複習`, unitLabel:'錯題本', headerEmoji:'📕',
     levels: chosen, gameCurrentLevel: 0,
-    gameTitle: '📕 錯題複習',
+    gameTitle: `📕 ${subjectLabel}錯題複習`,
     celebrateMessage: '太厲害了,這些錯題你都會了,錯題本清空囉!',
     celebrateEmoji: '🎉📕'
   };
@@ -7746,6 +8308,7 @@ function goHome(){
     if(b.dataset.tab !== 'home') b.disabled = true;
   });
   renderHome(); // refresh star-progress badges
+  updateMistakeBookBadge();
   switchTab('home');
 }
 
